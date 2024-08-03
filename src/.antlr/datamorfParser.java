@@ -1,4 +1,4 @@
-// Generated from /Users/manjunatha/Documents/Research/litelang/src/litelang.g4 by ANTLR 4.13.1
+// Generated from /Users/manjunatha/Documents/Research/litelang/src/datamorf.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class litelangParser extends Parser {
+public class datamorfParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -105,7 +105,7 @@ public class litelangParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "litelang.g4"; }
+	public String getGrammarFileName() { return "datamorf.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -116,14 +116,14 @@ public class litelangParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public litelangParser(TokenStream input) {
+	public datamorfParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ProgramContext extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(litelangParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(datamorfParser.EOF, 0); }
 		public StatementsContext statements() {
 			return getRuleContext(StatementsContext.class,0);
 		}
@@ -218,7 +218,7 @@ public class litelangParser extends Parser {
 		public VariableStatementContext variableStatement() {
 			return getRuleContext(VariableStatementContext.class,0);
 		}
-		public TerminalNode SemiColon() { return getToken(litelangParser.SemiColon, 0); }
+		public TerminalNode SemiColon() { return getToken(datamorfParser.SemiColon, 0); }
 		public AssignStatementContext assignStatement() {
 			return getRuleContext(AssignStatementContext.class,0);
 		}
@@ -342,9 +342,9 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class VariableStatementContext extends ParserRuleContext {
-		public TerminalNode Var() { return getToken(litelangParser.Var, 0); }
-		public TerminalNode Identifier() { return getToken(litelangParser.Identifier, 0); }
-		public TerminalNode Assign() { return getToken(litelangParser.Assign, 0); }
+		public TerminalNode Var() { return getToken(datamorfParser.Var, 0); }
+		public TerminalNode Identifier() { return getToken(datamorfParser.Identifier, 0); }
+		public TerminalNode Assign() { return getToken(datamorfParser.Assign, 0); }
 		public ValueContext value() {
 			return getRuleContext(ValueContext.class,0);
 		}
@@ -395,7 +395,7 @@ public class litelangParser extends Parser {
 		public ReferenceContext reference() {
 			return getRuleContext(ReferenceContext.class,0);
 		}
-		public TerminalNode Assign() { return getToken(litelangParser.Assign, 0); }
+		public TerminalNode Assign() { return getToken(datamorfParser.Assign, 0); }
 		public ValueContext value() {
 			return getRuleContext(ValueContext.class,0);
 		}
@@ -432,13 +432,13 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class FunctionStatementContext extends ParserRuleContext {
-		public TerminalNode Function() { return getToken(litelangParser.Function, 0); }
-		public TerminalNode Identifier() { return getToken(litelangParser.Identifier, 0); }
-		public TerminalNode OpenRound() { return getToken(litelangParser.OpenRound, 0); }
+		public TerminalNode Function() { return getToken(datamorfParser.Function, 0); }
+		public TerminalNode Identifier() { return getToken(datamorfParser.Identifier, 0); }
+		public TerminalNode OpenRound() { return getToken(datamorfParser.OpenRound, 0); }
 		public SignatureParamsContext signatureParams() {
 			return getRuleContext(SignatureParamsContext.class,0);
 		}
-		public TerminalNode CloseRound() { return getToken(litelangParser.CloseRound, 0); }
+		public TerminalNode CloseRound() { return getToken(datamorfParser.CloseRound, 0); }
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
@@ -481,13 +481,13 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IfStatementContext extends ParserRuleContext {
-		public List<TerminalNode> If() { return getTokens(litelangParser.If); }
+		public List<TerminalNode> If() { return getTokens(datamorfParser.If); }
 		public TerminalNode If(int i) {
-			return getToken(litelangParser.If, i);
+			return getToken(datamorfParser.If, i);
 		}
-		public List<TerminalNode> OpenRound() { return getTokens(litelangParser.OpenRound); }
+		public List<TerminalNode> OpenRound() { return getTokens(datamorfParser.OpenRound); }
 		public TerminalNode OpenRound(int i) {
-			return getToken(litelangParser.OpenRound, i);
+			return getToken(datamorfParser.OpenRound, i);
 		}
 		public List<UnitContext> unit() {
 			return getRuleContexts(UnitContext.class);
@@ -495,9 +495,9 @@ public class litelangParser extends Parser {
 		public UnitContext unit(int i) {
 			return getRuleContext(UnitContext.class,i);
 		}
-		public List<TerminalNode> CloseRound() { return getTokens(litelangParser.CloseRound); }
+		public List<TerminalNode> CloseRound() { return getTokens(datamorfParser.CloseRound); }
 		public TerminalNode CloseRound(int i) {
-			return getToken(litelangParser.CloseRound, i);
+			return getToken(datamorfParser.CloseRound, i);
 		}
 		public List<BlockContext> block() {
 			return getRuleContexts(BlockContext.class);
@@ -505,9 +505,9 @@ public class litelangParser extends Parser {
 		public BlockContext block(int i) {
 			return getRuleContext(BlockContext.class,i);
 		}
-		public List<TerminalNode> Else() { return getTokens(litelangParser.Else); }
+		public List<TerminalNode> Else() { return getTokens(datamorfParser.Else); }
 		public TerminalNode Else(int i) {
-			return getToken(litelangParser.Else, i);
+			return getToken(datamorfParser.Else, i);
 		}
 		public IfStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -586,12 +586,12 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class SwitchStatementContext extends ParserRuleContext {
-		public TerminalNode Switch() { return getToken(litelangParser.Switch, 0); }
-		public TerminalNode OpenRound() { return getToken(litelangParser.OpenRound, 0); }
+		public TerminalNode Switch() { return getToken(datamorfParser.Switch, 0); }
+		public TerminalNode OpenRound() { return getToken(datamorfParser.OpenRound, 0); }
 		public UnitContext unit() {
 			return getRuleContext(UnitContext.class,0);
 		}
-		public TerminalNode CloseRound() { return getToken(litelangParser.CloseRound, 0); }
+		public TerminalNode CloseRound() { return getToken(datamorfParser.CloseRound, 0); }
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
@@ -632,14 +632,14 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class DeleteStatementContext extends ParserRuleContext {
-		public TerminalNode Delete() { return getToken(litelangParser.Delete, 0); }
-		public List<TerminalNode> Identifier() { return getTokens(litelangParser.Identifier); }
+		public TerminalNode Delete() { return getToken(datamorfParser.Delete, 0); }
+		public List<TerminalNode> Identifier() { return getTokens(datamorfParser.Identifier); }
 		public TerminalNode Identifier(int i) {
-			return getToken(litelangParser.Identifier, i);
+			return getToken(datamorfParser.Identifier, i);
 		}
-		public List<TerminalNode> Dot() { return getTokens(litelangParser.Dot); }
+		public List<TerminalNode> Dot() { return getTokens(datamorfParser.Dot); }
 		public TerminalNode Dot(int i) {
-			return getToken(litelangParser.Dot, i);
+			return getToken(datamorfParser.Dot, i);
 		}
 		public List<AccessPropertyContext> accessProperty() {
 			return getRuleContexts(AccessPropertyContext.class);
@@ -748,7 +748,7 @@ public class litelangParser extends Parser {
 		public ValueContext value() {
 			return getRuleContext(ValueContext.class,0);
 		}
-		public TerminalNode SemiColon() { return getToken(litelangParser.SemiColon, 0); }
+		public TerminalNode SemiColon() { return getToken(datamorfParser.SemiColon, 0); }
 		public ValueStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -780,9 +780,9 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ForStatementContext extends ParserRuleContext {
-		public TerminalNode For() { return getToken(litelangParser.For, 0); }
-		public TerminalNode OpenRound() { return getToken(litelangParser.OpenRound, 0); }
-		public TerminalNode CloseRound() { return getToken(litelangParser.CloseRound, 0); }
+		public TerminalNode For() { return getToken(datamorfParser.For, 0); }
+		public TerminalNode OpenRound() { return getToken(datamorfParser.OpenRound, 0); }
+		public TerminalNode CloseRound() { return getToken(datamorfParser.CloseRound, 0); }
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
@@ -846,9 +846,9 @@ public class litelangParser extends Parser {
 		public VariableStatementContext init;
 		public UnitStatementContext condition;
 		public AssignStatementContext postOp;
-		public List<TerminalNode> SemiColon() { return getTokens(litelangParser.SemiColon); }
+		public List<TerminalNode> SemiColon() { return getTokens(datamorfParser.SemiColon); }
 		public TerminalNode SemiColon(int i) {
-			return getToken(litelangParser.SemiColon, i);
+			return getToken(datamorfParser.SemiColon, i);
 		}
 		public VariableStatementContext variableStatement() {
 			return getRuleContext(VariableStatementContext.class,0);
@@ -896,9 +896,9 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IteratorForConditionContext extends ParserRuleContext {
-		public TerminalNode Var() { return getToken(litelangParser.Var, 0); }
-		public TerminalNode Identifier() { return getToken(litelangParser.Identifier, 0); }
-		public TerminalNode Of() { return getToken(litelangParser.Of, 0); }
+		public TerminalNode Var() { return getToken(datamorfParser.Var, 0); }
+		public TerminalNode Identifier() { return getToken(datamorfParser.Identifier, 0); }
+		public TerminalNode Of() { return getToken(datamorfParser.Of, 0); }
 		public ReferenceContext reference() {
 			return getRuleContext(ReferenceContext.class,0);
 		}
@@ -940,33 +940,33 @@ public class litelangParser extends Parser {
 		public UnitContext left;
 		public UnitContext single;
 		public UnitContext right;
-		public TerminalNode OpenRound() { return getToken(litelangParser.OpenRound, 0); }
-		public TerminalNode CloseRound() { return getToken(litelangParser.CloseRound, 0); }
+		public TerminalNode OpenRound() { return getToken(datamorfParser.OpenRound, 0); }
+		public TerminalNode CloseRound() { return getToken(datamorfParser.CloseRound, 0); }
 		public List<UnitContext> unit() {
 			return getRuleContexts(UnitContext.class);
 		}
 		public UnitContext unit(int i) {
 			return getRuleContext(UnitContext.class,i);
 		}
-		public TerminalNode Not() { return getToken(litelangParser.Not, 0); }
+		public TerminalNode Not() { return getToken(datamorfParser.Not, 0); }
 		public ReferenceContext reference() {
 			return getRuleContext(ReferenceContext.class,0);
 		}
 		public ConstantContext constant() {
 			return getRuleContext(ConstantContext.class,0);
 		}
-		public TerminalNode Divide() { return getToken(litelangParser.Divide, 0); }
-		public TerminalNode Multiply() { return getToken(litelangParser.Multiply, 0); }
-		public TerminalNode Plus() { return getToken(litelangParser.Plus, 0); }
-		public TerminalNode Minus() { return getToken(litelangParser.Minus, 0); }
-		public TerminalNode LessThan() { return getToken(litelangParser.LessThan, 0); }
-		public TerminalNode MoreThan() { return getToken(litelangParser.MoreThan, 0); }
-		public TerminalNode LessThanEquals() { return getToken(litelangParser.LessThanEquals, 0); }
-		public TerminalNode GreaterThanEquals() { return getToken(litelangParser.GreaterThanEquals, 0); }
-		public TerminalNode Equals() { return getToken(litelangParser.Equals, 0); }
-		public TerminalNode NotEquals() { return getToken(litelangParser.NotEquals, 0); }
-		public TerminalNode And() { return getToken(litelangParser.And, 0); }
-		public TerminalNode Or() { return getToken(litelangParser.Or, 0); }
+		public TerminalNode Divide() { return getToken(datamorfParser.Divide, 0); }
+		public TerminalNode Multiply() { return getToken(datamorfParser.Multiply, 0); }
+		public TerminalNode Plus() { return getToken(datamorfParser.Plus, 0); }
+		public TerminalNode Minus() { return getToken(datamorfParser.Minus, 0); }
+		public TerminalNode LessThan() { return getToken(datamorfParser.LessThan, 0); }
+		public TerminalNode MoreThan() { return getToken(datamorfParser.MoreThan, 0); }
+		public TerminalNode LessThanEquals() { return getToken(datamorfParser.LessThanEquals, 0); }
+		public TerminalNode GreaterThanEquals() { return getToken(datamorfParser.GreaterThanEquals, 0); }
+		public TerminalNode Equals() { return getToken(datamorfParser.Equals, 0); }
+		public TerminalNode NotEquals() { return getToken(datamorfParser.NotEquals, 0); }
+		public TerminalNode And() { return getToken(datamorfParser.And, 0); }
+		public TerminalNode Or() { return getToken(datamorfParser.Or, 0); }
 		public UnitContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1146,7 +1146,7 @@ public class litelangParser extends Parser {
 		public FunctionCallContext functionCall() {
 			return getRuleContext(FunctionCallContext.class,0);
 		}
-		public TerminalNode Identifier() { return getToken(litelangParser.Identifier, 0); }
+		public TerminalNode Identifier() { return getToken(datamorfParser.Identifier, 0); }
 		public List<AccessorContext> accessor() {
 			return getRuleContexts(AccessorContext.class);
 		}
@@ -1216,8 +1216,8 @@ public class litelangParser extends Parser {
 		public AccessPropertyContext accessProperty() {
 			return getRuleContext(AccessPropertyContext.class,0);
 		}
-		public TerminalNode Dot() { return getToken(litelangParser.Dot, 0); }
-		public TerminalNode Identifier() { return getToken(litelangParser.Identifier, 0); }
+		public TerminalNode Dot() { return getToken(datamorfParser.Dot, 0); }
+		public TerminalNode Identifier() { return getToken(datamorfParser.Identifier, 0); }
 		public FunctionCallContext functionCall() {
 			return getRuleContext(FunctionCallContext.class,0);
 		}
@@ -1278,11 +1278,11 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class AccessPropertyContext extends ParserRuleContext {
-		public TerminalNode OpenSquare() { return getToken(litelangParser.OpenSquare, 0); }
-		public TerminalNode CloseSquare() { return getToken(litelangParser.CloseSquare, 0); }
-		public TerminalNode StringLiteral() { return getToken(litelangParser.StringLiteral, 0); }
-		public TerminalNode DecimalLiteral() { return getToken(litelangParser.DecimalLiteral, 0); }
-		public TerminalNode Identifier() { return getToken(litelangParser.Identifier, 0); }
+		public TerminalNode OpenSquare() { return getToken(datamorfParser.OpenSquare, 0); }
+		public TerminalNode CloseSquare() { return getToken(datamorfParser.CloseSquare, 0); }
+		public TerminalNode StringLiteral() { return getToken(datamorfParser.StringLiteral, 0); }
+		public TerminalNode DecimalLiteral() { return getToken(datamorfParser.DecimalLiteral, 0); }
+		public TerminalNode Identifier() { return getToken(datamorfParser.Identifier, 0); }
 		public AccessPropertyContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1325,9 +1325,9 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class FunctionCallContext extends ParserRuleContext {
-		public TerminalNode Identifier() { return getToken(litelangParser.Identifier, 0); }
-		public TerminalNode OpenRound() { return getToken(litelangParser.OpenRound, 0); }
-		public TerminalNode CloseRound() { return getToken(litelangParser.CloseRound, 0); }
+		public TerminalNode Identifier() { return getToken(datamorfParser.Identifier, 0); }
+		public TerminalNode OpenRound() { return getToken(datamorfParser.OpenRound, 0); }
+		public TerminalNode CloseRound() { return getToken(datamorfParser.CloseRound, 0); }
 		public SendingParamsContext sendingParams() {
 			return getRuleContext(SendingParamsContext.class,0);
 		}
@@ -1368,13 +1368,13 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class SignatureParamsContext extends ParserRuleContext {
-		public List<TerminalNode> Identifier() { return getTokens(litelangParser.Identifier); }
+		public List<TerminalNode> Identifier() { return getTokens(datamorfParser.Identifier); }
 		public TerminalNode Identifier(int i) {
-			return getToken(litelangParser.Identifier, i);
+			return getToken(datamorfParser.Identifier, i);
 		}
-		public List<TerminalNode> Comma() { return getTokens(litelangParser.Comma); }
+		public List<TerminalNode> Comma() { return getTokens(datamorfParser.Comma); }
 		public TerminalNode Comma(int i) {
-			return getToken(litelangParser.Comma, i);
+			return getToken(datamorfParser.Comma, i);
 		}
 		public SignatureParamsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1436,9 +1436,9 @@ public class litelangParser extends Parser {
 		public UnitContext unit(int i) {
 			return getRuleContext(UnitContext.class,i);
 		}
-		public List<TerminalNode> Comma() { return getTokens(litelangParser.Comma); }
+		public List<TerminalNode> Comma() { return getTokens(datamorfParser.Comma); }
 		public TerminalNode Comma(int i) {
-			return getToken(litelangParser.Comma, i);
+			return getToken(datamorfParser.Comma, i);
 		}
 		public SendingParamsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1494,11 +1494,11 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ArrowFunctionContext extends ParserRuleContext {
-		public TerminalNode OpenRound() { return getToken(litelangParser.OpenRound, 0); }
+		public TerminalNode OpenRound() { return getToken(datamorfParser.OpenRound, 0); }
 		public SignatureParamsContext signatureParams() {
 			return getRuleContext(SignatureParamsContext.class,0);
 		}
-		public TerminalNode CloseRound() { return getToken(litelangParser.CloseRound, 0); }
+		public TerminalNode CloseRound() { return getToken(datamorfParser.CloseRound, 0); }
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
@@ -1539,17 +1539,17 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ArrayLiteralContext extends ParserRuleContext {
-		public TerminalNode OpenSquare() { return getToken(litelangParser.OpenSquare, 0); }
-		public TerminalNode CloseSquare() { return getToken(litelangParser.CloseSquare, 0); }
+		public TerminalNode OpenSquare() { return getToken(datamorfParser.OpenSquare, 0); }
+		public TerminalNode CloseSquare() { return getToken(datamorfParser.CloseSquare, 0); }
 		public List<ValueContext> value() {
 			return getRuleContexts(ValueContext.class);
 		}
 		public ValueContext value(int i) {
 			return getRuleContext(ValueContext.class,i);
 		}
-		public List<TerminalNode> Comma() { return getTokens(litelangParser.Comma); }
+		public List<TerminalNode> Comma() { return getTokens(datamorfParser.Comma); }
 		public TerminalNode Comma(int i) {
-			return getToken(litelangParser.Comma, i);
+			return getToken(datamorfParser.Comma, i);
 		}
 		public ArrayLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1609,17 +1609,17 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ObjectLiteralContext extends ParserRuleContext {
-		public TerminalNode OpenCurly() { return getToken(litelangParser.OpenCurly, 0); }
-		public TerminalNode CloseCurly() { return getToken(litelangParser.CloseCurly, 0); }
+		public TerminalNode OpenCurly() { return getToken(datamorfParser.OpenCurly, 0); }
+		public TerminalNode CloseCurly() { return getToken(datamorfParser.CloseCurly, 0); }
 		public List<ObjectItemContext> objectItem() {
 			return getRuleContexts(ObjectItemContext.class);
 		}
 		public ObjectItemContext objectItem(int i) {
 			return getRuleContext(ObjectItemContext.class,i);
 		}
-		public List<TerminalNode> Comma() { return getTokens(litelangParser.Comma); }
+		public List<TerminalNode> Comma() { return getTokens(datamorfParser.Comma); }
 		public TerminalNode Comma(int i) {
-			return getToken(litelangParser.Comma, i);
+			return getToken(datamorfParser.Comma, i);
 		}
 		public ObjectLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1681,12 +1681,12 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class KeyContext extends ParserRuleContext {
-		public TerminalNode StringLiteral() { return getToken(litelangParser.StringLiteral, 0); }
-		public TerminalNode OpenSquare() { return getToken(litelangParser.OpenSquare, 0); }
+		public TerminalNode StringLiteral() { return getToken(datamorfParser.StringLiteral, 0); }
+		public TerminalNode OpenSquare() { return getToken(datamorfParser.OpenSquare, 0); }
 		public ReferenceContext reference() {
 			return getRuleContext(ReferenceContext.class,0);
 		}
-		public TerminalNode CloseSquare() { return getToken(litelangParser.CloseSquare, 0); }
+		public TerminalNode CloseSquare() { return getToken(datamorfParser.CloseSquare, 0); }
 		public KeyContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1806,7 +1806,7 @@ public class litelangParser extends Parser {
 		public KeyContext key() {
 			return getRuleContext(KeyContext.class,0);
 		}
-		public TerminalNode Colon() { return getToken(litelangParser.Colon, 0); }
+		public TerminalNode Colon() { return getToken(datamorfParser.Colon, 0); }
 		public ValueContext value() {
 			return getRuleContext(ValueContext.class,0);
 		}
@@ -1895,9 +1895,9 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class SpreadContext extends ParserRuleContext {
-		public List<TerminalNode> Dot() { return getTokens(litelangParser.Dot); }
+		public List<TerminalNode> Dot() { return getTokens(datamorfParser.Dot); }
 		public TerminalNode Dot(int i) {
-			return getToken(litelangParser.Dot, i);
+			return getToken(datamorfParser.Dot, i);
 		}
 		public ReferenceContext reference() {
 			return getRuleContext(ReferenceContext.class,0);
@@ -1937,11 +1937,11 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class BlockContext extends ParserRuleContext {
-		public TerminalNode OpenCurly() { return getToken(litelangParser.OpenCurly, 0); }
+		public TerminalNode OpenCurly() { return getToken(datamorfParser.OpenCurly, 0); }
 		public StatementsContext statements() {
 			return getRuleContext(StatementsContext.class,0);
 		}
-		public TerminalNode CloseCurly() { return getToken(litelangParser.CloseCurly, 0); }
+		public TerminalNode CloseCurly() { return getToken(datamorfParser.CloseCurly, 0); }
 		public BlockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1975,10 +1975,10 @@ public class litelangParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ConstantContext extends ParserRuleContext {
-		public TerminalNode NullLiteral() { return getToken(litelangParser.NullLiteral, 0); }
-		public TerminalNode BooleanLiteral() { return getToken(litelangParser.BooleanLiteral, 0); }
-		public TerminalNode DecimalLiteral() { return getToken(litelangParser.DecimalLiteral, 0); }
-		public TerminalNode StringLiteral() { return getToken(litelangParser.StringLiteral, 0); }
+		public TerminalNode NullLiteral() { return getToken(datamorfParser.NullLiteral, 0); }
+		public TerminalNode BooleanLiteral() { return getToken(datamorfParser.BooleanLiteral, 0); }
+		public TerminalNode DecimalLiteral() { return getToken(datamorfParser.DecimalLiteral, 0); }
+		public TerminalNode StringLiteral() { return getToken(datamorfParser.StringLiteral, 0); }
 		public ConstantContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}

@@ -1,3 +1,3 @@
 echo "Initiated building parsers for litelang and litequery"
 
-java -jar antlr.jar -Dlanguage=Go -Xexact-output-dir -o build -package LiteLang  -visitor  src/LiteLang.g4 
+java -jar antlr.jar -Dlanguage=Go -Xexact-output-dir -o build -package build  -visitor  src/DataMorf.g4 

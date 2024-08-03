@@ -1,9 +1,9 @@
-package litelang
+package datamorf
 
 import (
+	parser "datamorf/build"
 	"encoding/json"
 	"fmt"
-	parser "litelang/build"
 	"reflect"
 	"strconv"
 
@@ -11,28 +11,30 @@ import (
 	"github.com/mohae/deepcopy"
 )
 
-type LiteLangVisitor struct {
-	parser.LiteLangVisitor
+type DataMorfVisitor struct {
+	parser.DataMorfVisitor
 	variables map[string]interface{}
 	functions map[string]interface{}
 	logs      []string
 }
 
-func NewLiteLangVisitor(variables map[string]any) *LiteLangVisitor {
+func NewLiteLangVisitor(variables map[string]any) *DataMorfVisitor {
 	logs := make([]string, 0)
-	return &LiteLangVisitor{variables: variables, logs: logs}
+	return &DataMorfVisitor{variables: variables, logs: logs}
 }
 
 func ExecuteCode(
 	code string,
 	variables map[string]interface{},
 ) (map[string]interface{}, []string) {
+
 	stream := antlr.NewInputStream(code)
-	lexer := parser.NewLiteLangLexer(stream)
+	lexer := parser.NewDataMorfLexer(stream)
 	cs := antlr.NewCommonTokenStream(lexer, 0)
-	p := parser.NewLiteLangParser(cs)
+	p := parser.NewDataMorfParser(cs)
 	tree := p.Program()
 	llvisitor := NewLiteLangVisitor(variables)
+
 	llvisitor.Visit(tree)
 	return llvisitor.variables, llvisitor.logs
 }
@@ -42,19 +44,19 @@ func ExecuteWithReturn(
 	variables map[string]interface{},
 ) interface{} {
 	test := antlr.NewInputStream(code)
-	lexer := parser.NewLiteLangLexer(test)
+	lexer := parser.NewDataMorfLexer(test)
 	cs := antlr.NewCommonTokenStream(lexer, 0)
-	p := parser.NewLiteLangParser(cs)
+	p := parser.NewDataMorfParser(cs)
 	tree := p.Program()
 	llvisitor := NewLiteLangVisitor(variables)
 	return llvisitor.Visit(tree)
 }
 
-func (v *LiteLangVisitor) Visit(tree antlr.ParseTree) interface{} {
+func (v *DataMorfVisitor) Visit(tree antlr.ParseTree) interface{} {
 	return tree.Accept(v)
 }
 
-func (v *LiteLangVisitor) VisitProgram(ctx *parser.ProgramContext) interface{} {
+func (v *DataMorfVisitor) VisitProgram(ctx *parser.ProgramContext) interface{} {
 	for _, child := range ctx.GetChildren() {
 		switch x := child.(type) {
 		case *parser.StatementsContext:
@@ -64,7 +66,7 @@ func (v *LiteLangVisitor) VisitProgram(ctx *parser.ProgramContext) interface{} {
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitStatements(ctx *parser.StatementsContext) interface{} {
+func (v *DataMorfVisitor) VisitStatements(ctx *parser.StatementsContext) interface{} {
 	var last any
 	for _, child := range ctx.GetChildren() {
 		switch x := child.(type) {
@@ -75,7 +77,7 @@ func (v *LiteLangVisitor) VisitStatements(ctx *parser.StatementsContext) interfa
 	return last
 }
 
-func (v *LiteLangVisitor) VisitStatement(ctx *parser.StatementContext) interface{} {
+func (v *DataMorfVisitor) VisitStatement(ctx *parser.StatementContext) interface{} {
 	for _, child := range ctx.GetChildren() {
 		switch x := child.(type) {
 		case *parser.VariableStatementContext:
@@ -95,7 +97,7 @@ func (v *LiteLangVisitor) VisitStatement(ctx *parser.StatementContext) interface
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) interface{} {
+func (v *DataMorfVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) interface{} {
 	var value interface{}
 	value = nil
 	var name string
@@ -110,7 +112,7 @@ func (v *LiteLangVisitor) VisitVariableStatement(ctx *parser.VariableStatementCo
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
+func (v *DataMorfVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 	if ctx.ObjectLiteral() != nil {
 		return ctx.ObjectLiteral().Accept(v)
 	}
@@ -127,7 +129,7 @@ func (v *LiteLangVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitObjectLiteral(ctx *parser.ObjectLiteralContext) interface{} {
+func (v *DataMorfVisitor) VisitObjectLiteral(ctx *parser.ObjectLiteralContext) interface{} {
 	objectItems := ctx.AllObjectItem()
 	objectMap := make(map[string]interface{})
 
@@ -150,12 +152,12 @@ func (v *LiteLangVisitor) VisitObjectLiteral(ctx *parser.ObjectLiteralContext) i
 	return objectMap
 }
 
-func (v *LiteLangVisitor) VisitSpread(ctx *parser.SpreadContext) interface{} {
+func (v *DataMorfVisitor) VisitSpread(ctx *parser.SpreadContext) interface{} {
 	object := ctx.AccessRhs().Accept(v)
 	return object
 }
 
-func (v *LiteLangVisitor) VisitKeyValue(ctx *parser.KeyValueContext) interface{} {
+func (v *DataMorfVisitor) VisitKeyValue(ctx *parser.KeyValueContext) interface{} {
 	object := map[string]interface{}{}
 	key := ctx.Key().Accept(v).(string)
 	value := ctx.Value().Accept(v)
@@ -163,7 +165,7 @@ func (v *LiteLangVisitor) VisitKeyValue(ctx *parser.KeyValueContext) interface{}
 	return object
 }
 
-func (v *LiteLangVisitor) VisitArrayLiteral(ctx *parser.ArrayLiteralContext) interface{} {
+func (v *DataMorfVisitor) VisitArrayLiteral(ctx *parser.ArrayLiteralContext) interface{} {
 	values := make([]interface{}, 0)
 	for _, valueTree := range ctx.AllValue() {
 		value := valueTree.Accept(v)
@@ -172,18 +174,18 @@ func (v *LiteLangVisitor) VisitArrayLiteral(ctx *parser.ArrayLiteralContext) int
 	return values
 }
 
-func (v *LiteLangVisitor) VisitKey(ctx *parser.KeyContext) interface{} {
+func (v *DataMorfVisitor) VisitKey(ctx *parser.KeyContext) interface{} {
 	if ctx.StringLiteral() != nil {
 		return processStringLiteral(ctx.StringLiteral().GetText())
 	}
-	panic("No Key Found")
+	panic("No key Found")
 }
 
-func (v *LiteLangVisitor) VisitUnitStatement(ctx *parser.UnitStatementContext) interface{} {
+func (v *DataMorfVisitor) VisitUnitStatement(ctx *parser.UnitStatementContext) interface{} {
 	return ctx.Unit().Accept(v)
 }
 
-func (v *LiteLangVisitor) VisitUnit(ctx *parser.UnitContext) interface{} {
+func (v *DataMorfVisitor) VisitUnit(ctx *parser.UnitContext) interface{} {
 	if ctx.Constant() != nil {
 		return ctx.Constant().Accept(v)
 	}
@@ -235,7 +237,7 @@ func (v *LiteLangVisitor) VisitUnit(ctx *parser.UnitContext) interface{} {
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitConstant(ctx *parser.ConstantContext) interface{} {
+func (v *DataMorfVisitor) VisitConstant(ctx *parser.ConstantContext) interface{} {
 	if ctx.StringLiteral() != nil {
 		return processStringLiteral(ctx.StringLiteral().GetText())
 	}
@@ -251,14 +253,14 @@ func (v *LiteLangVisitor) VisitConstant(ctx *parser.ConstantContext) interface{}
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitValueStatement(ctx *parser.ValueStatementContext) interface{} {
+func (v *DataMorfVisitor) VisitValueStatement(ctx *parser.ValueStatementContext) interface{} {
 	if ctx.Value() != nil {
 		return ctx.Value().Accept(v)
 	}
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitAccessLhs(ctx *parser.AccessLhsContext) interface{} {
+func (v *DataMorfVisitor) VisitAccessLhs(ctx *parser.AccessLhsContext) interface{} {
 	var currentObject interface{}
 
 	if ctx.AllAccessorLhs() == nil || len(ctx.AllAccessorLhs()) == 0 {
@@ -298,7 +300,7 @@ func (v *LiteLangVisitor) VisitAccessLhs(ctx *parser.AccessLhsContext) interface
 	return currentObject
 }
 
-func (v *LiteLangVisitor) VisitFunctionCall(ctx *parser.FunctionCallContext) interface{} {
+func (v *DataMorfVisitor) VisitFunctionCall(ctx *parser.FunctionCallContext) interface{} {
 	functionName := ctx.Identifier().GetText()
 	paramVals := ctx.Params().Accept(v).([]interface{})
 	if functionName == "copy" {
@@ -318,7 +320,7 @@ func (v *LiteLangVisitor) VisitFunctionCall(ctx *parser.FunctionCallContext) int
 	return v.functions[functionName].(*parser.FunctionStatementContext).Accept(v)
 }
 
-func (v *LiteLangVisitor) VisitParams(ctx *parser.ParamsContext) interface{} {
+func (v *DataMorfVisitor) VisitParams(ctx *parser.ParamsContext) interface{} {
 	vals := make([]interface{}, 0)
 	for i := range ctx.AllUnit() {
 		val := ctx.AllUnit()[i].Accept(v)
@@ -327,7 +329,7 @@ func (v *LiteLangVisitor) VisitParams(ctx *parser.ParamsContext) interface{} {
 	return vals
 }
 
-func (v *LiteLangVisitor) VisitIfStatement(ctx *parser.IfStatementContext) interface{} {
+func (v *DataMorfVisitor) VisitIfStatement(ctx *parser.IfStatementContext) interface{} {
 	conditions := ctx.AllUnit()
 	blocks := ctx.AllBlock()
 	for i, condition := range conditions {
@@ -347,11 +349,7 @@ func (v *LiteLangVisitor) VisitIfStatement(ctx *parser.IfStatementContext) inter
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitForStatement(ctx *parser.ForStatementContext) interface{} {
-	if ctx.ClassicForParam() != nil {
-
-	}
-
+func (v *DataMorfVisitor) VisitForStatement(ctx *parser.ForStatementContext) interface{} {
 	if ctx.IteratorForParam() != nil {
 		iterator := ctx.IteratorForParam().Identifier().GetText()
 		parent := ctx.IteratorForParam().AccessRhs().Accept(v).([]interface{})
@@ -363,12 +361,12 @@ func (v *LiteLangVisitor) VisitForStatement(ctx *parser.ForStatementContext) int
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitBlock(ctx *parser.BlockContext) interface{} {
+func (v *DataMorfVisitor) VisitBlock(ctx *parser.BlockContext) interface{} {
 	ctx.Statements().Accept(v)
 	return nil
 }
 
-func (v *LiteLangVisitor) VisitAccessRhs(ctx *parser.AccessRhsContext) interface{} {
+func (v *DataMorfVisitor) VisitAccessRhs(ctx *parser.AccessRhsContext) interface{} {
 	var currentObject interface{}
 	var parentObject interface{}
 	parentObject = v.variables
@@ -434,7 +432,7 @@ func (v *LiteLangVisitor) VisitAccessRhs(ctx *parser.AccessRhsContext) interface
 	return currentObject
 }
 
-func (v *LiteLangVisitor) VisitAssignStatement(ctx *parser.AssignStatementContext) interface{} {
+func (v *DataMorfVisitor) VisitAssignStatement(ctx *parser.AssignStatementContext) interface{} {
 	value := ctx.Value().Accept(v)
 	current := ctx.AccessLhs().Accept(v)
 	property := getLastAccessorLhs(ctx.AccessLhs().(*parser.AccessLhsContext))

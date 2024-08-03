@@ -1,6 +1,6 @@
-// Code generated from litelang/src/LiteLang.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from src/DataMorf.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
-package LiteLang // LiteLang
+package build // DataMorf
 import (
 	"fmt"
 	"strconv"
@@ -14,11 +14,11 @@ var _ = fmt.Printf
 var _ = strconv.Itoa
 var _ = sync.Once{}
 
-type LiteLangParser struct {
+type DataMorfParser struct {
 	*antlr.BaseParser
 }
 
-var LiteLangParserStaticData struct {
+var DataMorfParserStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
 	LiteralNames           []string
@@ -29,182 +29,172 @@ var LiteLangParserStaticData struct {
 	decisionToDFA          []*antlr.DFA
 }
 
-func litelangParserInit() {
-	staticData := &LiteLangParserStaticData
+func datamorfParserInit() {
+	staticData := &DataMorfParserStaticData
 	staticData.LiteralNames = []string{
 		"", "'=>'", "'['", "']'", "'('", "')'", "'{'", "'}'", "';'", "','",
-		"'='", "'?'", "'?.'", "':'", "'.'", "'++'", "'--'", "'+'", "'-'", "'!'",
-		"'*'", "'/'", "'%'", "'**'", "'<'", "'>'", "'<='", "'>='", "'=='", "'!='",
-		"'&&'", "'||'", "'null'", "", "", "'break'", "'do'", "'of'", "'case'",
-		"'else'", "'new'", "'var'", "'return'", "'continue'", "'for'", "'switch'",
-		"'while'", "'function'", "'default'", "'if'", "'elif'", "'delete'",
+		"'='", "'?'", "'?.'", "':'", "'.'", "'+'", "'-'", "'!'", "'*'", "'/'",
+		"'%'", "'**'", "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'&&'",
+		"'||'", "'null'", "", "", "'break'", "'do'", "'of'", "'case'", "'else'",
+		"'var'", "'return'", "'continue'", "'for'", "'switch'", "'while'", "'function'",
+		"'default'", "'if'", "'elif'", "'delete'",
 	}
 	staticData.SymbolicNames = []string{
-		"", "", "OpenBracket", "CloseBracket", "OpenParen", "CloseParen", "OpenBrace",
-		"CloseBrace", "SemiColon", "Comma", "Assign", "QuestionMark", "QuestionMarkDot",
-		"Colon", "Dot", "PlusPlus", "MinusMinus", "Plus", "Minus", "Not", "Multiply",
-		"Divide", "Modulus", "Power", "LessThan", "MoreThan", "LessThanEquals",
-		"GreaterThanEquals", "Equals", "NotEquals", "And", "Or", "NullLiteral",
-		"BooleanLiteral", "DecimalLiteral", "Break", "Do", "Of", "Case", "Else",
-		"New", "Var", "Return", "Continue", "For", "Switch", "While", "Function",
-		"Default", "If", "Elif", "Delete", "Identifier", "StringLiteral", "WhiteSpaces",
-		"LineTerminator",
+		"", "", "OpenSquare", "CloseSquare", "OpenRound", "CloseRound", "OpenCurly",
+		"CloseCurly", "SemiColon", "Comma", "Assign", "QuestionMark", "QuestionMarkDot",
+		"Colon", "Dot", "Plus", "Minus", "Not", "Multiply", "Divide", "Modulus",
+		"Power", "LessThan", "MoreThan", "LessThanEquals", "GreaterThanEquals",
+		"Equals", "NotEquals", "And", "Or", "NullLiteral", "BooleanLiteral",
+		"DecimalLiteral", "Break", "Do", "Of", "Case", "Else", "Var", "Return",
+		"Continue", "For", "Switch", "While", "Function", "Default", "If", "Elif",
+		"Delete", "Identifier", "StringLiteral", "WhiteSpaces", "LineTerminator",
 	}
 	staticData.RuleNames = []string{
 		"program", "statements", "statement", "variableStatement", "assignStatement",
-		"functionStatement", "ifStatement", "forStatement", "classicForParam",
-		"iteratorForParam", "switchStatement", "deleteStatement", "unitStatement",
-		"valueStatement", "unit", "accessLhs", "accessRhs", "accessorRhs", "accessorLhs",
-		"accessProperty", "functionCall", "paramMaker", "params", "arrowFunction",
-		"arrayLiteral", "objectLiteral", "key", "value", "keyValue", "spread",
-		"objectItem", "block", "constant",
+		"functionStatement", "ifStatement", "switchStatement", "deleteStatement",
+		"unitStatement", "valueStatement", "forStatement", "classicForCondition",
+		"iteratorForCondition", "unit", "reference", "accessor", "accessProperty",
+		"functionCall", "signatureParams", "sendingParams", "arrowFunction",
+		"arrayLiteral", "objectLiteral", "key", "value", "keyValue", "objectItem",
+		"spread", "block", "constant",
 	}
 	staticData.PredictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 55, 333, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 52, 314, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
 		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
 		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 2, 19, 7, 19, 2, 20, 7, 20, 2,
 		21, 7, 21, 2, 22, 7, 22, 2, 23, 7, 23, 2, 24, 7, 24, 2, 25, 7, 25, 2, 26,
-		7, 26, 2, 27, 7, 27, 2, 28, 7, 28, 2, 29, 7, 29, 2, 30, 7, 30, 2, 31, 7,
-		31, 2, 32, 7, 32, 1, 0, 3, 0, 68, 8, 0, 1, 0, 1, 0, 1, 1, 4, 1, 73, 8,
-		1, 11, 1, 12, 1, 74, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
-		2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 3, 2, 94, 8, 2, 1, 3,
-		1, 3, 1, 3, 1, 3, 3, 3, 100, 8, 3, 1, 4, 1, 4, 1, 4, 1, 4, 1, 5, 1, 5,
-		1, 5, 1, 5, 1, 5, 1, 5, 1, 5, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6,
-		1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 5, 6, 125, 8, 6, 10, 6, 12, 6, 128, 9, 6,
-		1, 6, 1, 6, 3, 6, 132, 8, 6, 1, 7, 1, 7, 1, 7, 1, 7, 3, 7, 138, 8, 7, 1,
-		7, 1, 7, 1, 7, 1, 8, 1, 8, 3, 8, 145, 8, 8, 1, 8, 1, 8, 1, 8, 1, 8, 1,
-		8, 1, 9, 1, 9, 1, 9, 1, 9, 1, 9, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1,
-		10, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 3, 11, 168, 8, 11, 5, 11, 170, 8,
-		11, 10, 11, 12, 11, 173, 9, 11, 1, 12, 1, 12, 1, 13, 1, 13, 1, 13, 1, 14,
-		1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 3, 14, 189, 8,
-		14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14,
-		1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 5, 14, 206, 8, 14, 10, 14, 12, 14, 209,
-		9, 14, 1, 15, 1, 15, 5, 15, 213, 8, 15, 10, 15, 12, 15, 216, 9, 15, 1,
-		16, 1, 16, 3, 16, 220, 8, 16, 1, 16, 5, 16, 223, 8, 16, 10, 16, 12, 16,
-		226, 9, 16, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 3, 17, 233, 8, 17, 1, 18,
-		1, 18, 1, 18, 3, 18, 238, 8, 18, 1, 19, 1, 19, 1, 19, 1, 19, 1, 20, 1,
-		20, 1, 20, 1, 20, 1, 20, 1, 21, 1, 21, 1, 21, 5, 21, 252, 8, 21, 10, 21,
-		12, 21, 255, 9, 21, 3, 21, 257, 8, 21, 1, 22, 1, 22, 1, 22, 5, 22, 262,
-		8, 22, 10, 22, 12, 22, 265, 9, 22, 3, 22, 267, 8, 22, 1, 23, 1, 23, 1,
-		23, 1, 23, 1, 23, 1, 23, 1, 24, 1, 24, 1, 24, 1, 24, 5, 24, 279, 8, 24,
-		10, 24, 12, 24, 282, 9, 24, 3, 24, 284, 8, 24, 1, 24, 1, 24, 1, 25, 1,
-		25, 1, 25, 1, 25, 5, 25, 292, 8, 25, 10, 25, 12, 25, 295, 9, 25, 3, 25,
-		297, 8, 25, 1, 25, 1, 25, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 3, 26, 306,
-		8, 26, 1, 27, 1, 27, 1, 27, 1, 27, 3, 27, 312, 8, 27, 1, 28, 1, 28, 1,
-		28, 1, 28, 1, 29, 1, 29, 1, 29, 1, 29, 1, 29, 1, 30, 1, 30, 3, 30, 325,
-		8, 30, 1, 31, 1, 31, 1, 31, 1, 31, 1, 32, 1, 32, 1, 32, 0, 1, 28, 33, 0,
-		2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,
-		40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 0, 3, 1, 0, 24, 31,
-		2, 0, 34, 34, 52, 53, 2, 0, 32, 34, 53, 53, 343, 0, 67, 1, 0, 0, 0, 2,
-		72, 1, 0, 0, 0, 4, 93, 1, 0, 0, 0, 6, 95, 1, 0, 0, 0, 8, 101, 1, 0, 0,
-		0, 10, 105, 1, 0, 0, 0, 12, 112, 1, 0, 0, 0, 14, 133, 1, 0, 0, 0, 16, 144,
-		1, 0, 0, 0, 18, 151, 1, 0, 0, 0, 20, 156, 1, 0, 0, 0, 22, 162, 1, 0, 0,
-		0, 24, 174, 1, 0, 0, 0, 26, 176, 1, 0, 0, 0, 28, 188, 1, 0, 0, 0, 30, 210,
-		1, 0, 0, 0, 32, 219, 1, 0, 0, 0, 34, 232, 1, 0, 0, 0, 36, 237, 1, 0, 0,
-		0, 38, 239, 1, 0, 0, 0, 40, 243, 1, 0, 0, 0, 42, 256, 1, 0, 0, 0, 44, 266,
-		1, 0, 0, 0, 46, 268, 1, 0, 0, 0, 48, 274, 1, 0, 0, 0, 50, 287, 1, 0, 0,
-		0, 52, 305, 1, 0, 0, 0, 54, 311, 1, 0, 0, 0, 56, 313, 1, 0, 0, 0, 58, 317,
-		1, 0, 0, 0, 60, 324, 1, 0, 0, 0, 62, 326, 1, 0, 0, 0, 64, 330, 1, 0, 0,
-		0, 66, 68, 3, 2, 1, 0, 67, 66, 1, 0, 0, 0, 67, 68, 1, 0, 0, 0, 68, 69,
-		1, 0, 0, 0, 69, 70, 5, 0, 0, 1, 70, 1, 1, 0, 0, 0, 71, 73, 3, 4, 2, 0,
-		72, 71, 1, 0, 0, 0, 73, 74, 1, 0, 0, 0, 74, 72, 1, 0, 0, 0, 74, 75, 1,
-		0, 0, 0, 75, 3, 1, 0, 0, 0, 76, 77, 3, 6, 3, 0, 77, 78, 5, 8, 0, 0, 78,
-		94, 1, 0, 0, 0, 79, 80, 3, 8, 4, 0, 80, 81, 5, 8, 0, 0, 81, 94, 1, 0, 0,
-		0, 82, 94, 3, 10, 5, 0, 83, 94, 3, 12, 6, 0, 84, 94, 3, 14, 7, 0, 85, 94,
-		3, 20, 10, 0, 86, 94, 3, 26, 13, 0, 87, 88, 3, 22, 11, 0, 88, 89, 5, 8,
-		0, 0, 89, 94, 1, 0, 0, 0, 90, 91, 3, 24, 12, 0, 91, 92, 5, 8, 0, 0, 92,
-		94, 1, 0, 0, 0, 93, 76, 1, 0, 0, 0, 93, 79, 1, 0, 0, 0, 93, 82, 1, 0, 0,
-		0, 93, 83, 1, 0, 0, 0, 93, 84, 1, 0, 0, 0, 93, 85, 1, 0, 0, 0, 93, 86,
-		1, 0, 0, 0, 93, 87, 1, 0, 0, 0, 93, 90, 1, 0, 0, 0, 94, 5, 1, 0, 0, 0,
-		95, 96, 5, 41, 0, 0, 96, 99, 5, 52, 0, 0, 97, 98, 5, 10, 0, 0, 98, 100,
-		3, 54, 27, 0, 99, 97, 1, 0, 0, 0, 99, 100, 1, 0, 0, 0, 100, 7, 1, 0, 0,
-		0, 101, 102, 3, 30, 15, 0, 102, 103, 5, 10, 0, 0, 103, 104, 3, 54, 27,
-		0, 104, 9, 1, 0, 0, 0, 105, 106, 5, 47, 0, 0, 106, 107, 5, 52, 0, 0, 107,
-		108, 5, 4, 0, 0, 108, 109, 3, 42, 21, 0, 109, 110, 5, 5, 0, 0, 110, 111,
-		3, 62, 31, 0, 111, 11, 1, 0, 0, 0, 112, 113, 5, 49, 0, 0, 113, 114, 5,
-		4, 0, 0, 114, 115, 3, 28, 14, 0, 115, 116, 5, 5, 0, 0, 116, 126, 3, 62,
-		31, 0, 117, 118, 5, 39, 0, 0, 118, 119, 5, 49, 0, 0, 119, 120, 5, 4, 0,
-		0, 120, 121, 3, 28, 14, 0, 121, 122, 5, 5, 0, 0, 122, 123, 3, 62, 31, 0,
-		123, 125, 1, 0, 0, 0, 124, 117, 1, 0, 0, 0, 125, 128, 1, 0, 0, 0, 126,
-		124, 1, 0, 0, 0, 126, 127, 1, 0, 0, 0, 127, 131, 1, 0, 0, 0, 128, 126,
-		1, 0, 0, 0, 129, 130, 5, 39, 0, 0, 130, 132, 3, 62, 31, 0, 131, 129, 1,
-		0, 0, 0, 131, 132, 1, 0, 0, 0, 132, 13, 1, 0, 0, 0, 133, 134, 5, 44, 0,
-		0, 134, 137, 5, 4, 0, 0, 135, 138, 3, 16, 8, 0, 136, 138, 3, 18, 9, 0,
-		137, 135, 1, 0, 0, 0, 137, 136, 1, 0, 0, 0, 138, 139, 1, 0, 0, 0, 139,
-		140, 5, 5, 0, 0, 140, 141, 3, 62, 31, 0, 141, 15, 1, 0, 0, 0, 142, 145,
-		3, 6, 3, 0, 143, 145, 3, 8, 4, 0, 144, 142, 1, 0, 0, 0, 144, 143, 1, 0,
-		0, 0, 145, 146, 1, 0, 0, 0, 146, 147, 5, 8, 0, 0, 147, 148, 3, 24, 12,
-		0, 148, 149, 5, 8, 0, 0, 149, 150, 3, 8, 4, 0, 150, 17, 1, 0, 0, 0, 151,
-		152, 5, 41, 0, 0, 152, 153, 5, 52, 0, 0, 153, 154, 5, 37, 0, 0, 154, 155,
-		3, 32, 16, 0, 155, 19, 1, 0, 0, 0, 156, 157, 5, 45, 0, 0, 157, 158, 5,
-		4, 0, 0, 158, 159, 3, 28, 14, 0, 159, 160, 5, 5, 0, 0, 160, 161, 3, 62,
-		31, 0, 161, 21, 1, 0, 0, 0, 162, 163, 5, 51, 0, 0, 163, 171, 5, 52, 0,
-		0, 164, 167, 5, 14, 0, 0, 165, 168, 3, 38, 19, 0, 166, 168, 5, 52, 0, 0,
-		167, 165, 1, 0, 0, 0, 167, 166, 1, 0, 0, 0, 168, 170, 1, 0, 0, 0, 169,
-		164, 1, 0, 0, 0, 170, 173, 1, 0, 0, 0, 171, 169, 1, 0, 0, 0, 171, 172,
-		1, 0, 0, 0, 172, 23, 1, 0, 0, 0, 173, 171, 1, 0, 0, 0, 174, 175, 3, 28,
-		14, 0, 175, 25, 1, 0, 0, 0, 176, 177, 3, 54, 27, 0, 177, 178, 5, 8, 0,
-		0, 178, 27, 1, 0, 0, 0, 179, 180, 6, 14, -1, 0, 180, 181, 5, 4, 0, 0, 181,
-		182, 3, 28, 14, 0, 182, 183, 5, 5, 0, 0, 183, 189, 1, 0, 0, 0, 184, 185,
-		5, 19, 0, 0, 185, 189, 3, 28, 14, 3, 186, 189, 3, 32, 16, 0, 187, 189,
-		3, 64, 32, 0, 188, 179, 1, 0, 0, 0, 188, 184, 1, 0, 0, 0, 188, 186, 1,
-		0, 0, 0, 188, 187, 1, 0, 0, 0, 189, 207, 1, 0, 0, 0, 190, 191, 10, 8, 0,
-		0, 191, 192, 5, 21, 0, 0, 192, 206, 3, 28, 14, 9, 193, 194, 10, 7, 0, 0,
-		194, 195, 5, 20, 0, 0, 195, 206, 3, 28, 14, 8, 196, 197, 10, 6, 0, 0, 197,
-		198, 5, 17, 0, 0, 198, 206, 3, 28, 14, 7, 199, 200, 10, 5, 0, 0, 200, 201,
-		5, 18, 0, 0, 201, 206, 3, 28, 14, 6, 202, 203, 10, 4, 0, 0, 203, 204, 7,
-		0, 0, 0, 204, 206, 3, 28, 14, 5, 205, 190, 1, 0, 0, 0, 205, 193, 1, 0,
-		0, 0, 205, 196, 1, 0, 0, 0, 205, 199, 1, 0, 0, 0, 205, 202, 1, 0, 0, 0,
-		206, 209, 1, 0, 0, 0, 207, 205, 1, 0, 0, 0, 207, 208, 1, 0, 0, 0, 208,
-		29, 1, 0, 0, 0, 209, 207, 1, 0, 0, 0, 210, 214, 5, 52, 0, 0, 211, 213,
-		3, 36, 18, 0, 212, 211, 1, 0, 0, 0, 213, 216, 1, 0, 0, 0, 214, 212, 1,
-		0, 0, 0, 214, 215, 1, 0, 0, 0, 215, 31, 1, 0, 0, 0, 216, 214, 1, 0, 0,
-		0, 217, 220, 3, 40, 20, 0, 218, 220, 5, 52, 0, 0, 219, 217, 1, 0, 0, 0,
-		219, 218, 1, 0, 0, 0, 220, 224, 1, 0, 0, 0, 221, 223, 3, 34, 17, 0, 222,
-		221, 1, 0, 0, 0, 223, 226, 1, 0, 0, 0, 224, 222, 1, 0, 0, 0, 224, 225,
-		1, 0, 0, 0, 225, 33, 1, 0, 0, 0, 226, 224, 1, 0, 0, 0, 227, 233, 3, 38,
-		19, 0, 228, 229, 5, 14, 0, 0, 229, 233, 5, 52, 0, 0, 230, 231, 5, 14, 0,
-		0, 231, 233, 3, 40, 20, 0, 232, 227, 1, 0, 0, 0, 232, 228, 1, 0, 0, 0,
-		232, 230, 1, 0, 0, 0, 233, 35, 1, 0, 0, 0, 234, 238, 3, 38, 19, 0, 235,
-		236, 5, 14, 0, 0, 236, 238, 5, 52, 0, 0, 237, 234, 1, 0, 0, 0, 237, 235,
-		1, 0, 0, 0, 238, 37, 1, 0, 0, 0, 239, 240, 5, 2, 0, 0, 240, 241, 7, 1,
-		0, 0, 241, 242, 5, 3, 0, 0, 242, 39, 1, 0, 0, 0, 243, 244, 5, 52, 0, 0,
-		244, 245, 5, 4, 0, 0, 245, 246, 3, 44, 22, 0, 246, 247, 5, 5, 0, 0, 247,
-		41, 1, 0, 0, 0, 248, 253, 5, 52, 0, 0, 249, 250, 5, 9, 0, 0, 250, 252,
-		5, 52, 0, 0, 251, 249, 1, 0, 0, 0, 252, 255, 1, 0, 0, 0, 253, 251, 1, 0,
-		0, 0, 253, 254, 1, 0, 0, 0, 254, 257, 1, 0, 0, 0, 255, 253, 1, 0, 0, 0,
-		256, 248, 1, 0, 0, 0, 256, 257, 1, 0, 0, 0, 257, 43, 1, 0, 0, 0, 258, 263,
-		3, 28, 14, 0, 259, 260, 5, 9, 0, 0, 260, 262, 3, 28, 14, 0, 261, 259, 1,
-		0, 0, 0, 262, 265, 1, 0, 0, 0, 263, 261, 1, 0, 0, 0, 263, 264, 1, 0, 0,
-		0, 264, 267, 1, 0, 0, 0, 265, 263, 1, 0, 0, 0, 266, 258, 1, 0, 0, 0, 266,
-		267, 1, 0, 0, 0, 267, 45, 1, 0, 0, 0, 268, 269, 5, 4, 0, 0, 269, 270, 3,
-		44, 22, 0, 270, 271, 5, 5, 0, 0, 271, 272, 5, 1, 0, 0, 272, 273, 3, 62,
-		31, 0, 273, 47, 1, 0, 0, 0, 274, 283, 5, 2, 0, 0, 275, 280, 3, 54, 27,
-		0, 276, 277, 5, 9, 0, 0, 277, 279, 3, 54, 27, 0, 278, 276, 1, 0, 0, 0,
-		279, 282, 1, 0, 0, 0, 280, 278, 1, 0, 0, 0, 280, 281, 1, 0, 0, 0, 281,
-		284, 1, 0, 0, 0, 282, 280, 1, 0, 0, 0, 283, 275, 1, 0, 0, 0, 283, 284,
-		1, 0, 0, 0, 284, 285, 1, 0, 0, 0, 285, 286, 5, 3, 0, 0, 286, 49, 1, 0,
-		0, 0, 287, 296, 5, 6, 0, 0, 288, 293, 3, 60, 30, 0, 289, 290, 5, 9, 0,
-		0, 290, 292, 3, 60, 30, 0, 291, 289, 1, 0, 0, 0, 292, 295, 1, 0, 0, 0,
-		293, 291, 1, 0, 0, 0, 293, 294, 1, 0, 0, 0, 294, 297, 1, 0, 0, 0, 295,
-		293, 1, 0, 0, 0, 296, 288, 1, 0, 0, 0, 296, 297, 1, 0, 0, 0, 297, 298,
-		1, 0, 0, 0, 298, 299, 5, 7, 0, 0, 299, 51, 1, 0, 0, 0, 300, 306, 5, 53,
-		0, 0, 301, 302, 5, 2, 0, 0, 302, 303, 3, 32, 16, 0, 303, 304, 5, 3, 0,
-		0, 304, 306, 1, 0, 0, 0, 305, 300, 1, 0, 0, 0, 305, 301, 1, 0, 0, 0, 306,
-		53, 1, 0, 0, 0, 307, 312, 3, 40, 20, 0, 308, 312, 3, 28, 14, 0, 309, 312,
-		3, 50, 25, 0, 310, 312, 3, 48, 24, 0, 311, 307, 1, 0, 0, 0, 311, 308, 1,
-		0, 0, 0, 311, 309, 1, 0, 0, 0, 311, 310, 1, 0, 0, 0, 312, 55, 1, 0, 0,
-		0, 313, 314, 3, 52, 26, 0, 314, 315, 5, 13, 0, 0, 315, 316, 3, 54, 27,
-		0, 316, 57, 1, 0, 0, 0, 317, 318, 5, 14, 0, 0, 318, 319, 5, 14, 0, 0, 319,
-		320, 5, 14, 0, 0, 320, 321, 3, 32, 16, 0, 321, 59, 1, 0, 0, 0, 322, 325,
-		3, 56, 28, 0, 323, 325, 3, 58, 29, 0, 324, 322, 1, 0, 0, 0, 324, 323, 1,
-		0, 0, 0, 325, 61, 1, 0, 0, 0, 326, 327, 5, 6, 0, 0, 327, 328, 3, 2, 1,
-		0, 328, 329, 5, 7, 0, 0, 329, 63, 1, 0, 0, 0, 330, 331, 7, 2, 0, 0, 331,
-		65, 1, 0, 0, 0, 29, 67, 74, 93, 99, 126, 131, 137, 144, 167, 171, 188,
-		205, 207, 214, 219, 224, 232, 237, 253, 256, 263, 266, 280, 283, 293, 296,
-		305, 311, 324,
+		7, 26, 2, 27, 7, 27, 2, 28, 7, 28, 2, 29, 7, 29, 2, 30, 7, 30, 1, 0, 3,
+		0, 64, 8, 0, 1, 0, 1, 0, 1, 1, 4, 1, 69, 8, 1, 11, 1, 12, 1, 70, 1, 2,
+		1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
+		1, 2, 1, 2, 1, 2, 1, 2, 3, 2, 90, 8, 2, 1, 3, 1, 3, 1, 3, 1, 3, 3, 3, 96,
+		8, 3, 1, 4, 1, 4, 1, 4, 1, 4, 1, 5, 1, 5, 1, 5, 1, 5, 1, 5, 1, 5, 1, 5,
+		1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6,
+		5, 6, 121, 8, 6, 10, 6, 12, 6, 124, 9, 6, 1, 6, 1, 6, 3, 6, 128, 8, 6,
+		1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 8, 1, 8, 1, 8, 1, 8, 1, 8, 3, 8,
+		141, 8, 8, 5, 8, 143, 8, 8, 10, 8, 12, 8, 146, 9, 8, 1, 9, 1, 9, 1, 10,
+		1, 10, 1, 10, 1, 11, 1, 11, 1, 11, 1, 11, 3, 11, 157, 8, 11, 1, 11, 1,
+		11, 1, 11, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 13, 1, 13, 1, 13,
+		1, 13, 1, 13, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1,
+		14, 3, 14, 182, 8, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14,
+		1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 5, 14, 199, 8,
+		14, 10, 14, 12, 14, 202, 9, 14, 1, 15, 1, 15, 3, 15, 206, 8, 15, 1, 15,
+		5, 15, 209, 8, 15, 10, 15, 12, 15, 212, 9, 15, 1, 16, 1, 16, 1, 16, 1,
+		16, 1, 16, 3, 16, 219, 8, 16, 1, 17, 1, 17, 1, 17, 1, 17, 1, 18, 1, 18,
+		1, 18, 1, 18, 1, 18, 1, 19, 1, 19, 1, 19, 5, 19, 233, 8, 19, 10, 19, 12,
+		19, 236, 9, 19, 3, 19, 238, 8, 19, 1, 20, 1, 20, 1, 20, 5, 20, 243, 8,
+		20, 10, 20, 12, 20, 246, 9, 20, 3, 20, 248, 8, 20, 1, 21, 1, 21, 1, 21,
+		1, 21, 1, 21, 1, 21, 1, 22, 1, 22, 1, 22, 1, 22, 5, 22, 260, 8, 22, 10,
+		22, 12, 22, 263, 9, 22, 3, 22, 265, 8, 22, 1, 22, 1, 22, 1, 23, 1, 23,
+		1, 23, 1, 23, 5, 23, 273, 8, 23, 10, 23, 12, 23, 276, 9, 23, 3, 23, 278,
+		8, 23, 1, 23, 1, 23, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 3, 24, 287, 8,
+		24, 1, 25, 1, 25, 1, 25, 1, 25, 3, 25, 293, 8, 25, 1, 26, 1, 26, 1, 26,
+		1, 26, 1, 27, 1, 27, 3, 27, 301, 8, 27, 1, 28, 1, 28, 1, 28, 1, 28, 1,
+		28, 1, 29, 1, 29, 1, 29, 1, 29, 1, 30, 1, 30, 1, 30, 0, 1, 28, 31, 0, 2,
+		4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
+		42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 0, 3, 1, 0, 22, 29, 2, 0, 32, 32,
+		49, 50, 2, 0, 30, 32, 50, 50, 323, 0, 63, 1, 0, 0, 0, 2, 68, 1, 0, 0, 0,
+		4, 89, 1, 0, 0, 0, 6, 91, 1, 0, 0, 0, 8, 97, 1, 0, 0, 0, 10, 101, 1, 0,
+		0, 0, 12, 108, 1, 0, 0, 0, 14, 129, 1, 0, 0, 0, 16, 135, 1, 0, 0, 0, 18,
+		147, 1, 0, 0, 0, 20, 149, 1, 0, 0, 0, 22, 152, 1, 0, 0, 0, 24, 161, 1,
+		0, 0, 0, 26, 167, 1, 0, 0, 0, 28, 181, 1, 0, 0, 0, 30, 205, 1, 0, 0, 0,
+		32, 218, 1, 0, 0, 0, 34, 220, 1, 0, 0, 0, 36, 224, 1, 0, 0, 0, 38, 237,
+		1, 0, 0, 0, 40, 247, 1, 0, 0, 0, 42, 249, 1, 0, 0, 0, 44, 255, 1, 0, 0,
+		0, 46, 268, 1, 0, 0, 0, 48, 286, 1, 0, 0, 0, 50, 292, 1, 0, 0, 0, 52, 294,
+		1, 0, 0, 0, 54, 300, 1, 0, 0, 0, 56, 302, 1, 0, 0, 0, 58, 307, 1, 0, 0,
+		0, 60, 311, 1, 0, 0, 0, 62, 64, 3, 2, 1, 0, 63, 62, 1, 0, 0, 0, 63, 64,
+		1, 0, 0, 0, 64, 65, 1, 0, 0, 0, 65, 66, 5, 0, 0, 1, 66, 1, 1, 0, 0, 0,
+		67, 69, 3, 4, 2, 0, 68, 67, 1, 0, 0, 0, 69, 70, 1, 0, 0, 0, 70, 68, 1,
+		0, 0, 0, 70, 71, 1, 0, 0, 0, 71, 3, 1, 0, 0, 0, 72, 73, 3, 6, 3, 0, 73,
+		74, 5, 8, 0, 0, 74, 90, 1, 0, 0, 0, 75, 76, 3, 8, 4, 0, 76, 77, 5, 8, 0,
+		0, 77, 90, 1, 0, 0, 0, 78, 90, 3, 10, 5, 0, 79, 90, 3, 12, 6, 0, 80, 90,
+		3, 22, 11, 0, 81, 90, 3, 14, 7, 0, 82, 90, 3, 20, 10, 0, 83, 84, 3, 16,
+		8, 0, 84, 85, 5, 8, 0, 0, 85, 90, 1, 0, 0, 0, 86, 87, 3, 18, 9, 0, 87,
+		88, 5, 8, 0, 0, 88, 90, 1, 0, 0, 0, 89, 72, 1, 0, 0, 0, 89, 75, 1, 0, 0,
+		0, 89, 78, 1, 0, 0, 0, 89, 79, 1, 0, 0, 0, 89, 80, 1, 0, 0, 0, 89, 81,
+		1, 0, 0, 0, 89, 82, 1, 0, 0, 0, 89, 83, 1, 0, 0, 0, 89, 86, 1, 0, 0, 0,
+		90, 5, 1, 0, 0, 0, 91, 92, 5, 38, 0, 0, 92, 95, 5, 49, 0, 0, 93, 94, 5,
+		10, 0, 0, 94, 96, 3, 50, 25, 0, 95, 93, 1, 0, 0, 0, 95, 96, 1, 0, 0, 0,
+		96, 7, 1, 0, 0, 0, 97, 98, 3, 30, 15, 0, 98, 99, 5, 10, 0, 0, 99, 100,
+		3, 50, 25, 0, 100, 9, 1, 0, 0, 0, 101, 102, 5, 44, 0, 0, 102, 103, 5, 49,
+		0, 0, 103, 104, 5, 4, 0, 0, 104, 105, 3, 38, 19, 0, 105, 106, 5, 5, 0,
+		0, 106, 107, 3, 58, 29, 0, 107, 11, 1, 0, 0, 0, 108, 109, 5, 46, 0, 0,
+		109, 110, 5, 4, 0, 0, 110, 111, 3, 28, 14, 0, 111, 112, 5, 5, 0, 0, 112,
+		122, 3, 58, 29, 0, 113, 114, 5, 37, 0, 0, 114, 115, 5, 46, 0, 0, 115, 116,
+		5, 4, 0, 0, 116, 117, 3, 28, 14, 0, 117, 118, 5, 5, 0, 0, 118, 119, 3,
+		58, 29, 0, 119, 121, 1, 0, 0, 0, 120, 113, 1, 0, 0, 0, 121, 124, 1, 0,
+		0, 0, 122, 120, 1, 0, 0, 0, 122, 123, 1, 0, 0, 0, 123, 127, 1, 0, 0, 0,
+		124, 122, 1, 0, 0, 0, 125, 126, 5, 37, 0, 0, 126, 128, 3, 58, 29, 0, 127,
+		125, 1, 0, 0, 0, 127, 128, 1, 0, 0, 0, 128, 13, 1, 0, 0, 0, 129, 130, 5,
+		42, 0, 0, 130, 131, 5, 4, 0, 0, 131, 132, 3, 28, 14, 0, 132, 133, 5, 5,
+		0, 0, 133, 134, 3, 58, 29, 0, 134, 15, 1, 0, 0, 0, 135, 136, 5, 48, 0,
+		0, 136, 144, 5, 49, 0, 0, 137, 140, 5, 14, 0, 0, 138, 141, 3, 34, 17, 0,
+		139, 141, 5, 49, 0, 0, 140, 138, 1, 0, 0, 0, 140, 139, 1, 0, 0, 0, 141,
+		143, 1, 0, 0, 0, 142, 137, 1, 0, 0, 0, 143, 146, 1, 0, 0, 0, 144, 142,
+		1, 0, 0, 0, 144, 145, 1, 0, 0, 0, 145, 17, 1, 0, 0, 0, 146, 144, 1, 0,
+		0, 0, 147, 148, 3, 28, 14, 0, 148, 19, 1, 0, 0, 0, 149, 150, 3, 50, 25,
+		0, 150, 151, 5, 8, 0, 0, 151, 21, 1, 0, 0, 0, 152, 153, 5, 41, 0, 0, 153,
+		156, 5, 4, 0, 0, 154, 157, 3, 24, 12, 0, 155, 157, 3, 26, 13, 0, 156, 154,
+		1, 0, 0, 0, 156, 155, 1, 0, 0, 0, 157, 158, 1, 0, 0, 0, 158, 159, 5, 5,
+		0, 0, 159, 160, 3, 58, 29, 0, 160, 23, 1, 0, 0, 0, 161, 162, 3, 6, 3, 0,
+		162, 163, 5, 8, 0, 0, 163, 164, 3, 18, 9, 0, 164, 165, 5, 8, 0, 0, 165,
+		166, 3, 8, 4, 0, 166, 25, 1, 0, 0, 0, 167, 168, 5, 38, 0, 0, 168, 169,
+		5, 49, 0, 0, 169, 170, 5, 35, 0, 0, 170, 171, 3, 30, 15, 0, 171, 27, 1,
+		0, 0, 0, 172, 173, 6, 14, -1, 0, 173, 174, 5, 4, 0, 0, 174, 175, 3, 28,
+		14, 0, 175, 176, 5, 5, 0, 0, 176, 182, 1, 0, 0, 0, 177, 178, 5, 17, 0,
+		0, 178, 182, 3, 28, 14, 3, 179, 182, 3, 30, 15, 0, 180, 182, 3, 60, 30,
+		0, 181, 172, 1, 0, 0, 0, 181, 177, 1, 0, 0, 0, 181, 179, 1, 0, 0, 0, 181,
+		180, 1, 0, 0, 0, 182, 200, 1, 0, 0, 0, 183, 184, 10, 8, 0, 0, 184, 185,
+		5, 19, 0, 0, 185, 199, 3, 28, 14, 9, 186, 187, 10, 7, 0, 0, 187, 188, 5,
+		18, 0, 0, 188, 199, 3, 28, 14, 8, 189, 190, 10, 6, 0, 0, 190, 191, 5, 15,
+		0, 0, 191, 199, 3, 28, 14, 7, 192, 193, 10, 5, 0, 0, 193, 194, 5, 16, 0,
+		0, 194, 199, 3, 28, 14, 6, 195, 196, 10, 4, 0, 0, 196, 197, 7, 0, 0, 0,
+		197, 199, 3, 28, 14, 5, 198, 183, 1, 0, 0, 0, 198, 186, 1, 0, 0, 0, 198,
+		189, 1, 0, 0, 0, 198, 192, 1, 0, 0, 0, 198, 195, 1, 0, 0, 0, 199, 202,
+		1, 0, 0, 0, 200, 198, 1, 0, 0, 0, 200, 201, 1, 0, 0, 0, 201, 29, 1, 0,
+		0, 0, 202, 200, 1, 0, 0, 0, 203, 206, 3, 36, 18, 0, 204, 206, 5, 49, 0,
+		0, 205, 203, 1, 0, 0, 0, 205, 204, 1, 0, 0, 0, 206, 210, 1, 0, 0, 0, 207,
+		209, 3, 32, 16, 0, 208, 207, 1, 0, 0, 0, 209, 212, 1, 0, 0, 0, 210, 208,
+		1, 0, 0, 0, 210, 211, 1, 0, 0, 0, 211, 31, 1, 0, 0, 0, 212, 210, 1, 0,
+		0, 0, 213, 219, 3, 34, 17, 0, 214, 215, 5, 14, 0, 0, 215, 219, 5, 49, 0,
+		0, 216, 217, 5, 14, 0, 0, 217, 219, 3, 36, 18, 0, 218, 213, 1, 0, 0, 0,
+		218, 214, 1, 0, 0, 0, 218, 216, 1, 0, 0, 0, 219, 33, 1, 0, 0, 0, 220, 221,
+		5, 2, 0, 0, 221, 222, 7, 1, 0, 0, 222, 223, 5, 3, 0, 0, 223, 35, 1, 0,
+		0, 0, 224, 225, 5, 49, 0, 0, 225, 226, 5, 4, 0, 0, 226, 227, 3, 40, 20,
+		0, 227, 228, 5, 5, 0, 0, 228, 37, 1, 0, 0, 0, 229, 234, 5, 49, 0, 0, 230,
+		231, 5, 9, 0, 0, 231, 233, 5, 49, 0, 0, 232, 230, 1, 0, 0, 0, 233, 236,
+		1, 0, 0, 0, 234, 232, 1, 0, 0, 0, 234, 235, 1, 0, 0, 0, 235, 238, 1, 0,
+		0, 0, 236, 234, 1, 0, 0, 0, 237, 229, 1, 0, 0, 0, 237, 238, 1, 0, 0, 0,
+		238, 39, 1, 0, 0, 0, 239, 244, 3, 28, 14, 0, 240, 241, 5, 9, 0, 0, 241,
+		243, 3, 28, 14, 0, 242, 240, 1, 0, 0, 0, 243, 246, 1, 0, 0, 0, 244, 242,
+		1, 0, 0, 0, 244, 245, 1, 0, 0, 0, 245, 248, 1, 0, 0, 0, 246, 244, 1, 0,
+		0, 0, 247, 239, 1, 0, 0, 0, 247, 248, 1, 0, 0, 0, 248, 41, 1, 0, 0, 0,
+		249, 250, 5, 4, 0, 0, 250, 251, 3, 38, 19, 0, 251, 252, 5, 5, 0, 0, 252,
+		253, 5, 1, 0, 0, 253, 254, 3, 58, 29, 0, 254, 43, 1, 0, 0, 0, 255, 264,
+		5, 2, 0, 0, 256, 261, 3, 50, 25, 0, 257, 258, 5, 9, 0, 0, 258, 260, 3,
+		50, 25, 0, 259, 257, 1, 0, 0, 0, 260, 263, 1, 0, 0, 0, 261, 259, 1, 0,
+		0, 0, 261, 262, 1, 0, 0, 0, 262, 265, 1, 0, 0, 0, 263, 261, 1, 0, 0, 0,
+		264, 256, 1, 0, 0, 0, 264, 265, 1, 0, 0, 0, 265, 266, 1, 0, 0, 0, 266,
+		267, 5, 3, 0, 0, 267, 45, 1, 0, 0, 0, 268, 277, 5, 6, 0, 0, 269, 274, 3,
+		54, 27, 0, 270, 271, 5, 9, 0, 0, 271, 273, 3, 54, 27, 0, 272, 270, 1, 0,
+		0, 0, 273, 276, 1, 0, 0, 0, 274, 272, 1, 0, 0, 0, 274, 275, 1, 0, 0, 0,
+		275, 278, 1, 0, 0, 0, 276, 274, 1, 0, 0, 0, 277, 269, 1, 0, 0, 0, 277,
+		278, 1, 0, 0, 0, 278, 279, 1, 0, 0, 0, 279, 280, 5, 7, 0, 0, 280, 47, 1,
+		0, 0, 0, 281, 287, 5, 50, 0, 0, 282, 283, 5, 2, 0, 0, 283, 284, 3, 30,
+		15, 0, 284, 285, 5, 3, 0, 0, 285, 287, 1, 0, 0, 0, 286, 281, 1, 0, 0, 0,
+		286, 282, 1, 0, 0, 0, 287, 49, 1, 0, 0, 0, 288, 293, 3, 36, 18, 0, 289,
+		293, 3, 28, 14, 0, 290, 293, 3, 46, 23, 0, 291, 293, 3, 44, 22, 0, 292,
+		288, 1, 0, 0, 0, 292, 289, 1, 0, 0, 0, 292, 290, 1, 0, 0, 0, 292, 291,
+		1, 0, 0, 0, 293, 51, 1, 0, 0, 0, 294, 295, 3, 48, 24, 0, 295, 296, 5, 13,
+		0, 0, 296, 297, 3, 50, 25, 0, 297, 53, 1, 0, 0, 0, 298, 301, 3, 52, 26,
+		0, 299, 301, 3, 56, 28, 0, 300, 298, 1, 0, 0, 0, 300, 299, 1, 0, 0, 0,
+		301, 55, 1, 0, 0, 0, 302, 303, 5, 14, 0, 0, 303, 304, 5, 14, 0, 0, 304,
+		305, 5, 14, 0, 0, 305, 306, 3, 30, 15, 0, 306, 57, 1, 0, 0, 0, 307, 308,
+		5, 6, 0, 0, 308, 309, 3, 2, 1, 0, 309, 310, 5, 7, 0, 0, 310, 59, 1, 0,
+		0, 0, 311, 312, 7, 2, 0, 0, 312, 61, 1, 0, 0, 0, 26, 63, 70, 89, 95, 122,
+		127, 140, 144, 156, 181, 198, 200, 205, 210, 218, 234, 237, 244, 247, 261,
+		264, 274, 277, 286, 292, 300,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -216,125 +206,120 @@ func litelangParserInit() {
 	}
 }
 
-// LiteLangParserInit initializes any static state used to implement LiteLangParser. By default the
+// DataMorfParserInit initializes any static state used to implement DataMorfParser. By default the
 // static state used to implement the parser is lazily initialized during the first call to
-// NewLiteLangParser(). You can call this function if you wish to initialize the static state ahead
+// NewDataMorfParser(). You can call this function if you wish to initialize the static state ahead
 // of time.
-func LiteLangParserInit() {
-	staticData := &LiteLangParserStaticData
-	staticData.once.Do(litelangParserInit)
+func DataMorfParserInit() {
+	staticData := &DataMorfParserStaticData
+	staticData.once.Do(datamorfParserInit)
 }
 
-// NewLiteLangParser produces a new parser instance for the optional input antlr.TokenStream.
-func NewLiteLangParser(input antlr.TokenStream) *LiteLangParser {
-	LiteLangParserInit()
-	this := new(LiteLangParser)
+// NewDataMorfParser produces a new parser instance for the optional input antlr.TokenStream.
+func NewDataMorfParser(input antlr.TokenStream) *DataMorfParser {
+	DataMorfParserInit()
+	this := new(DataMorfParser)
 	this.BaseParser = antlr.NewBaseParser(input)
-	staticData := &LiteLangParserStaticData
+	staticData := &DataMorfParserStaticData
 	this.Interpreter = antlr.NewParserATNSimulator(this, staticData.atn, staticData.decisionToDFA, staticData.PredictionContextCache)
 	this.RuleNames = staticData.RuleNames
 	this.LiteralNames = staticData.LiteralNames
 	this.SymbolicNames = staticData.SymbolicNames
-	this.GrammarFileName = "LiteLang.g4"
+	this.GrammarFileName = "DataMorf.g4"
 
 	return this
 }
 
-// LiteLangParser tokens.
+// DataMorfParser tokens.
 const (
-	LiteLangParserEOF               = antlr.TokenEOF
-	LiteLangParserT__0              = 1
-	LiteLangParserOpenBracket       = 2
-	LiteLangParserCloseBracket      = 3
-	LiteLangParserOpenParen         = 4
-	LiteLangParserCloseParen        = 5
-	LiteLangParserOpenBrace         = 6
-	LiteLangParserCloseBrace        = 7
-	LiteLangParserSemiColon         = 8
-	LiteLangParserComma             = 9
-	LiteLangParserAssign            = 10
-	LiteLangParserQuestionMark      = 11
-	LiteLangParserQuestionMarkDot   = 12
-	LiteLangParserColon             = 13
-	LiteLangParserDot               = 14
-	LiteLangParserPlusPlus          = 15
-	LiteLangParserMinusMinus        = 16
-	LiteLangParserPlus              = 17
-	LiteLangParserMinus             = 18
-	LiteLangParserNot               = 19
-	LiteLangParserMultiply          = 20
-	LiteLangParserDivide            = 21
-	LiteLangParserModulus           = 22
-	LiteLangParserPower             = 23
-	LiteLangParserLessThan          = 24
-	LiteLangParserMoreThan          = 25
-	LiteLangParserLessThanEquals    = 26
-	LiteLangParserGreaterThanEquals = 27
-	LiteLangParserEquals            = 28
-	LiteLangParserNotEquals         = 29
-	LiteLangParserAnd               = 30
-	LiteLangParserOr                = 31
-	LiteLangParserNullLiteral       = 32
-	LiteLangParserBooleanLiteral    = 33
-	LiteLangParserDecimalLiteral    = 34
-	LiteLangParserBreak             = 35
-	LiteLangParserDo                = 36
-	LiteLangParserOf                = 37
-	LiteLangParserCase              = 38
-	LiteLangParserElse              = 39
-	LiteLangParserNew               = 40
-	LiteLangParserVar               = 41
-	LiteLangParserReturn            = 42
-	LiteLangParserContinue          = 43
-	LiteLangParserFor               = 44
-	LiteLangParserSwitch            = 45
-	LiteLangParserWhile             = 46
-	LiteLangParserFunction          = 47
-	LiteLangParserDefault           = 48
-	LiteLangParserIf                = 49
-	LiteLangParserElif              = 50
-	LiteLangParserDelete            = 51
-	LiteLangParserIdentifier        = 52
-	LiteLangParserStringLiteral     = 53
-	LiteLangParserWhiteSpaces       = 54
-	LiteLangParserLineTerminator    = 55
+	DataMorfParserEOF               = antlr.TokenEOF
+	DataMorfParserT__0              = 1
+	DataMorfParserOpenSquare        = 2
+	DataMorfParserCloseSquare       = 3
+	DataMorfParserOpenRound         = 4
+	DataMorfParserCloseRound        = 5
+	DataMorfParserOpenCurly         = 6
+	DataMorfParserCloseCurly        = 7
+	DataMorfParserSemiColon         = 8
+	DataMorfParserComma             = 9
+	DataMorfParserAssign            = 10
+	DataMorfParserQuestionMark      = 11
+	DataMorfParserQuestionMarkDot   = 12
+	DataMorfParserColon             = 13
+	DataMorfParserDot               = 14
+	DataMorfParserPlus              = 15
+	DataMorfParserMinus             = 16
+	DataMorfParserNot               = 17
+	DataMorfParserMultiply          = 18
+	DataMorfParserDivide            = 19
+	DataMorfParserModulus           = 20
+	DataMorfParserPower             = 21
+	DataMorfParserLessThan          = 22
+	DataMorfParserMoreThan          = 23
+	DataMorfParserLessThanEquals    = 24
+	DataMorfParserGreaterThanEquals = 25
+	DataMorfParserEquals            = 26
+	DataMorfParserNotEquals         = 27
+	DataMorfParserAnd               = 28
+	DataMorfParserOr                = 29
+	DataMorfParserNullLiteral       = 30
+	DataMorfParserBooleanLiteral    = 31
+	DataMorfParserDecimalLiteral    = 32
+	DataMorfParserBreak             = 33
+	DataMorfParserDo                = 34
+	DataMorfParserOf                = 35
+	DataMorfParserCase              = 36
+	DataMorfParserElse              = 37
+	DataMorfParserVar               = 38
+	DataMorfParserReturn            = 39
+	DataMorfParserContinue          = 40
+	DataMorfParserFor               = 41
+	DataMorfParserSwitch            = 42
+	DataMorfParserWhile             = 43
+	DataMorfParserFunction          = 44
+	DataMorfParserDefault           = 45
+	DataMorfParserIf                = 46
+	DataMorfParserElif              = 47
+	DataMorfParserDelete            = 48
+	DataMorfParserIdentifier        = 49
+	DataMorfParserStringLiteral     = 50
+	DataMorfParserWhiteSpaces       = 51
+	DataMorfParserLineTerminator    = 52
 )
 
-// LiteLangParser rules.
+// DataMorfParser rules.
 const (
-	LiteLangParserRULE_program           = 0
-	LiteLangParserRULE_statements        = 1
-	LiteLangParserRULE_statement         = 2
-	LiteLangParserRULE_variableStatement = 3
-	LiteLangParserRULE_assignStatement   = 4
-	LiteLangParserRULE_functionStatement = 5
-	LiteLangParserRULE_ifStatement       = 6
-	LiteLangParserRULE_forStatement      = 7
-	LiteLangParserRULE_classicForParam   = 8
-	LiteLangParserRULE_iteratorForParam  = 9
-	LiteLangParserRULE_switchStatement   = 10
-	LiteLangParserRULE_deleteStatement   = 11
-	LiteLangParserRULE_unitStatement     = 12
-	LiteLangParserRULE_valueStatement    = 13
-	LiteLangParserRULE_unit              = 14
-	LiteLangParserRULE_accessLhs         = 15
-	LiteLangParserRULE_accessRhs         = 16
-	LiteLangParserRULE_accessorRhs       = 17
-	LiteLangParserRULE_accessorLhs       = 18
-	LiteLangParserRULE_accessProperty    = 19
-	LiteLangParserRULE_functionCall      = 20
-	LiteLangParserRULE_paramMaker        = 21
-	LiteLangParserRULE_params            = 22
-	LiteLangParserRULE_arrowFunction     = 23
-	LiteLangParserRULE_arrayLiteral      = 24
-	LiteLangParserRULE_objectLiteral     = 25
-	LiteLangParserRULE_key               = 26
-	LiteLangParserRULE_value             = 27
-	LiteLangParserRULE_keyValue          = 28
-	LiteLangParserRULE_spread            = 29
-	LiteLangParserRULE_objectItem        = 30
-	LiteLangParserRULE_block             = 31
-	LiteLangParserRULE_constant          = 32
+	DataMorfParserRULE_program              = 0
+	DataMorfParserRULE_statements           = 1
+	DataMorfParserRULE_statement            = 2
+	DataMorfParserRULE_variableStatement    = 3
+	DataMorfParserRULE_assignStatement      = 4
+	DataMorfParserRULE_functionStatement    = 5
+	DataMorfParserRULE_ifStatement          = 6
+	DataMorfParserRULE_switchStatement      = 7
+	DataMorfParserRULE_deleteStatement      = 8
+	DataMorfParserRULE_unitStatement        = 9
+	DataMorfParserRULE_valueStatement       = 10
+	DataMorfParserRULE_forStatement         = 11
+	DataMorfParserRULE_classicForCondition  = 12
+	DataMorfParserRULE_iteratorForCondition = 13
+	DataMorfParserRULE_unit                 = 14
+	DataMorfParserRULE_reference            = 15
+	DataMorfParserRULE_accessor             = 16
+	DataMorfParserRULE_accessProperty       = 17
+	DataMorfParserRULE_functionCall         = 18
+	DataMorfParserRULE_signatureParams      = 19
+	DataMorfParserRULE_sendingParams        = 20
+	DataMorfParserRULE_arrowFunction        = 21
+	DataMorfParserRULE_arrayLiteral         = 22
+	DataMorfParserRULE_objectLiteral        = 23
+	DataMorfParserRULE_key                  = 24
+	DataMorfParserRULE_value                = 25
+	DataMorfParserRULE_keyValue             = 26
+	DataMorfParserRULE_objectItem           = 27
+	DataMorfParserRULE_spread               = 28
+	DataMorfParserRULE_block                = 29
+	DataMorfParserRULE_constant             = 30
 )
 
 // IProgramContext is an interface to support dynamic dispatch.
@@ -360,13 +345,13 @@ type ProgramContext struct {
 func NewEmptyProgramContext() *ProgramContext {
 	var p = new(ProgramContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_program
+	p.RuleIndex = DataMorfParserRULE_program
 	return p
 }
 
 func InitEmptyProgramContext(p *ProgramContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_program
+	p.RuleIndex = DataMorfParserRULE_program
 }
 
 func (*ProgramContext) IsProgramContext() {}
@@ -377,7 +362,7 @@ func NewProgramContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_program
+	p.RuleIndex = DataMorfParserRULE_program
 
 	return p
 }
@@ -385,7 +370,7 @@ func NewProgramContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *ProgramContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ProgramContext) EOF() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserEOF, 0)
+	return s.GetToken(DataMorfParserEOF, 0)
 }
 
 func (s *ProgramContext) Statements() IStatementsContext {
@@ -413,20 +398,20 @@ func (s *ProgramContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *ProgramContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterProgram(s)
 	}
 }
 
 func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitProgram(s)
 	}
 }
 
 func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitProgram(s)
 
 	default:
@@ -434,29 +419,29 @@ func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Program() (localctx IProgramContext) {
+func (p *DataMorfParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, LiteLangParserRULE_program)
+	p.EnterRule(localctx, 0, DataMorfParserRULE_program)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(67)
+	p.SetState(63)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&16521291784257620) != 0 {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&2065165231194196) != 0 {
 		{
-			p.SetState(66)
+			p.SetState(62)
 			p.Statements()
 		}
 
 	}
 	{
-		p.SetState(69)
-		p.Match(LiteLangParserEOF)
+		p.SetState(65)
+		p.Match(DataMorfParserEOF)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -499,13 +484,13 @@ type StatementsContext struct {
 func NewEmptyStatementsContext() *StatementsContext {
 	var p = new(StatementsContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_statements
+	p.RuleIndex = DataMorfParserRULE_statements
 	return p
 }
 
 func InitEmptyStatementsContext(p *StatementsContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_statements
+	p.RuleIndex = DataMorfParserRULE_statements
 }
 
 func (*StatementsContext) IsStatementsContext() {}
@@ -516,7 +501,7 @@ func NewStatementsContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_statements
+	p.RuleIndex = DataMorfParserRULE_statements
 
 	return p
 }
@@ -573,20 +558,20 @@ func (s *StatementsContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *StatementsContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterStatements(s)
 	}
 }
 
 func (s *StatementsContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitStatements(s)
 	}
 }
 
 func (s *StatementsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitStatements(s)
 
 	default:
@@ -594,26 +579,26 @@ func (s *StatementsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Statements() (localctx IStatementsContext) {
+func (p *DataMorfParser) Statements() (localctx IStatementsContext) {
 	localctx = NewStatementsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, LiteLangParserRULE_statements)
+	p.EnterRule(localctx, 2, DataMorfParserRULE_statements)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(72)
+	p.SetState(68)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&16521291784257620) != 0) {
+	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&2065165231194196) != 0) {
 		{
-			p.SetState(71)
+			p.SetState(67)
 			p.Statement()
 		}
 
-		p.SetState(74)
+		p.SetState(70)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -665,13 +650,13 @@ type StatementContext struct {
 func NewEmptyStatementContext() *StatementContext {
 	var p = new(StatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_statement
+	p.RuleIndex = DataMorfParserRULE_statement
 	return p
 }
 
 func InitEmptyStatementContext(p *StatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_statement
+	p.RuleIndex = DataMorfParserRULE_statement
 }
 
 func (*StatementContext) IsStatementContext() {}
@@ -682,7 +667,7 @@ func NewStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_statement
+	p.RuleIndex = DataMorfParserRULE_statement
 
 	return p
 }
@@ -706,7 +691,7 @@ func (s *StatementContext) VariableStatement() IVariableStatementContext {
 }
 
 func (s *StatementContext) SemiColon() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserSemiColon, 0)
+	return s.GetToken(DataMorfParserSemiColon, 0)
 }
 
 func (s *StatementContext) AssignStatement() IAssignStatementContext {
@@ -846,20 +831,20 @@ func (s *StatementContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *StatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterStatement(s)
 	}
 }
 
 func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitStatement(s)
 	}
 }
 
 func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitStatement(s)
 
 	default:
@@ -867,10 +852,10 @@ func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Statement() (localctx IStatementContext) {
+func (p *DataMorfParser) Statement() (localctx IStatementContext) {
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, LiteLangParserRULE_statement)
-	p.SetState(93)
+	p.EnterRule(localctx, 4, DataMorfParserRULE_statement)
+	p.SetState(89)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -880,12 +865,12 @@ func (p *LiteLangParser) Statement() (localctx IStatementContext) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(76)
+			p.SetState(72)
 			p.VariableStatement()
 		}
 		{
-			p.SetState(77)
-			p.Match(LiteLangParserSemiColon)
+			p.SetState(73)
+			p.Match(DataMorfParserSemiColon)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -895,12 +880,12 @@ func (p *LiteLangParser) Statement() (localctx IStatementContext) {
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(79)
+			p.SetState(75)
 			p.AssignStatement()
 		}
 		{
-			p.SetState(80)
-			p.Match(LiteLangParserSemiColon)
+			p.SetState(76)
+			p.Match(DataMorfParserSemiColon)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -910,47 +895,47 @@ func (p *LiteLangParser) Statement() (localctx IStatementContext) {
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(82)
+			p.SetState(78)
 			p.FunctionStatement()
 		}
 
 	case 4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(83)
+			p.SetState(79)
 			p.IfStatement()
 		}
 
 	case 5:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(84)
+			p.SetState(80)
 			p.ForStatement()
 		}
 
 	case 6:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(85)
+			p.SetState(81)
 			p.SwitchStatement()
 		}
 
 	case 7:
 		p.EnterOuterAlt(localctx, 7)
 		{
-			p.SetState(86)
+			p.SetState(82)
 			p.ValueStatement()
 		}
 
 	case 8:
 		p.EnterOuterAlt(localctx, 8)
 		{
-			p.SetState(87)
+			p.SetState(83)
 			p.DeleteStatement()
 		}
 		{
-			p.SetState(88)
-			p.Match(LiteLangParserSemiColon)
+			p.SetState(84)
+			p.Match(DataMorfParserSemiColon)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -960,12 +945,12 @@ func (p *LiteLangParser) Statement() (localctx IStatementContext) {
 	case 9:
 		p.EnterOuterAlt(localctx, 9)
 		{
-			p.SetState(90)
+			p.SetState(86)
 			p.UnitStatement()
 		}
 		{
-			p.SetState(91)
-			p.Match(LiteLangParserSemiColon)
+			p.SetState(87)
+			p.Match(DataMorfParserSemiColon)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1014,13 +999,13 @@ type VariableStatementContext struct {
 func NewEmptyVariableStatementContext() *VariableStatementContext {
 	var p = new(VariableStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_variableStatement
+	p.RuleIndex = DataMorfParserRULE_variableStatement
 	return p
 }
 
 func InitEmptyVariableStatementContext(p *VariableStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_variableStatement
+	p.RuleIndex = DataMorfParserRULE_variableStatement
 }
 
 func (*VariableStatementContext) IsVariableStatementContext() {}
@@ -1031,7 +1016,7 @@ func NewVariableStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_variableStatement
+	p.RuleIndex = DataMorfParserRULE_variableStatement
 
 	return p
 }
@@ -1039,15 +1024,15 @@ func NewVariableStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *VariableStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *VariableStatementContext) Var() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserVar, 0)
+	return s.GetToken(DataMorfParserVar, 0)
 }
 
 func (s *VariableStatementContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
+	return s.GetToken(DataMorfParserIdentifier, 0)
 }
 
 func (s *VariableStatementContext) Assign() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserAssign, 0)
+	return s.GetToken(DataMorfParserAssign, 0)
 }
 
 func (s *VariableStatementContext) Value() IValueContext {
@@ -1075,20 +1060,20 @@ func (s *VariableStatementContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *VariableStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterVariableStatement(s)
 	}
 }
 
 func (s *VariableStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitVariableStatement(s)
 	}
 }
 
 func (s *VariableStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitVariableStatement(s)
 
 	default:
@@ -1096,46 +1081,46 @@ func (s *VariableStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *LiteLangParser) VariableStatement() (localctx IVariableStatementContext) {
+func (p *DataMorfParser) VariableStatement() (localctx IVariableStatementContext) {
 	localctx = NewVariableStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, LiteLangParserRULE_variableStatement)
+	p.EnterRule(localctx, 6, DataMorfParserRULE_variableStatement)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(95)
-		p.Match(LiteLangParserVar)
+		p.SetState(91)
+		p.Match(DataMorfParserVar)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(96)
-		p.Match(LiteLangParserIdentifier)
+		p.SetState(92)
+		p.Match(DataMorfParserIdentifier)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(99)
+	p.SetState(95)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == LiteLangParserAssign {
+	if _la == DataMorfParserAssign {
 		{
-			p.SetState(97)
-			p.Match(LiteLangParserAssign)
+			p.SetState(93)
+			p.Match(DataMorfParserAssign)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 		{
-			p.SetState(98)
+			p.SetState(94)
 			p.Value()
 		}
 
@@ -1162,7 +1147,7 @@ type IAssignStatementContext interface {
 	GetParser() antlr.Parser
 
 	// Getter signatures
-	AccessLhs() IAccessLhsContext
+	Reference() IReferenceContext
 	Assign() antlr.TerminalNode
 	Value() IValueContext
 
@@ -1178,13 +1163,13 @@ type AssignStatementContext struct {
 func NewEmptyAssignStatementContext() *AssignStatementContext {
 	var p = new(AssignStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_assignStatement
+	p.RuleIndex = DataMorfParserRULE_assignStatement
 	return p
 }
 
 func InitEmptyAssignStatementContext(p *AssignStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_assignStatement
+	p.RuleIndex = DataMorfParserRULE_assignStatement
 }
 
 func (*AssignStatementContext) IsAssignStatementContext() {}
@@ -1195,17 +1180,17 @@ func NewAssignStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_assignStatement
+	p.RuleIndex = DataMorfParserRULE_assignStatement
 
 	return p
 }
 
 func (s *AssignStatementContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *AssignStatementContext) AccessLhs() IAccessLhsContext {
+func (s *AssignStatementContext) Reference() IReferenceContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessLhsContext); ok {
+		if _, ok := ctx.(IReferenceContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -1215,11 +1200,11 @@ func (s *AssignStatementContext) AccessLhs() IAccessLhsContext {
 		return nil
 	}
 
-	return t.(IAccessLhsContext)
+	return t.(IReferenceContext)
 }
 
 func (s *AssignStatementContext) Assign() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserAssign, 0)
+	return s.GetToken(DataMorfParserAssign, 0)
 }
 
 func (s *AssignStatementContext) Value() IValueContext {
@@ -1247,20 +1232,20 @@ func (s *AssignStatementContext) ToStringTree(ruleNames []string, recog antlr.Re
 }
 
 func (s *AssignStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterAssignStatement(s)
 	}
 }
 
 func (s *AssignStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitAssignStatement(s)
 	}
 }
 
 func (s *AssignStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitAssignStatement(s)
 
 	default:
@@ -1268,24 +1253,24 @@ func (s *AssignStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *LiteLangParser) AssignStatement() (localctx IAssignStatementContext) {
+func (p *DataMorfParser) AssignStatement() (localctx IAssignStatementContext) {
 	localctx = NewAssignStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, LiteLangParserRULE_assignStatement)
+	p.EnterRule(localctx, 8, DataMorfParserRULE_assignStatement)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(101)
-		p.AccessLhs()
+		p.SetState(97)
+		p.Reference()
 	}
 	{
-		p.SetState(102)
-		p.Match(LiteLangParserAssign)
+		p.SetState(98)
+		p.Match(DataMorfParserAssign)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(103)
+		p.SetState(99)
 		p.Value()
 	}
 
@@ -1312,9 +1297,9 @@ type IFunctionStatementContext interface {
 	// Getter signatures
 	Function() antlr.TerminalNode
 	Identifier() antlr.TerminalNode
-	OpenParen() antlr.TerminalNode
-	ParamMaker() IParamMakerContext
-	CloseParen() antlr.TerminalNode
+	OpenRound() antlr.TerminalNode
+	SignatureParams() ISignatureParamsContext
+	CloseRound() antlr.TerminalNode
 	Block() IBlockContext
 
 	// IsFunctionStatementContext differentiates from other interfaces.
@@ -1329,13 +1314,13 @@ type FunctionStatementContext struct {
 func NewEmptyFunctionStatementContext() *FunctionStatementContext {
 	var p = new(FunctionStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_functionStatement
+	p.RuleIndex = DataMorfParserRULE_functionStatement
 	return p
 }
 
 func InitEmptyFunctionStatementContext(p *FunctionStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_functionStatement
+	p.RuleIndex = DataMorfParserRULE_functionStatement
 }
 
 func (*FunctionStatementContext) IsFunctionStatementContext() {}
@@ -1346,7 +1331,7 @@ func NewFunctionStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_functionStatement
+	p.RuleIndex = DataMorfParserRULE_functionStatement
 
 	return p
 }
@@ -1354,21 +1339,21 @@ func NewFunctionStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *FunctionStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *FunctionStatementContext) Function() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserFunction, 0)
+	return s.GetToken(DataMorfParserFunction, 0)
 }
 
 func (s *FunctionStatementContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
+	return s.GetToken(DataMorfParserIdentifier, 0)
 }
 
-func (s *FunctionStatementContext) OpenParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenParen, 0)
+func (s *FunctionStatementContext) OpenRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenRound, 0)
 }
 
-func (s *FunctionStatementContext) ParamMaker() IParamMakerContext {
+func (s *FunctionStatementContext) SignatureParams() ISignatureParamsContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IParamMakerContext); ok {
+		if _, ok := ctx.(ISignatureParamsContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -1378,11 +1363,11 @@ func (s *FunctionStatementContext) ParamMaker() IParamMakerContext {
 		return nil
 	}
 
-	return t.(IParamMakerContext)
+	return t.(ISignatureParamsContext)
 }
 
-func (s *FunctionStatementContext) CloseParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseParen, 0)
+func (s *FunctionStatementContext) CloseRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseRound, 0)
 }
 
 func (s *FunctionStatementContext) Block() IBlockContext {
@@ -1410,20 +1395,20 @@ func (s *FunctionStatementContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *FunctionStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterFunctionStatement(s)
 	}
 }
 
 func (s *FunctionStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitFunctionStatement(s)
 	}
 }
 
 func (s *FunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitFunctionStatement(s)
 
 	default:
@@ -1431,13 +1416,41 @@ func (s *FunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *LiteLangParser) FunctionStatement() (localctx IFunctionStatementContext) {
+func (p *DataMorfParser) FunctionStatement() (localctx IFunctionStatementContext) {
 	localctx = NewFunctionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, LiteLangParserRULE_functionStatement)
+	p.EnterRule(localctx, 10, DataMorfParserRULE_functionStatement)
 	p.EnterOuterAlt(localctx, 1)
 	{
+		p.SetState(101)
+		p.Match(DataMorfParserFunction)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(102)
+		p.Match(DataMorfParserIdentifier)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(103)
+		p.Match(DataMorfParserOpenRound)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(104)
+		p.SignatureParams()
+	}
+	{
 		p.SetState(105)
-		p.Match(LiteLangParserFunction)
+		p.Match(DataMorfParserCloseRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -1445,34 +1458,6 @@ func (p *LiteLangParser) FunctionStatement() (localctx IFunctionStatementContext
 	}
 	{
 		p.SetState(106)
-		p.Match(LiteLangParserIdentifier)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(107)
-		p.Match(LiteLangParserOpenParen)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(108)
-		p.ParamMaker()
-	}
-	{
-		p.SetState(109)
-		p.Match(LiteLangParserCloseParen)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(110)
 		p.Block()
 	}
 
@@ -1499,12 +1484,12 @@ type IIfStatementContext interface {
 	// Getter signatures
 	AllIf() []antlr.TerminalNode
 	If(i int) antlr.TerminalNode
-	AllOpenParen() []antlr.TerminalNode
-	OpenParen(i int) antlr.TerminalNode
+	AllOpenRound() []antlr.TerminalNode
+	OpenRound(i int) antlr.TerminalNode
 	AllUnit() []IUnitContext
 	Unit(i int) IUnitContext
-	AllCloseParen() []antlr.TerminalNode
-	CloseParen(i int) antlr.TerminalNode
+	AllCloseRound() []antlr.TerminalNode
+	CloseRound(i int) antlr.TerminalNode
 	AllBlock() []IBlockContext
 	Block(i int) IBlockContext
 	AllElse() []antlr.TerminalNode
@@ -1522,13 +1507,13 @@ type IfStatementContext struct {
 func NewEmptyIfStatementContext() *IfStatementContext {
 	var p = new(IfStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_ifStatement
+	p.RuleIndex = DataMorfParserRULE_ifStatement
 	return p
 }
 
 func InitEmptyIfStatementContext(p *IfStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_ifStatement
+	p.RuleIndex = DataMorfParserRULE_ifStatement
 }
 
 func (*IfStatementContext) IsIfStatementContext() {}
@@ -1539,7 +1524,7 @@ func NewIfStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_ifStatement
+	p.RuleIndex = DataMorfParserRULE_ifStatement
 
 	return p
 }
@@ -1547,19 +1532,19 @@ func NewIfStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *IfStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *IfStatementContext) AllIf() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserIf)
+	return s.GetTokens(DataMorfParserIf)
 }
 
 func (s *IfStatementContext) If(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIf, i)
+	return s.GetToken(DataMorfParserIf, i)
 }
 
-func (s *IfStatementContext) AllOpenParen() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserOpenParen)
+func (s *IfStatementContext) AllOpenRound() []antlr.TerminalNode {
+	return s.GetTokens(DataMorfParserOpenRound)
 }
 
-func (s *IfStatementContext) OpenParen(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenParen, i)
+func (s *IfStatementContext) OpenRound(i int) antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenRound, i)
 }
 
 func (s *IfStatementContext) AllUnit() []IUnitContext {
@@ -1603,12 +1588,12 @@ func (s *IfStatementContext) Unit(i int) IUnitContext {
 	return t.(IUnitContext)
 }
 
-func (s *IfStatementContext) AllCloseParen() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserCloseParen)
+func (s *IfStatementContext) AllCloseRound() []antlr.TerminalNode {
+	return s.GetTokens(DataMorfParserCloseRound)
 }
 
-func (s *IfStatementContext) CloseParen(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseParen, i)
+func (s *IfStatementContext) CloseRound(i int) antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseRound, i)
 }
 
 func (s *IfStatementContext) AllBlock() []IBlockContext {
@@ -1653,11 +1638,11 @@ func (s *IfStatementContext) Block(i int) IBlockContext {
 }
 
 func (s *IfStatementContext) AllElse() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserElse)
+	return s.GetTokens(DataMorfParserElse)
 }
 
 func (s *IfStatementContext) Else(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserElse, i)
+	return s.GetToken(DataMorfParserElse, i)
 }
 
 func (s *IfStatementContext) GetRuleContext() antlr.RuleContext {
@@ -1669,20 +1654,20 @@ func (s *IfStatementContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 }
 
 func (s *IfStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterIfStatement(s)
 	}
 }
 
 func (s *IfStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitIfStatement(s)
 	}
 }
 
 func (s *IfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitIfStatement(s)
 
 	default:
@@ -1690,47 +1675,47 @@ func (s *IfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *LiteLangParser) IfStatement() (localctx IIfStatementContext) {
+func (p *DataMorfParser) IfStatement() (localctx IIfStatementContext) {
 	localctx = NewIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, LiteLangParserRULE_ifStatement)
+	p.EnterRule(localctx, 12, DataMorfParserRULE_ifStatement)
 	var _la int
 
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(112)
-		p.Match(LiteLangParserIf)
+		p.SetState(108)
+		p.Match(DataMorfParserIf)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(113)
-		p.Match(LiteLangParserOpenParen)
+		p.SetState(109)
+		p.Match(DataMorfParserOpenRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(114)
+		p.SetState(110)
 		p.unit(0)
 	}
 	{
-		p.SetState(115)
-		p.Match(LiteLangParserCloseParen)
+		p.SetState(111)
+		p.Match(DataMorfParserCloseRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(116)
+		p.SetState(112)
 		p.Block()
 	}
-	p.SetState(126)
+	p.SetState(122)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -1742,8 +1727,36 @@ func (p *LiteLangParser) IfStatement() (localctx IIfStatementContext) {
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
+				p.SetState(113)
+				p.Match(DataMorfParserElse)
+				if p.HasError() {
+					// Recognition error - abort rule
+					goto errorExit
+				}
+			}
+			{
+				p.SetState(114)
+				p.Match(DataMorfParserIf)
+				if p.HasError() {
+					// Recognition error - abort rule
+					goto errorExit
+				}
+			}
+			{
+				p.SetState(115)
+				p.Match(DataMorfParserOpenRound)
+				if p.HasError() {
+					// Recognition error - abort rule
+					goto errorExit
+				}
+			}
+			{
+				p.SetState(116)
+				p.unit(0)
+			}
+			{
 				p.SetState(117)
-				p.Match(LiteLangParserElse)
+				p.Match(DataMorfParserCloseRound)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
@@ -1751,39 +1764,11 @@ func (p *LiteLangParser) IfStatement() (localctx IIfStatementContext) {
 			}
 			{
 				p.SetState(118)
-				p.Match(LiteLangParserIf)
-				if p.HasError() {
-					// Recognition error - abort rule
-					goto errorExit
-				}
-			}
-			{
-				p.SetState(119)
-				p.Match(LiteLangParserOpenParen)
-				if p.HasError() {
-					// Recognition error - abort rule
-					goto errorExit
-				}
-			}
-			{
-				p.SetState(120)
-				p.unit(0)
-			}
-			{
-				p.SetState(121)
-				p.Match(LiteLangParserCloseParen)
-				if p.HasError() {
-					// Recognition error - abort rule
-					goto errorExit
-				}
-			}
-			{
-				p.SetState(122)
 				p.Block()
 			}
 
 		}
-		p.SetState(128)
+		p.SetState(124)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -1793,644 +1778,27 @@ func (p *LiteLangParser) IfStatement() (localctx IIfStatementContext) {
 			goto errorExit
 		}
 	}
-	p.SetState(131)
+	p.SetState(127)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == LiteLangParserElse {
+	if _la == DataMorfParserElse {
 		{
-			p.SetState(129)
-			p.Match(LiteLangParserElse)
+			p.SetState(125)
+			p.Match(DataMorfParserElse)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 		{
-			p.SetState(130)
+			p.SetState(126)
 			p.Block()
 		}
 
-	}
-
-errorExit:
-	if p.HasError() {
-		v := p.GetError()
-		localctx.SetException(v)
-		p.GetErrorHandler().ReportError(p, v)
-		p.GetErrorHandler().Recover(p, v)
-		p.SetError(nil)
-	}
-	p.ExitRule()
-	return localctx
-	goto errorExit // Trick to prevent compiler error if the label is not used
-}
-
-// IForStatementContext is an interface to support dynamic dispatch.
-type IForStatementContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// Getter signatures
-	For() antlr.TerminalNode
-	OpenParen() antlr.TerminalNode
-	CloseParen() antlr.TerminalNode
-	Block() IBlockContext
-	ClassicForParam() IClassicForParamContext
-	IteratorForParam() IIteratorForParamContext
-
-	// IsForStatementContext differentiates from other interfaces.
-	IsForStatementContext()
-}
-
-type ForStatementContext struct {
-	antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyForStatementContext() *ForStatementContext {
-	var p = new(ForStatementContext)
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_forStatement
-	return p
-}
-
-func InitEmptyForStatementContext(p *ForStatementContext) {
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_forStatement
-}
-
-func (*ForStatementContext) IsForStatementContext() {}
-
-func NewForStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ForStatementContext {
-	var p = new(ForStatementContext)
-
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_forStatement
-
-	return p
-}
-
-func (s *ForStatementContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ForStatementContext) For() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserFor, 0)
-}
-
-func (s *ForStatementContext) OpenParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenParen, 0)
-}
-
-func (s *ForStatementContext) CloseParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseParen, 0)
-}
-
-func (s *ForStatementContext) Block() IBlockContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IBlockContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IBlockContext)
-}
-
-func (s *ForStatementContext) ClassicForParam() IClassicForParamContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IClassicForParamContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IClassicForParamContext)
-}
-
-func (s *ForStatementContext) IteratorForParam() IIteratorForParamContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IIteratorForParamContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IIteratorForParamContext)
-}
-
-func (s *ForStatementContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ForStatementContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ForStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterForStatement(s)
-	}
-}
-
-func (s *ForStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitForStatement(s)
-	}
-}
-
-func (s *ForStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitForStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *LiteLangParser) ForStatement() (localctx IForStatementContext) {
-	localctx = NewForStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, LiteLangParserRULE_forStatement)
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(133)
-		p.Match(LiteLangParserFor)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(134)
-		p.Match(LiteLangParserOpenParen)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	p.SetState(137)
-	p.GetErrorHandler().Sync(p)
-	if p.HasError() {
-		goto errorExit
-	}
-
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 6, p.GetParserRuleContext()) {
-	case 1:
-		{
-			p.SetState(135)
-			p.ClassicForParam()
-		}
-
-	case 2:
-		{
-			p.SetState(136)
-			p.IteratorForParam()
-		}
-
-	case antlr.ATNInvalidAltNumber:
-		goto errorExit
-	}
-	{
-		p.SetState(139)
-		p.Match(LiteLangParserCloseParen)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(140)
-		p.Block()
-	}
-
-errorExit:
-	if p.HasError() {
-		v := p.GetError()
-		localctx.SetException(v)
-		p.GetErrorHandler().ReportError(p, v)
-		p.GetErrorHandler().Recover(p, v)
-		p.SetError(nil)
-	}
-	p.ExitRule()
-	return localctx
-	goto errorExit // Trick to prevent compiler error if the label is not used
-}
-
-// IClassicForParamContext is an interface to support dynamic dispatch.
-type IClassicForParamContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// GetCondition returns the condition rule contexts.
-	GetCondition() IUnitStatementContext
-
-	// GetPostOp returns the postOp rule contexts.
-	GetPostOp() IAssignStatementContext
-
-	// SetCondition sets the condition rule contexts.
-	SetCondition(IUnitStatementContext)
-
-	// SetPostOp sets the postOp rule contexts.
-	SetPostOp(IAssignStatementContext)
-
-	// Getter signatures
-	AllSemiColon() []antlr.TerminalNode
-	SemiColon(i int) antlr.TerminalNode
-	UnitStatement() IUnitStatementContext
-	AllAssignStatement() []IAssignStatementContext
-	AssignStatement(i int) IAssignStatementContext
-	VariableStatement() IVariableStatementContext
-
-	// IsClassicForParamContext differentiates from other interfaces.
-	IsClassicForParamContext()
-}
-
-type ClassicForParamContext struct {
-	antlr.BaseParserRuleContext
-	parser    antlr.Parser
-	condition IUnitStatementContext
-	postOp    IAssignStatementContext
-}
-
-func NewEmptyClassicForParamContext() *ClassicForParamContext {
-	var p = new(ClassicForParamContext)
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_classicForParam
-	return p
-}
-
-func InitEmptyClassicForParamContext(p *ClassicForParamContext) {
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_classicForParam
-}
-
-func (*ClassicForParamContext) IsClassicForParamContext() {}
-
-func NewClassicForParamContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ClassicForParamContext {
-	var p = new(ClassicForParamContext)
-
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_classicForParam
-
-	return p
-}
-
-func (s *ClassicForParamContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ClassicForParamContext) GetCondition() IUnitStatementContext { return s.condition }
-
-func (s *ClassicForParamContext) GetPostOp() IAssignStatementContext { return s.postOp }
-
-func (s *ClassicForParamContext) SetCondition(v IUnitStatementContext) { s.condition = v }
-
-func (s *ClassicForParamContext) SetPostOp(v IAssignStatementContext) { s.postOp = v }
-
-func (s *ClassicForParamContext) AllSemiColon() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserSemiColon)
-}
-
-func (s *ClassicForParamContext) SemiColon(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserSemiColon, i)
-}
-
-func (s *ClassicForParamContext) UnitStatement() IUnitStatementContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IUnitStatementContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IUnitStatementContext)
-}
-
-func (s *ClassicForParamContext) AllAssignStatement() []IAssignStatementContext {
-	children := s.GetChildren()
-	len := 0
-	for _, ctx := range children {
-		if _, ok := ctx.(IAssignStatementContext); ok {
-			len++
-		}
-	}
-
-	tst := make([]IAssignStatementContext, len)
-	i := 0
-	for _, ctx := range children {
-		if t, ok := ctx.(IAssignStatementContext); ok {
-			tst[i] = t.(IAssignStatementContext)
-			i++
-		}
-	}
-
-	return tst
-}
-
-func (s *ClassicForParamContext) AssignStatement(i int) IAssignStatementContext {
-	var t antlr.RuleContext
-	j := 0
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAssignStatementContext); ok {
-			if j == i {
-				t = ctx.(antlr.RuleContext)
-				break
-			}
-			j++
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IAssignStatementContext)
-}
-
-func (s *ClassicForParamContext) VariableStatement() IVariableStatementContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IVariableStatementContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IVariableStatementContext)
-}
-
-func (s *ClassicForParamContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ClassicForParamContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ClassicForParamContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterClassicForParam(s)
-	}
-}
-
-func (s *ClassicForParamContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitClassicForParam(s)
-	}
-}
-
-func (s *ClassicForParamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitClassicForParam(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *LiteLangParser) ClassicForParam() (localctx IClassicForParamContext) {
-	localctx = NewClassicForParamContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, LiteLangParserRULE_classicForParam)
-	p.EnterOuterAlt(localctx, 1)
-	p.SetState(144)
-	p.GetErrorHandler().Sync(p)
-	if p.HasError() {
-		goto errorExit
-	}
-
-	switch p.GetTokenStream().LA(1) {
-	case LiteLangParserVar:
-		{
-			p.SetState(142)
-			p.VariableStatement()
-		}
-
-	case LiteLangParserIdentifier:
-		{
-			p.SetState(143)
-			p.AssignStatement()
-		}
-
-	default:
-		p.SetError(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
-		goto errorExit
-	}
-	{
-		p.SetState(146)
-		p.Match(LiteLangParserSemiColon)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(147)
-
-		var _x = p.UnitStatement()
-
-		localctx.(*ClassicForParamContext).condition = _x
-	}
-	{
-		p.SetState(148)
-		p.Match(LiteLangParserSemiColon)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(149)
-
-		var _x = p.AssignStatement()
-
-		localctx.(*ClassicForParamContext).postOp = _x
-	}
-
-errorExit:
-	if p.HasError() {
-		v := p.GetError()
-		localctx.SetException(v)
-		p.GetErrorHandler().ReportError(p, v)
-		p.GetErrorHandler().Recover(p, v)
-		p.SetError(nil)
-	}
-	p.ExitRule()
-	return localctx
-	goto errorExit // Trick to prevent compiler error if the label is not used
-}
-
-// IIteratorForParamContext is an interface to support dynamic dispatch.
-type IIteratorForParamContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// Getter signatures
-	Var() antlr.TerminalNode
-	Identifier() antlr.TerminalNode
-	Of() antlr.TerminalNode
-	AccessRhs() IAccessRhsContext
-
-	// IsIteratorForParamContext differentiates from other interfaces.
-	IsIteratorForParamContext()
-}
-
-type IteratorForParamContext struct {
-	antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyIteratorForParamContext() *IteratorForParamContext {
-	var p = new(IteratorForParamContext)
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_iteratorForParam
-	return p
-}
-
-func InitEmptyIteratorForParamContext(p *IteratorForParamContext) {
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_iteratorForParam
-}
-
-func (*IteratorForParamContext) IsIteratorForParamContext() {}
-
-func NewIteratorForParamContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IteratorForParamContext {
-	var p = new(IteratorForParamContext)
-
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_iteratorForParam
-
-	return p
-}
-
-func (s *IteratorForParamContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *IteratorForParamContext) Var() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserVar, 0)
-}
-
-func (s *IteratorForParamContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
-}
-
-func (s *IteratorForParamContext) Of() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOf, 0)
-}
-
-func (s *IteratorForParamContext) AccessRhs() IAccessRhsContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessRhsContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IAccessRhsContext)
-}
-
-func (s *IteratorForParamContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *IteratorForParamContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *IteratorForParamContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterIteratorForParam(s)
-	}
-}
-
-func (s *IteratorForParamContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitIteratorForParam(s)
-	}
-}
-
-func (s *IteratorForParamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitIteratorForParam(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *LiteLangParser) IteratorForParam() (localctx IIteratorForParamContext) {
-	localctx = NewIteratorForParamContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, LiteLangParserRULE_iteratorForParam)
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(151)
-		p.Match(LiteLangParserVar)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(152)
-		p.Match(LiteLangParserIdentifier)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(153)
-		p.Match(LiteLangParserOf)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(154)
-		p.AccessRhs()
 	}
 
 errorExit:
@@ -2455,9 +1823,9 @@ type ISwitchStatementContext interface {
 
 	// Getter signatures
 	Switch() antlr.TerminalNode
-	OpenParen() antlr.TerminalNode
+	OpenRound() antlr.TerminalNode
 	Unit() IUnitContext
-	CloseParen() antlr.TerminalNode
+	CloseRound() antlr.TerminalNode
 	Block() IBlockContext
 
 	// IsSwitchStatementContext differentiates from other interfaces.
@@ -2472,13 +1840,13 @@ type SwitchStatementContext struct {
 func NewEmptySwitchStatementContext() *SwitchStatementContext {
 	var p = new(SwitchStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_switchStatement
+	p.RuleIndex = DataMorfParserRULE_switchStatement
 	return p
 }
 
 func InitEmptySwitchStatementContext(p *SwitchStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_switchStatement
+	p.RuleIndex = DataMorfParserRULE_switchStatement
 }
 
 func (*SwitchStatementContext) IsSwitchStatementContext() {}
@@ -2489,7 +1857,7 @@ func NewSwitchStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_switchStatement
+	p.RuleIndex = DataMorfParserRULE_switchStatement
 
 	return p
 }
@@ -2497,11 +1865,11 @@ func NewSwitchStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *SwitchStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *SwitchStatementContext) Switch() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserSwitch, 0)
+	return s.GetToken(DataMorfParserSwitch, 0)
 }
 
-func (s *SwitchStatementContext) OpenParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenParen, 0)
+func (s *SwitchStatementContext) OpenRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenRound, 0)
 }
 
 func (s *SwitchStatementContext) Unit() IUnitContext {
@@ -2520,8 +1888,8 @@ func (s *SwitchStatementContext) Unit() IUnitContext {
 	return t.(IUnitContext)
 }
 
-func (s *SwitchStatementContext) CloseParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseParen, 0)
+func (s *SwitchStatementContext) CloseRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseRound, 0)
 }
 
 func (s *SwitchStatementContext) Block() IBlockContext {
@@ -2549,20 +1917,20 @@ func (s *SwitchStatementContext) ToStringTree(ruleNames []string, recog antlr.Re
 }
 
 func (s *SwitchStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterSwitchStatement(s)
 	}
 }
 
 func (s *SwitchStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitSwitchStatement(s)
 	}
 }
 
 func (s *SwitchStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitSwitchStatement(s)
 
 	default:
@@ -2570,40 +1938,40 @@ func (s *SwitchStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *LiteLangParser) SwitchStatement() (localctx ISwitchStatementContext) {
+func (p *DataMorfParser) SwitchStatement() (localctx ISwitchStatementContext) {
 	localctx = NewSwitchStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, LiteLangParserRULE_switchStatement)
+	p.EnterRule(localctx, 14, DataMorfParserRULE_switchStatement)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(156)
-		p.Match(LiteLangParserSwitch)
+		p.SetState(129)
+		p.Match(DataMorfParserSwitch)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(157)
-		p.Match(LiteLangParserOpenParen)
+		p.SetState(130)
+		p.Match(DataMorfParserOpenRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(158)
+		p.SetState(131)
 		p.unit(0)
 	}
 	{
-		p.SetState(159)
-		p.Match(LiteLangParserCloseParen)
+		p.SetState(132)
+		p.Match(DataMorfParserCloseRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(160)
+		p.SetState(133)
 		p.Block()
 	}
 
@@ -2648,13 +2016,13 @@ type DeleteStatementContext struct {
 func NewEmptyDeleteStatementContext() *DeleteStatementContext {
 	var p = new(DeleteStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_deleteStatement
+	p.RuleIndex = DataMorfParserRULE_deleteStatement
 	return p
 }
 
 func InitEmptyDeleteStatementContext(p *DeleteStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_deleteStatement
+	p.RuleIndex = DataMorfParserRULE_deleteStatement
 }
 
 func (*DeleteStatementContext) IsDeleteStatementContext() {}
@@ -2665,7 +2033,7 @@ func NewDeleteStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_deleteStatement
+	p.RuleIndex = DataMorfParserRULE_deleteStatement
 
 	return p
 }
@@ -2673,23 +2041,23 @@ func NewDeleteStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *DeleteStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *DeleteStatementContext) Delete() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDelete, 0)
+	return s.GetToken(DataMorfParserDelete, 0)
 }
 
 func (s *DeleteStatementContext) AllIdentifier() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserIdentifier)
+	return s.GetTokens(DataMorfParserIdentifier)
 }
 
 func (s *DeleteStatementContext) Identifier(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, i)
+	return s.GetToken(DataMorfParserIdentifier, i)
 }
 
 func (s *DeleteStatementContext) AllDot() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserDot)
+	return s.GetTokens(DataMorfParserDot)
 }
 
 func (s *DeleteStatementContext) Dot(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDot, i)
+	return s.GetToken(DataMorfParserDot, i)
 }
 
 func (s *DeleteStatementContext) AllAccessProperty() []IAccessPropertyContext {
@@ -2742,20 +2110,20 @@ func (s *DeleteStatementContext) ToStringTree(ruleNames []string, recog antlr.Re
 }
 
 func (s *DeleteStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterDeleteStatement(s)
 	}
 }
 
 func (s *DeleteStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitDeleteStatement(s)
 	}
 }
 
 func (s *DeleteStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitDeleteStatement(s)
 
 	default:
@@ -2763,15 +2131,15 @@ func (s *DeleteStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *LiteLangParser) DeleteStatement() (localctx IDeleteStatementContext) {
+func (p *DataMorfParser) DeleteStatement() (localctx IDeleteStatementContext) {
 	localctx = NewDeleteStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, LiteLangParserRULE_deleteStatement)
+	p.EnterRule(localctx, 16, DataMorfParserRULE_deleteStatement)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(162)
-		p.Match(LiteLangParserDelete)
+		p.SetState(135)
+		p.Match(DataMorfParserDelete)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -2779,46 +2147,46 @@ func (p *LiteLangParser) DeleteStatement() (localctx IDeleteStatementContext) {
 	}
 
 	{
-		p.SetState(163)
-		p.Match(LiteLangParserIdentifier)
+		p.SetState(136)
+		p.Match(DataMorfParserIdentifier)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(171)
+	p.SetState(144)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == LiteLangParserDot {
+	for _la == DataMorfParserDot {
 		{
-			p.SetState(164)
-			p.Match(LiteLangParserDot)
+			p.SetState(137)
+			p.Match(DataMorfParserDot)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(167)
+		p.SetState(140)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
 
 		switch p.GetTokenStream().LA(1) {
-		case LiteLangParserOpenBracket:
+		case DataMorfParserOpenSquare:
 			{
-				p.SetState(165)
+				p.SetState(138)
 				p.AccessProperty()
 			}
 
-		case LiteLangParserIdentifier:
+		case DataMorfParserIdentifier:
 			{
-				p.SetState(166)
-				p.Match(LiteLangParserIdentifier)
+				p.SetState(139)
+				p.Match(DataMorfParserIdentifier)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
@@ -2830,7 +2198,7 @@ func (p *LiteLangParser) DeleteStatement() (localctx IDeleteStatementContext) {
 			goto errorExit
 		}
 
-		p.SetState(173)
+		p.SetState(146)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -2873,13 +2241,13 @@ type UnitStatementContext struct {
 func NewEmptyUnitStatementContext() *UnitStatementContext {
 	var p = new(UnitStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_unitStatement
+	p.RuleIndex = DataMorfParserRULE_unitStatement
 	return p
 }
 
 func InitEmptyUnitStatementContext(p *UnitStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_unitStatement
+	p.RuleIndex = DataMorfParserRULE_unitStatement
 }
 
 func (*UnitStatementContext) IsUnitStatementContext() {}
@@ -2890,7 +2258,7 @@ func NewUnitStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_unitStatement
+	p.RuleIndex = DataMorfParserRULE_unitStatement
 
 	return p
 }
@@ -2922,20 +2290,20 @@ func (s *UnitStatementContext) ToStringTree(ruleNames []string, recog antlr.Reco
 }
 
 func (s *UnitStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterUnitStatement(s)
 	}
 }
 
 func (s *UnitStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitUnitStatement(s)
 	}
 }
 
 func (s *UnitStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitUnitStatement(s)
 
 	default:
@@ -2943,12 +2311,12 @@ func (s *UnitStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *LiteLangParser) UnitStatement() (localctx IUnitStatementContext) {
+func (p *DataMorfParser) UnitStatement() (localctx IUnitStatementContext) {
 	localctx = NewUnitStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, LiteLangParserRULE_unitStatement)
+	p.EnterRule(localctx, 18, DataMorfParserRULE_unitStatement)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(174)
+		p.SetState(147)
 		p.unit(0)
 	}
 
@@ -2988,13 +2356,13 @@ type ValueStatementContext struct {
 func NewEmptyValueStatementContext() *ValueStatementContext {
 	var p = new(ValueStatementContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_valueStatement
+	p.RuleIndex = DataMorfParserRULE_valueStatement
 	return p
 }
 
 func InitEmptyValueStatementContext(p *ValueStatementContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_valueStatement
+	p.RuleIndex = DataMorfParserRULE_valueStatement
 }
 
 func (*ValueStatementContext) IsValueStatementContext() {}
@@ -3005,7 +2373,7 @@ func NewValueStatementContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_valueStatement
+	p.RuleIndex = DataMorfParserRULE_valueStatement
 
 	return p
 }
@@ -3029,7 +2397,7 @@ func (s *ValueStatementContext) Value() IValueContext {
 }
 
 func (s *ValueStatementContext) SemiColon() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserSemiColon, 0)
+	return s.GetToken(DataMorfParserSemiColon, 0)
 }
 
 func (s *ValueStatementContext) GetRuleContext() antlr.RuleContext {
@@ -3041,20 +2409,20 @@ func (s *ValueStatementContext) ToStringTree(ruleNames []string, recog antlr.Rec
 }
 
 func (s *ValueStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterValueStatement(s)
 	}
 }
 
 func (s *ValueStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitValueStatement(s)
 	}
 }
 
 func (s *ValueStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitValueStatement(s)
 
 	default:
@@ -3062,21 +2430,607 @@ func (s *ValueStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *LiteLangParser) ValueStatement() (localctx IValueStatementContext) {
+func (p *DataMorfParser) ValueStatement() (localctx IValueStatementContext) {
 	localctx = NewValueStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, LiteLangParserRULE_valueStatement)
+	p.EnterRule(localctx, 20, DataMorfParserRULE_valueStatement)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(176)
+		p.SetState(149)
 		p.Value()
 	}
 	{
-		p.SetState(177)
-		p.Match(LiteLangParserSemiColon)
+		p.SetState(150)
+		p.Match(DataMorfParserSemiColon)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
+	}
+
+errorExit:
+	if p.HasError() {
+		v := p.GetError()
+		localctx.SetException(v)
+		p.GetErrorHandler().ReportError(p, v)
+		p.GetErrorHandler().Recover(p, v)
+		p.SetError(nil)
+	}
+	p.ExitRule()
+	return localctx
+	goto errorExit // Trick to prevent compiler error if the label is not used
+}
+
+// IForStatementContext is an interface to support dynamic dispatch.
+type IForStatementContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// Getter signatures
+	For() antlr.TerminalNode
+	OpenRound() antlr.TerminalNode
+	CloseRound() antlr.TerminalNode
+	Block() IBlockContext
+	ClassicForCondition() IClassicForConditionContext
+	IteratorForCondition() IIteratorForConditionContext
+
+	// IsForStatementContext differentiates from other interfaces.
+	IsForStatementContext()
+}
+
+type ForStatementContext struct {
+	antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyForStatementContext() *ForStatementContext {
+	var p = new(ForStatementContext)
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_forStatement
+	return p
+}
+
+func InitEmptyForStatementContext(p *ForStatementContext) {
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_forStatement
+}
+
+func (*ForStatementContext) IsForStatementContext() {}
+
+func NewForStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ForStatementContext {
+	var p = new(ForStatementContext)
+
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DataMorfParserRULE_forStatement
+
+	return p
+}
+
+func (s *ForStatementContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ForStatementContext) For() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserFor, 0)
+}
+
+func (s *ForStatementContext) OpenRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenRound, 0)
+}
+
+func (s *ForStatementContext) CloseRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseRound, 0)
+}
+
+func (s *ForStatementContext) Block() IBlockContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IBlockContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IBlockContext)
+}
+
+func (s *ForStatementContext) ClassicForCondition() IClassicForConditionContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IClassicForConditionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IClassicForConditionContext)
+}
+
+func (s *ForStatementContext) IteratorForCondition() IIteratorForConditionContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IIteratorForConditionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IIteratorForConditionContext)
+}
+
+func (s *ForStatementContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ForStatementContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ForStatementContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterForStatement(s)
+	}
+}
+
+func (s *ForStatementContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitForStatement(s)
+	}
+}
+
+func (s *ForStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DataMorfVisitor:
+		return t.VisitForStatement(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DataMorfParser) ForStatement() (localctx IForStatementContext) {
+	localctx = NewForStatementContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 22, DataMorfParserRULE_forStatement)
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(152)
+		p.Match(DataMorfParserFor)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(153)
+		p.Match(DataMorfParserOpenRound)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	p.SetState(156)
+	p.GetErrorHandler().Sync(p)
+	if p.HasError() {
+		goto errorExit
+	}
+
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 8, p.GetParserRuleContext()) {
+	case 1:
+		{
+			p.SetState(154)
+			p.ClassicForCondition()
+		}
+
+	case 2:
+		{
+			p.SetState(155)
+			p.IteratorForCondition()
+		}
+
+	case antlr.ATNInvalidAltNumber:
+		goto errorExit
+	}
+	{
+		p.SetState(158)
+		p.Match(DataMorfParserCloseRound)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(159)
+		p.Block()
+	}
+
+errorExit:
+	if p.HasError() {
+		v := p.GetError()
+		localctx.SetException(v)
+		p.GetErrorHandler().ReportError(p, v)
+		p.GetErrorHandler().Recover(p, v)
+		p.SetError(nil)
+	}
+	p.ExitRule()
+	return localctx
+	goto errorExit // Trick to prevent compiler error if the label is not used
+}
+
+// IClassicForConditionContext is an interface to support dynamic dispatch.
+type IClassicForConditionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// GetInit returns the init rule contexts.
+	GetInit() IVariableStatementContext
+
+	// GetCondition returns the condition rule contexts.
+	GetCondition() IUnitStatementContext
+
+	// GetPostOp returns the postOp rule contexts.
+	GetPostOp() IAssignStatementContext
+
+	// SetInit sets the init rule contexts.
+	SetInit(IVariableStatementContext)
+
+	// SetCondition sets the condition rule contexts.
+	SetCondition(IUnitStatementContext)
+
+	// SetPostOp sets the postOp rule contexts.
+	SetPostOp(IAssignStatementContext)
+
+	// Getter signatures
+	AllSemiColon() []antlr.TerminalNode
+	SemiColon(i int) antlr.TerminalNode
+	VariableStatement() IVariableStatementContext
+	UnitStatement() IUnitStatementContext
+	AssignStatement() IAssignStatementContext
+
+	// IsClassicForConditionContext differentiates from other interfaces.
+	IsClassicForConditionContext()
+}
+
+type ClassicForConditionContext struct {
+	antlr.BaseParserRuleContext
+	parser    antlr.Parser
+	init      IVariableStatementContext
+	condition IUnitStatementContext
+	postOp    IAssignStatementContext
+}
+
+func NewEmptyClassicForConditionContext() *ClassicForConditionContext {
+	var p = new(ClassicForConditionContext)
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_classicForCondition
+	return p
+}
+
+func InitEmptyClassicForConditionContext(p *ClassicForConditionContext) {
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_classicForCondition
+}
+
+func (*ClassicForConditionContext) IsClassicForConditionContext() {}
+
+func NewClassicForConditionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ClassicForConditionContext {
+	var p = new(ClassicForConditionContext)
+
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DataMorfParserRULE_classicForCondition
+
+	return p
+}
+
+func (s *ClassicForConditionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ClassicForConditionContext) GetInit() IVariableStatementContext { return s.init }
+
+func (s *ClassicForConditionContext) GetCondition() IUnitStatementContext { return s.condition }
+
+func (s *ClassicForConditionContext) GetPostOp() IAssignStatementContext { return s.postOp }
+
+func (s *ClassicForConditionContext) SetInit(v IVariableStatementContext) { s.init = v }
+
+func (s *ClassicForConditionContext) SetCondition(v IUnitStatementContext) { s.condition = v }
+
+func (s *ClassicForConditionContext) SetPostOp(v IAssignStatementContext) { s.postOp = v }
+
+func (s *ClassicForConditionContext) AllSemiColon() []antlr.TerminalNode {
+	return s.GetTokens(DataMorfParserSemiColon)
+}
+
+func (s *ClassicForConditionContext) SemiColon(i int) antlr.TerminalNode {
+	return s.GetToken(DataMorfParserSemiColon, i)
+}
+
+func (s *ClassicForConditionContext) VariableStatement() IVariableStatementContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableStatementContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IVariableStatementContext)
+}
+
+func (s *ClassicForConditionContext) UnitStatement() IUnitStatementContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IUnitStatementContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IUnitStatementContext)
+}
+
+func (s *ClassicForConditionContext) AssignStatement() IAssignStatementContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignStatementContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IAssignStatementContext)
+}
+
+func (s *ClassicForConditionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ClassicForConditionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ClassicForConditionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterClassicForCondition(s)
+	}
+}
+
+func (s *ClassicForConditionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitClassicForCondition(s)
+	}
+}
+
+func (s *ClassicForConditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DataMorfVisitor:
+		return t.VisitClassicForCondition(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DataMorfParser) ClassicForCondition() (localctx IClassicForConditionContext) {
+	localctx = NewClassicForConditionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 24, DataMorfParserRULE_classicForCondition)
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(161)
+
+		var _x = p.VariableStatement()
+
+		localctx.(*ClassicForConditionContext).init = _x
+	}
+	{
+		p.SetState(162)
+		p.Match(DataMorfParserSemiColon)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(163)
+
+		var _x = p.UnitStatement()
+
+		localctx.(*ClassicForConditionContext).condition = _x
+	}
+	{
+		p.SetState(164)
+		p.Match(DataMorfParserSemiColon)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(165)
+
+		var _x = p.AssignStatement()
+
+		localctx.(*ClassicForConditionContext).postOp = _x
+	}
+
+errorExit:
+	if p.HasError() {
+		v := p.GetError()
+		localctx.SetException(v)
+		p.GetErrorHandler().ReportError(p, v)
+		p.GetErrorHandler().Recover(p, v)
+		p.SetError(nil)
+	}
+	p.ExitRule()
+	return localctx
+	goto errorExit // Trick to prevent compiler error if the label is not used
+}
+
+// IIteratorForConditionContext is an interface to support dynamic dispatch.
+type IIteratorForConditionContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// Getter signatures
+	Var() antlr.TerminalNode
+	Identifier() antlr.TerminalNode
+	Of() antlr.TerminalNode
+	Reference() IReferenceContext
+
+	// IsIteratorForConditionContext differentiates from other interfaces.
+	IsIteratorForConditionContext()
+}
+
+type IteratorForConditionContext struct {
+	antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyIteratorForConditionContext() *IteratorForConditionContext {
+	var p = new(IteratorForConditionContext)
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_iteratorForCondition
+	return p
+}
+
+func InitEmptyIteratorForConditionContext(p *IteratorForConditionContext) {
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_iteratorForCondition
+}
+
+func (*IteratorForConditionContext) IsIteratorForConditionContext() {}
+
+func NewIteratorForConditionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IteratorForConditionContext {
+	var p = new(IteratorForConditionContext)
+
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DataMorfParserRULE_iteratorForCondition
+
+	return p
+}
+
+func (s *IteratorForConditionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *IteratorForConditionContext) Var() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserVar, 0)
+}
+
+func (s *IteratorForConditionContext) Identifier() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserIdentifier, 0)
+}
+
+func (s *IteratorForConditionContext) Of() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOf, 0)
+}
+
+func (s *IteratorForConditionContext) Reference() IReferenceContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IReferenceContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IReferenceContext)
+}
+
+func (s *IteratorForConditionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *IteratorForConditionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *IteratorForConditionContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterIteratorForCondition(s)
+	}
+}
+
+func (s *IteratorForConditionContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitIteratorForCondition(s)
+	}
+}
+
+func (s *IteratorForConditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DataMorfVisitor:
+		return t.VisitIteratorForCondition(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DataMorfParser) IteratorForCondition() (localctx IIteratorForConditionContext) {
+	localctx = NewIteratorForConditionContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 26, DataMorfParserRULE_iteratorForCondition)
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(167)
+		p.Match(DataMorfParserVar)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(168)
+		p.Match(DataMorfParserIdentifier)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(169)
+		p.Match(DataMorfParserOf)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(170)
+		p.Reference()
 	}
 
 errorExit:
@@ -3118,12 +3072,12 @@ type IUnitContext interface {
 	SetRight(IUnitContext)
 
 	// Getter signatures
-	OpenParen() antlr.TerminalNode
-	CloseParen() antlr.TerminalNode
+	OpenRound() antlr.TerminalNode
+	CloseRound() antlr.TerminalNode
 	AllUnit() []IUnitContext
 	Unit(i int) IUnitContext
 	Not() antlr.TerminalNode
-	AccessRhs() IAccessRhsContext
+	Reference() IReferenceContext
 	Constant() IConstantContext
 	Divide() antlr.TerminalNode
 	Multiply() antlr.TerminalNode
@@ -3153,13 +3107,13 @@ type UnitContext struct {
 func NewEmptyUnitContext() *UnitContext {
 	var p = new(UnitContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_unit
+	p.RuleIndex = DataMorfParserRULE_unit
 	return p
 }
 
 func InitEmptyUnitContext(p *UnitContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_unit
+	p.RuleIndex = DataMorfParserRULE_unit
 }
 
 func (*UnitContext) IsUnitContext() {}
@@ -3170,7 +3124,7 @@ func NewUnitContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_unit
+	p.RuleIndex = DataMorfParserRULE_unit
 
 	return p
 }
@@ -3189,12 +3143,12 @@ func (s *UnitContext) SetSingle(v IUnitContext) { s.single = v }
 
 func (s *UnitContext) SetRight(v IUnitContext) { s.right = v }
 
-func (s *UnitContext) OpenParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenParen, 0)
+func (s *UnitContext) OpenRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenRound, 0)
 }
 
-func (s *UnitContext) CloseParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseParen, 0)
+func (s *UnitContext) CloseRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseRound, 0)
 }
 
 func (s *UnitContext) AllUnit() []IUnitContext {
@@ -3239,13 +3193,13 @@ func (s *UnitContext) Unit(i int) IUnitContext {
 }
 
 func (s *UnitContext) Not() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserNot, 0)
+	return s.GetToken(DataMorfParserNot, 0)
 }
 
-func (s *UnitContext) AccessRhs() IAccessRhsContext {
+func (s *UnitContext) Reference() IReferenceContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessRhsContext); ok {
+		if _, ok := ctx.(IReferenceContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -3255,7 +3209,7 @@ func (s *UnitContext) AccessRhs() IAccessRhsContext {
 		return nil
 	}
 
-	return t.(IAccessRhsContext)
+	return t.(IReferenceContext)
 }
 
 func (s *UnitContext) Constant() IConstantContext {
@@ -3275,51 +3229,51 @@ func (s *UnitContext) Constant() IConstantContext {
 }
 
 func (s *UnitContext) Divide() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDivide, 0)
+	return s.GetToken(DataMorfParserDivide, 0)
 }
 
 func (s *UnitContext) Multiply() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserMultiply, 0)
+	return s.GetToken(DataMorfParserMultiply, 0)
 }
 
 func (s *UnitContext) Plus() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserPlus, 0)
+	return s.GetToken(DataMorfParserPlus, 0)
 }
 
 func (s *UnitContext) Minus() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserMinus, 0)
+	return s.GetToken(DataMorfParserMinus, 0)
 }
 
 func (s *UnitContext) LessThan() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserLessThan, 0)
+	return s.GetToken(DataMorfParserLessThan, 0)
 }
 
 func (s *UnitContext) MoreThan() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserMoreThan, 0)
+	return s.GetToken(DataMorfParserMoreThan, 0)
 }
 
 func (s *UnitContext) LessThanEquals() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserLessThanEquals, 0)
+	return s.GetToken(DataMorfParserLessThanEquals, 0)
 }
 
 func (s *UnitContext) GreaterThanEquals() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserGreaterThanEquals, 0)
+	return s.GetToken(DataMorfParserGreaterThanEquals, 0)
 }
 
 func (s *UnitContext) Equals() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserEquals, 0)
+	return s.GetToken(DataMorfParserEquals, 0)
 }
 
 func (s *UnitContext) NotEquals() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserNotEquals, 0)
+	return s.GetToken(DataMorfParserNotEquals, 0)
 }
 
 func (s *UnitContext) And() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserAnd, 0)
+	return s.GetToken(DataMorfParserAnd, 0)
 }
 
 func (s *UnitContext) Or() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOr, 0)
+	return s.GetToken(DataMorfParserOr, 0)
 }
 
 func (s *UnitContext) GetRuleContext() antlr.RuleContext {
@@ -3331,20 +3285,20 @@ func (s *UnitContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 }
 
 func (s *UnitContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterUnit(s)
 	}
 }
 
 func (s *UnitContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitUnit(s)
 	}
 }
 
 func (s *UnitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitUnit(s)
 
 	default:
@@ -3352,11 +3306,11 @@ func (s *UnitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Unit() (localctx IUnitContext) {
+func (p *DataMorfParser) Unit() (localctx IUnitContext) {
 	return p.unit(0)
 }
 
-func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
+func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 
 	_parentState := p.GetState()
@@ -3364,70 +3318,70 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 	var _prevctx IUnitContext = localctx
 	var _ antlr.ParserRuleContext = _prevctx // TODO: To prevent unused variable warning.
 	_startState := 28
-	p.EnterRecursionRule(localctx, 28, LiteLangParserRULE_unit, _p)
+	p.EnterRecursionRule(localctx, 28, DataMorfParserRULE_unit, _p)
 	var _la int
 
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(188)
+	p.SetState(181)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case LiteLangParserOpenParen:
+	case DataMorfParserOpenRound:
 		{
-			p.SetState(180)
-			p.Match(LiteLangParserOpenParen)
+			p.SetState(173)
+			p.Match(DataMorfParserOpenRound)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 		{
-			p.SetState(181)
+			p.SetState(174)
 
 			var _x = p.unit(0)
 
 			localctx.(*UnitContext).single = _x
 		}
 		{
-			p.SetState(182)
-			p.Match(LiteLangParserCloseParen)
+			p.SetState(175)
+			p.Match(DataMorfParserCloseRound)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case LiteLangParserNot:
+	case DataMorfParserNot:
 		{
-			p.SetState(184)
-			p.Match(LiteLangParserNot)
+			p.SetState(177)
+			p.Match(DataMorfParserNot)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 		{
-			p.SetState(185)
+			p.SetState(178)
 
 			var _x = p.unit(3)
 
 			localctx.(*UnitContext).single = _x
 		}
 
-	case LiteLangParserIdentifier:
+	case DataMorfParserIdentifier:
 		{
-			p.SetState(186)
-			p.AccessRhs()
+			p.SetState(179)
+			p.Reference()
 		}
 
-	case LiteLangParserNullLiteral, LiteLangParserBooleanLiteral, LiteLangParserDecimalLiteral, LiteLangParserStringLiteral:
+	case DataMorfParserNullLiteral, DataMorfParserBooleanLiteral, DataMorfParserDecimalLiteral, DataMorfParserStringLiteral:
 		{
-			p.SetState(187)
+			p.SetState(180)
 			p.Constant()
 		}
 
@@ -3436,12 +3390,12 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 		goto errorExit
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(207)
+	p.SetState(200)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
-	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 12, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 11, p.GetParserRuleContext())
 	if p.HasError() {
 		goto errorExit
 	}
@@ -3451,18 +3405,18 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(205)
+			p.SetState(198)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
 			}
 
-			switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 11, p.GetParserRuleContext()) {
+			switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 10, p.GetParserRuleContext()) {
 			case 1:
 				localctx = NewUnitContext(p, _parentctx, _parentState)
 				localctx.(*UnitContext).left = _prevctx
-				p.PushNewRecursionContext(localctx, _startState, LiteLangParserRULE_unit)
-				p.SetState(190)
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(183)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 8)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 8)", ""))
@@ -3470,8 +3424,8 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(191)
-					p.Match(LiteLangParserDivide)
+					p.SetState(184)
+					p.Match(DataMorfParserDivide)
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
@@ -3479,7 +3433,7 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(192)
+					p.SetState(185)
 
 					var _x = p.unit(9)
 
@@ -3489,8 +3443,8 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 			case 2:
 				localctx = NewUnitContext(p, _parentctx, _parentState)
 				localctx.(*UnitContext).left = _prevctx
-				p.PushNewRecursionContext(localctx, _startState, LiteLangParserRULE_unit)
-				p.SetState(193)
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(186)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 7)", ""))
@@ -3498,8 +3452,8 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(194)
-					p.Match(LiteLangParserMultiply)
+					p.SetState(187)
+					p.Match(DataMorfParserMultiply)
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
@@ -3507,7 +3461,7 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(195)
+					p.SetState(188)
 
 					var _x = p.unit(8)
 
@@ -3517,8 +3471,8 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 			case 3:
 				localctx = NewUnitContext(p, _parentctx, _parentState)
 				localctx.(*UnitContext).left = _prevctx
-				p.PushNewRecursionContext(localctx, _startState, LiteLangParserRULE_unit)
-				p.SetState(196)
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(189)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 6)", ""))
@@ -3526,8 +3480,8 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(197)
-					p.Match(LiteLangParserPlus)
+					p.SetState(190)
+					p.Match(DataMorfParserPlus)
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
@@ -3535,7 +3489,7 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(198)
+					p.SetState(191)
 
 					var _x = p.unit(7)
 
@@ -3545,8 +3499,8 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 			case 4:
 				localctx = NewUnitContext(p, _parentctx, _parentState)
 				localctx.(*UnitContext).left = _prevctx
-				p.PushNewRecursionContext(localctx, _startState, LiteLangParserRULE_unit)
-				p.SetState(199)
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(192)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
@@ -3554,8 +3508,8 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(200)
-					p.Match(LiteLangParserMinus)
+					p.SetState(193)
+					p.Match(DataMorfParserMinus)
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
@@ -3563,7 +3517,7 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 				}
 
 				{
-					p.SetState(201)
+					p.SetState(194)
 
 					var _x = p.unit(6)
 
@@ -3573,18 +3527,18 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 			case 5:
 				localctx = NewUnitContext(p, _parentctx, _parentState)
 				localctx.(*UnitContext).left = _prevctx
-				p.PushNewRecursionContext(localctx, _startState, LiteLangParserRULE_unit)
-				p.SetState(202)
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(195)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 					goto errorExit
 				}
 				{
-					p.SetState(203)
+					p.SetState(196)
 					_la = p.GetTokenStream().LA(1)
 
-					if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&4278190080) != 0) {
+					if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1069547520) != 0) {
 						p.GetErrorHandler().RecoverInline(p)
 					} else {
 						p.GetErrorHandler().ReportMatch(p)
@@ -3592,7 +3546,7 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 					}
 				}
 				{
-					p.SetState(204)
+					p.SetState(197)
 
 					var _x = p.unit(5)
 
@@ -3604,12 +3558,12 @@ func (p *LiteLangParser) unit(_p int) (localctx IUnitContext) {
 			}
 
 		}
-		p.SetState(209)
+		p.SetState(202)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
-		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 12, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 11, p.GetParserRuleContext())
 		if p.HasError() {
 			goto errorExit
 		}
@@ -3628,179 +3582,8 @@ errorExit:
 	goto errorExit // Trick to prevent compiler error if the label is not used
 }
 
-// IAccessLhsContext is an interface to support dynamic dispatch.
-type IAccessLhsContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// Getter signatures
-	Identifier() antlr.TerminalNode
-	AllAccessorLhs() []IAccessorLhsContext
-	AccessorLhs(i int) IAccessorLhsContext
-
-	// IsAccessLhsContext differentiates from other interfaces.
-	IsAccessLhsContext()
-}
-
-type AccessLhsContext struct {
-	antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyAccessLhsContext() *AccessLhsContext {
-	var p = new(AccessLhsContext)
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessLhs
-	return p
-}
-
-func InitEmptyAccessLhsContext(p *AccessLhsContext) {
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessLhs
-}
-
-func (*AccessLhsContext) IsAccessLhsContext() {}
-
-func NewAccessLhsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AccessLhsContext {
-	var p = new(AccessLhsContext)
-
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_accessLhs
-
-	return p
-}
-
-func (s *AccessLhsContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *AccessLhsContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
-}
-
-func (s *AccessLhsContext) AllAccessorLhs() []IAccessorLhsContext {
-	children := s.GetChildren()
-	len := 0
-	for _, ctx := range children {
-		if _, ok := ctx.(IAccessorLhsContext); ok {
-			len++
-		}
-	}
-
-	tst := make([]IAccessorLhsContext, len)
-	i := 0
-	for _, ctx := range children {
-		if t, ok := ctx.(IAccessorLhsContext); ok {
-			tst[i] = t.(IAccessorLhsContext)
-			i++
-		}
-	}
-
-	return tst
-}
-
-func (s *AccessLhsContext) AccessorLhs(i int) IAccessorLhsContext {
-	var t antlr.RuleContext
-	j := 0
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessorLhsContext); ok {
-			if j == i {
-				t = ctx.(antlr.RuleContext)
-				break
-			}
-			j++
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IAccessorLhsContext)
-}
-
-func (s *AccessLhsContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *AccessLhsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *AccessLhsContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterAccessLhs(s)
-	}
-}
-
-func (s *AccessLhsContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitAccessLhs(s)
-	}
-}
-
-func (s *AccessLhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitAccessLhs(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *LiteLangParser) AccessLhs() (localctx IAccessLhsContext) {
-	localctx = NewAccessLhsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, LiteLangParserRULE_accessLhs)
-	var _la int
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(210)
-		p.Match(LiteLangParserIdentifier)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	p.SetState(214)
-	p.GetErrorHandler().Sync(p)
-	if p.HasError() {
-		goto errorExit
-	}
-	_la = p.GetTokenStream().LA(1)
-
-	for _la == LiteLangParserOpenBracket || _la == LiteLangParserDot {
-		{
-			p.SetState(211)
-			p.AccessorLhs()
-		}
-
-		p.SetState(216)
-		p.GetErrorHandler().Sync(p)
-		if p.HasError() {
-			goto errorExit
-		}
-		_la = p.GetTokenStream().LA(1)
-	}
-
-errorExit:
-	if p.HasError() {
-		v := p.GetError()
-		localctx.SetException(v)
-		p.GetErrorHandler().ReportError(p, v)
-		p.GetErrorHandler().Recover(p, v)
-		p.SetError(nil)
-	}
-	p.ExitRule()
-	return localctx
-	goto errorExit // Trick to prevent compiler error if the label is not used
-}
-
-// IAccessRhsContext is an interface to support dynamic dispatch.
-type IAccessRhsContext interface {
+// IReferenceContext is an interface to support dynamic dispatch.
+type IReferenceContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
@@ -3809,46 +3592,46 @@ type IAccessRhsContext interface {
 	// Getter signatures
 	FunctionCall() IFunctionCallContext
 	Identifier() antlr.TerminalNode
-	AllAccessorRhs() []IAccessorRhsContext
-	AccessorRhs(i int) IAccessorRhsContext
+	AllAccessor() []IAccessorContext
+	Accessor(i int) IAccessorContext
 
-	// IsAccessRhsContext differentiates from other interfaces.
-	IsAccessRhsContext()
+	// IsReferenceContext differentiates from other interfaces.
+	IsReferenceContext()
 }
 
-type AccessRhsContext struct {
+type ReferenceContext struct {
 	antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyAccessRhsContext() *AccessRhsContext {
-	var p = new(AccessRhsContext)
+func NewEmptyReferenceContext() *ReferenceContext {
+	var p = new(ReferenceContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessRhs
+	p.RuleIndex = DataMorfParserRULE_reference
 	return p
 }
 
-func InitEmptyAccessRhsContext(p *AccessRhsContext) {
+func InitEmptyReferenceContext(p *ReferenceContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessRhs
+	p.RuleIndex = DataMorfParserRULE_reference
 }
 
-func (*AccessRhsContext) IsAccessRhsContext() {}
+func (*ReferenceContext) IsReferenceContext() {}
 
-func NewAccessRhsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AccessRhsContext {
-	var p = new(AccessRhsContext)
+func NewReferenceContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ReferenceContext {
+	var p = new(ReferenceContext)
 
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_accessRhs
+	p.RuleIndex = DataMorfParserRULE_reference
 
 	return p
 }
 
-func (s *AccessRhsContext) GetParser() antlr.Parser { return s.parser }
+func (s *ReferenceContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *AccessRhsContext) FunctionCall() IFunctionCallContext {
+func (s *ReferenceContext) FunctionCall() IFunctionCallContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
 		if _, ok := ctx.(IFunctionCallContext); ok {
@@ -3864,24 +3647,24 @@ func (s *AccessRhsContext) FunctionCall() IFunctionCallContext {
 	return t.(IFunctionCallContext)
 }
 
-func (s *AccessRhsContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
+func (s *ReferenceContext) Identifier() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserIdentifier, 0)
 }
 
-func (s *AccessRhsContext) AllAccessorRhs() []IAccessorRhsContext {
+func (s *ReferenceContext) AllAccessor() []IAccessorContext {
 	children := s.GetChildren()
 	len := 0
 	for _, ctx := range children {
-		if _, ok := ctx.(IAccessorRhsContext); ok {
+		if _, ok := ctx.(IAccessorContext); ok {
 			len++
 		}
 	}
 
-	tst := make([]IAccessorRhsContext, len)
+	tst := make([]IAccessorContext, len)
 	i := 0
 	for _, ctx := range children {
-		if t, ok := ctx.(IAccessorRhsContext); ok {
-			tst[i] = t.(IAccessorRhsContext)
+		if t, ok := ctx.(IAccessorContext); ok {
+			tst[i] = t.(IAccessorContext)
 			i++
 		}
 	}
@@ -3889,11 +3672,11 @@ func (s *AccessRhsContext) AllAccessorRhs() []IAccessorRhsContext {
 	return tst
 }
 
-func (s *AccessRhsContext) AccessorRhs(i int) IAccessorRhsContext {
+func (s *ReferenceContext) Accessor(i int) IAccessorContext {
 	var t antlr.RuleContext
 	j := 0
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessorRhsContext); ok {
+		if _, ok := ctx.(IAccessorContext); ok {
 			if j == i {
 				t = ctx.(antlr.RuleContext)
 				break
@@ -3906,46 +3689,236 @@ func (s *AccessRhsContext) AccessorRhs(i int) IAccessorRhsContext {
 		return nil
 	}
 
-	return t.(IAccessorRhsContext)
+	return t.(IAccessorContext)
 }
 
-func (s *AccessRhsContext) GetRuleContext() antlr.RuleContext {
+func (s *ReferenceContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *AccessRhsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ReferenceContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *AccessRhsContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterAccessRhs(s)
+func (s *ReferenceContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterReference(s)
 	}
 }
 
-func (s *AccessRhsContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitAccessRhs(s)
+func (s *ReferenceContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitReference(s)
 	}
 }
 
-func (s *AccessRhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *ReferenceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitAccessRhs(s)
+	case DataMorfVisitor:
+		return t.VisitReference(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *LiteLangParser) AccessRhs() (localctx IAccessRhsContext) {
-	localctx = NewAccessRhsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, LiteLangParserRULE_accessRhs)
+func (p *DataMorfParser) Reference() (localctx IReferenceContext) {
+	localctx = NewReferenceContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 30, DataMorfParserRULE_reference)
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(219)
+	p.SetState(205)
+	p.GetErrorHandler().Sync(p)
+	if p.HasError() {
+		goto errorExit
+	}
+
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 12, p.GetParserRuleContext()) {
+	case 1:
+		{
+			p.SetState(203)
+			p.FunctionCall()
+		}
+
+	case 2:
+		{
+			p.SetState(204)
+			p.Match(DataMorfParserIdentifier)
+			if p.HasError() {
+				// Recognition error - abort rule
+				goto errorExit
+			}
+		}
+
+	case antlr.ATNInvalidAltNumber:
+		goto errorExit
+	}
+	p.SetState(210)
+	p.GetErrorHandler().Sync(p)
+	if p.HasError() {
+		goto errorExit
+	}
+	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 13, p.GetParserRuleContext())
+	if p.HasError() {
+		goto errorExit
+	}
+	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+		if _alt == 1 {
+			{
+				p.SetState(207)
+				p.Accessor()
+			}
+
+		}
+		p.SetState(212)
+		p.GetErrorHandler().Sync(p)
+		if p.HasError() {
+			goto errorExit
+		}
+		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 13, p.GetParserRuleContext())
+		if p.HasError() {
+			goto errorExit
+		}
+	}
+
+errorExit:
+	if p.HasError() {
+		v := p.GetError()
+		localctx.SetException(v)
+		p.GetErrorHandler().ReportError(p, v)
+		p.GetErrorHandler().Recover(p, v)
+		p.SetError(nil)
+	}
+	p.ExitRule()
+	return localctx
+	goto errorExit // Trick to prevent compiler error if the label is not used
+}
+
+// IAccessorContext is an interface to support dynamic dispatch.
+type IAccessorContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// Getter signatures
+	AccessProperty() IAccessPropertyContext
+	Dot() antlr.TerminalNode
+	Identifier() antlr.TerminalNode
+	FunctionCall() IFunctionCallContext
+
+	// IsAccessorContext differentiates from other interfaces.
+	IsAccessorContext()
+}
+
+type AccessorContext struct {
+	antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyAccessorContext() *AccessorContext {
+	var p = new(AccessorContext)
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_accessor
+	return p
+}
+
+func InitEmptyAccessorContext(p *AccessorContext) {
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_accessor
+}
+
+func (*AccessorContext) IsAccessorContext() {}
+
+func NewAccessorContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AccessorContext {
+	var p = new(AccessorContext)
+
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DataMorfParserRULE_accessor
+
+	return p
+}
+
+func (s *AccessorContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *AccessorContext) AccessProperty() IAccessPropertyContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAccessPropertyContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IAccessPropertyContext)
+}
+
+func (s *AccessorContext) Dot() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserDot, 0)
+}
+
+func (s *AccessorContext) Identifier() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserIdentifier, 0)
+}
+
+func (s *AccessorContext) FunctionCall() IFunctionCallContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionCallContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IFunctionCallContext)
+}
+
+func (s *AccessorContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *AccessorContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *AccessorContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterAccessor(s)
+	}
+}
+
+func (s *AccessorContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitAccessor(s)
+	}
+}
+
+func (s *AccessorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DataMorfVisitor:
+		return t.VisitAccessor(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DataMorfParser) Accessor() (localctx IAccessorContext) {
+	localctx = NewAccessorContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 32, DataMorfParserRULE_accessor)
+	p.EnterOuterAlt(localctx, 1)
+	p.SetState(218)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3954,212 +3927,22 @@ func (p *LiteLangParser) AccessRhs() (localctx IAccessRhsContext) {
 	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 14, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(217)
-			p.FunctionCall()
-		}
-
-	case 2:
-		{
-			p.SetState(218)
-			p.Match(LiteLangParserIdentifier)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	case antlr.ATNInvalidAltNumber:
-		goto errorExit
-	}
-	p.SetState(224)
-	p.GetErrorHandler().Sync(p)
-	if p.HasError() {
-		goto errorExit
-	}
-	_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 15, p.GetParserRuleContext())
-	if p.HasError() {
-		goto errorExit
-	}
-	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
-		if _alt == 1 {
-			{
-				p.SetState(221)
-				p.AccessorRhs()
-			}
-
-		}
-		p.SetState(226)
-		p.GetErrorHandler().Sync(p)
-		if p.HasError() {
-			goto errorExit
-		}
-		_alt = p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 15, p.GetParserRuleContext())
-		if p.HasError() {
-			goto errorExit
-		}
-	}
-
-errorExit:
-	if p.HasError() {
-		v := p.GetError()
-		localctx.SetException(v)
-		p.GetErrorHandler().ReportError(p, v)
-		p.GetErrorHandler().Recover(p, v)
-		p.SetError(nil)
-	}
-	p.ExitRule()
-	return localctx
-	goto errorExit // Trick to prevent compiler error if the label is not used
-}
-
-// IAccessorRhsContext is an interface to support dynamic dispatch.
-type IAccessorRhsContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// Getter signatures
-	AccessProperty() IAccessPropertyContext
-	Dot() antlr.TerminalNode
-	Identifier() antlr.TerminalNode
-	FunctionCall() IFunctionCallContext
-
-	// IsAccessorRhsContext differentiates from other interfaces.
-	IsAccessorRhsContext()
-}
-
-type AccessorRhsContext struct {
-	antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyAccessorRhsContext() *AccessorRhsContext {
-	var p = new(AccessorRhsContext)
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessorRhs
-	return p
-}
-
-func InitEmptyAccessorRhsContext(p *AccessorRhsContext) {
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessorRhs
-}
-
-func (*AccessorRhsContext) IsAccessorRhsContext() {}
-
-func NewAccessorRhsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AccessorRhsContext {
-	var p = new(AccessorRhsContext)
-
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_accessorRhs
-
-	return p
-}
-
-func (s *AccessorRhsContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *AccessorRhsContext) AccessProperty() IAccessPropertyContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessPropertyContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IAccessPropertyContext)
-}
-
-func (s *AccessorRhsContext) Dot() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDot, 0)
-}
-
-func (s *AccessorRhsContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
-}
-
-func (s *AccessorRhsContext) FunctionCall() IFunctionCallContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IFunctionCallContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IFunctionCallContext)
-}
-
-func (s *AccessorRhsContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *AccessorRhsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *AccessorRhsContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterAccessorRhs(s)
-	}
-}
-
-func (s *AccessorRhsContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitAccessorRhs(s)
-	}
-}
-
-func (s *AccessorRhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitAccessorRhs(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *LiteLangParser) AccessorRhs() (localctx IAccessorRhsContext) {
-	localctx = NewAccessorRhsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, LiteLangParserRULE_accessorRhs)
-	p.EnterOuterAlt(localctx, 1)
-	p.SetState(232)
-	p.GetErrorHandler().Sync(p)
-	if p.HasError() {
-		goto errorExit
-	}
-
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 16, p.GetParserRuleContext()) {
-	case 1:
-		{
-			p.SetState(227)
+			p.SetState(213)
 			p.AccessProperty()
 		}
 
 	case 2:
 		{
-			p.SetState(228)
-			p.Match(LiteLangParserDot)
+			p.SetState(214)
+			p.Match(DataMorfParserDot)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 		{
-			p.SetState(229)
-			p.Match(LiteLangParserIdentifier)
+			p.SetState(215)
+			p.Match(DataMorfParserIdentifier)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4168,175 +3951,19 @@ func (p *LiteLangParser) AccessorRhs() (localctx IAccessorRhsContext) {
 
 	case 3:
 		{
-			p.SetState(230)
-			p.Match(LiteLangParserDot)
+			p.SetState(216)
+			p.Match(DataMorfParserDot)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 		{
-			p.SetState(231)
+			p.SetState(217)
 			p.FunctionCall()
 		}
 
 	case antlr.ATNInvalidAltNumber:
-		goto errorExit
-	}
-
-errorExit:
-	if p.HasError() {
-		v := p.GetError()
-		localctx.SetException(v)
-		p.GetErrorHandler().ReportError(p, v)
-		p.GetErrorHandler().Recover(p, v)
-		p.SetError(nil)
-	}
-	p.ExitRule()
-	return localctx
-	goto errorExit // Trick to prevent compiler error if the label is not used
-}
-
-// IAccessorLhsContext is an interface to support dynamic dispatch.
-type IAccessorLhsContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// Getter signatures
-	AccessProperty() IAccessPropertyContext
-	Dot() antlr.TerminalNode
-	Identifier() antlr.TerminalNode
-
-	// IsAccessorLhsContext differentiates from other interfaces.
-	IsAccessorLhsContext()
-}
-
-type AccessorLhsContext struct {
-	antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyAccessorLhsContext() *AccessorLhsContext {
-	var p = new(AccessorLhsContext)
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessorLhs
-	return p
-}
-
-func InitEmptyAccessorLhsContext(p *AccessorLhsContext) {
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessorLhs
-}
-
-func (*AccessorLhsContext) IsAccessorLhsContext() {}
-
-func NewAccessorLhsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AccessorLhsContext {
-	var p = new(AccessorLhsContext)
-
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_accessorLhs
-
-	return p
-}
-
-func (s *AccessorLhsContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *AccessorLhsContext) AccessProperty() IAccessPropertyContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessPropertyContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IAccessPropertyContext)
-}
-
-func (s *AccessorLhsContext) Dot() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDot, 0)
-}
-
-func (s *AccessorLhsContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
-}
-
-func (s *AccessorLhsContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *AccessorLhsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *AccessorLhsContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterAccessorLhs(s)
-	}
-}
-
-func (s *AccessorLhsContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitAccessorLhs(s)
-	}
-}
-
-func (s *AccessorLhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitAccessorLhs(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *LiteLangParser) AccessorLhs() (localctx IAccessorLhsContext) {
-	localctx = NewAccessorLhsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, LiteLangParserRULE_accessorLhs)
-	p.SetState(237)
-	p.GetErrorHandler().Sync(p)
-	if p.HasError() {
-		goto errorExit
-	}
-
-	switch p.GetTokenStream().LA(1) {
-	case LiteLangParserOpenBracket:
-		p.EnterOuterAlt(localctx, 1)
-		{
-			p.SetState(234)
-			p.AccessProperty()
-		}
-
-	case LiteLangParserDot:
-		p.EnterOuterAlt(localctx, 2)
-		{
-			p.SetState(235)
-			p.Match(LiteLangParserDot)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-		{
-			p.SetState(236)
-			p.Match(LiteLangParserIdentifier)
-			if p.HasError() {
-				// Recognition error - abort rule
-				goto errorExit
-			}
-		}
-
-	default:
-		p.SetError(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 		goto errorExit
 	}
 
@@ -4361,8 +3988,8 @@ type IAccessPropertyContext interface {
 	GetParser() antlr.Parser
 
 	// Getter signatures
-	OpenBracket() antlr.TerminalNode
-	CloseBracket() antlr.TerminalNode
+	OpenSquare() antlr.TerminalNode
+	CloseSquare() antlr.TerminalNode
 	StringLiteral() antlr.TerminalNode
 	DecimalLiteral() antlr.TerminalNode
 	Identifier() antlr.TerminalNode
@@ -4379,13 +4006,13 @@ type AccessPropertyContext struct {
 func NewEmptyAccessPropertyContext() *AccessPropertyContext {
 	var p = new(AccessPropertyContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessProperty
+	p.RuleIndex = DataMorfParserRULE_accessProperty
 	return p
 }
 
 func InitEmptyAccessPropertyContext(p *AccessPropertyContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_accessProperty
+	p.RuleIndex = DataMorfParserRULE_accessProperty
 }
 
 func (*AccessPropertyContext) IsAccessPropertyContext() {}
@@ -4396,31 +4023,31 @@ func NewAccessPropertyContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_accessProperty
+	p.RuleIndex = DataMorfParserRULE_accessProperty
 
 	return p
 }
 
 func (s *AccessPropertyContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *AccessPropertyContext) OpenBracket() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenBracket, 0)
+func (s *AccessPropertyContext) OpenSquare() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenSquare, 0)
 }
 
-func (s *AccessPropertyContext) CloseBracket() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseBracket, 0)
+func (s *AccessPropertyContext) CloseSquare() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseSquare, 0)
 }
 
 func (s *AccessPropertyContext) StringLiteral() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserStringLiteral, 0)
+	return s.GetToken(DataMorfParserStringLiteral, 0)
 }
 
 func (s *AccessPropertyContext) DecimalLiteral() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDecimalLiteral, 0)
+	return s.GetToken(DataMorfParserDecimalLiteral, 0)
 }
 
 func (s *AccessPropertyContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
+	return s.GetToken(DataMorfParserIdentifier, 0)
 }
 
 func (s *AccessPropertyContext) GetRuleContext() antlr.RuleContext {
@@ -4432,20 +4059,20 @@ func (s *AccessPropertyContext) ToStringTree(ruleNames []string, recog antlr.Rec
 }
 
 func (s *AccessPropertyContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterAccessProperty(s)
 	}
 }
 
 func (s *AccessPropertyContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitAccessProperty(s)
 	}
 }
 
 func (s *AccessPropertyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitAccessProperty(s)
 
 	default:
@@ -4453,25 +4080,25 @@ func (s *AccessPropertyContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *LiteLangParser) AccessProperty() (localctx IAccessPropertyContext) {
+func (p *DataMorfParser) AccessProperty() (localctx IAccessPropertyContext) {
 	localctx = NewAccessPropertyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, LiteLangParserRULE_accessProperty)
+	p.EnterRule(localctx, 34, DataMorfParserRULE_accessProperty)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(239)
-		p.Match(LiteLangParserOpenBracket)
+		p.SetState(220)
+		p.Match(DataMorfParserOpenSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(240)
+		p.SetState(221)
 		_la = p.GetTokenStream().LA(1)
 
-		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&13510816061980672) != 0) {
+		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1688854155231232) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -4479,8 +4106,8 @@ func (p *LiteLangParser) AccessProperty() (localctx IAccessPropertyContext) {
 		}
 	}
 	{
-		p.SetState(241)
-		p.Match(LiteLangParserCloseBracket)
+		p.SetState(222)
+		p.Match(DataMorfParserCloseSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -4509,9 +4136,9 @@ type IFunctionCallContext interface {
 
 	// Getter signatures
 	Identifier() antlr.TerminalNode
-	OpenParen() antlr.TerminalNode
-	CloseParen() antlr.TerminalNode
-	Params() IParamsContext
+	OpenRound() antlr.TerminalNode
+	CloseRound() antlr.TerminalNode
+	SendingParams() ISendingParamsContext
 
 	// IsFunctionCallContext differentiates from other interfaces.
 	IsFunctionCallContext()
@@ -4525,13 +4152,13 @@ type FunctionCallContext struct {
 func NewEmptyFunctionCallContext() *FunctionCallContext {
 	var p = new(FunctionCallContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_functionCall
+	p.RuleIndex = DataMorfParserRULE_functionCall
 	return p
 }
 
 func InitEmptyFunctionCallContext(p *FunctionCallContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_functionCall
+	p.RuleIndex = DataMorfParserRULE_functionCall
 }
 
 func (*FunctionCallContext) IsFunctionCallContext() {}
@@ -4542,7 +4169,7 @@ func NewFunctionCallContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_functionCall
+	p.RuleIndex = DataMorfParserRULE_functionCall
 
 	return p
 }
@@ -4550,21 +4177,21 @@ func NewFunctionCallContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 func (s *FunctionCallContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *FunctionCallContext) Identifier() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, 0)
+	return s.GetToken(DataMorfParserIdentifier, 0)
 }
 
-func (s *FunctionCallContext) OpenParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenParen, 0)
+func (s *FunctionCallContext) OpenRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenRound, 0)
 }
 
-func (s *FunctionCallContext) CloseParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseParen, 0)
+func (s *FunctionCallContext) CloseRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseRound, 0)
 }
 
-func (s *FunctionCallContext) Params() IParamsContext {
+func (s *FunctionCallContext) SendingParams() ISendingParamsContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IParamsContext); ok {
+		if _, ok := ctx.(ISendingParamsContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -4574,7 +4201,7 @@ func (s *FunctionCallContext) Params() IParamsContext {
 		return nil
 	}
 
-	return t.(IParamsContext)
+	return t.(ISendingParamsContext)
 }
 
 func (s *FunctionCallContext) GetRuleContext() antlr.RuleContext {
@@ -4586,20 +4213,20 @@ func (s *FunctionCallContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *FunctionCallContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterFunctionCall(s)
 	}
 }
 
 func (s *FunctionCallContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitFunctionCall(s)
 	}
 }
 
 func (s *FunctionCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitFunctionCall(s)
 
 	default:
@@ -4607,21 +4234,21 @@ func (s *FunctionCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *LiteLangParser) FunctionCall() (localctx IFunctionCallContext) {
+func (p *DataMorfParser) FunctionCall() (localctx IFunctionCallContext) {
 	localctx = NewFunctionCallContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, LiteLangParserRULE_functionCall)
+	p.EnterRule(localctx, 36, DataMorfParserRULE_functionCall)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(243)
-		p.Match(LiteLangParserIdentifier)
+		p.SetState(224)
+		p.Match(DataMorfParserIdentifier)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(244)
-		p.Match(LiteLangParserOpenParen)
+		p.SetState(225)
+		p.Match(DataMorfParserOpenRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -4629,13 +4256,13 @@ func (p *LiteLangParser) FunctionCall() (localctx IFunctionCallContext) {
 	}
 
 	{
-		p.SetState(245)
-		p.Params()
+		p.SetState(226)
+		p.SendingParams()
 	}
 
 	{
-		p.SetState(246)
-		p.Match(LiteLangParserCloseParen)
+		p.SetState(227)
+		p.Match(DataMorfParserCloseRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -4655,8 +4282,8 @@ errorExit:
 	goto errorExit // Trick to prevent compiler error if the label is not used
 }
 
-// IParamMakerContext is an interface to support dynamic dispatch.
-type IParamMakerContext interface {
+// ISignatureParamsContext is an interface to support dynamic dispatch.
+type ISignatureParamsContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
@@ -4668,136 +4295,136 @@ type IParamMakerContext interface {
 	AllComma() []antlr.TerminalNode
 	Comma(i int) antlr.TerminalNode
 
-	// IsParamMakerContext differentiates from other interfaces.
-	IsParamMakerContext()
+	// IsSignatureParamsContext differentiates from other interfaces.
+	IsSignatureParamsContext()
 }
 
-type ParamMakerContext struct {
+type SignatureParamsContext struct {
 	antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyParamMakerContext() *ParamMakerContext {
-	var p = new(ParamMakerContext)
+func NewEmptySignatureParamsContext() *SignatureParamsContext {
+	var p = new(SignatureParamsContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_paramMaker
+	p.RuleIndex = DataMorfParserRULE_signatureParams
 	return p
 }
 
-func InitEmptyParamMakerContext(p *ParamMakerContext) {
+func InitEmptySignatureParamsContext(p *SignatureParamsContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_paramMaker
+	p.RuleIndex = DataMorfParserRULE_signatureParams
 }
 
-func (*ParamMakerContext) IsParamMakerContext() {}
+func (*SignatureParamsContext) IsSignatureParamsContext() {}
 
-func NewParamMakerContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ParamMakerContext {
-	var p = new(ParamMakerContext)
+func NewSignatureParamsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SignatureParamsContext {
+	var p = new(SignatureParamsContext)
 
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_paramMaker
+	p.RuleIndex = DataMorfParserRULE_signatureParams
 
 	return p
 }
 
-func (s *ParamMakerContext) GetParser() antlr.Parser { return s.parser }
+func (s *SignatureParamsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ParamMakerContext) AllIdentifier() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserIdentifier)
+func (s *SignatureParamsContext) AllIdentifier() []antlr.TerminalNode {
+	return s.GetTokens(DataMorfParserIdentifier)
 }
 
-func (s *ParamMakerContext) Identifier(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserIdentifier, i)
+func (s *SignatureParamsContext) Identifier(i int) antlr.TerminalNode {
+	return s.GetToken(DataMorfParserIdentifier, i)
 }
 
-func (s *ParamMakerContext) AllComma() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserComma)
+func (s *SignatureParamsContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(DataMorfParserComma)
 }
 
-func (s *ParamMakerContext) Comma(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserComma, i)
+func (s *SignatureParamsContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(DataMorfParserComma, i)
 }
 
-func (s *ParamMakerContext) GetRuleContext() antlr.RuleContext {
+func (s *SignatureParamsContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ParamMakerContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *SignatureParamsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ParamMakerContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterParamMaker(s)
+func (s *SignatureParamsContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterSignatureParams(s)
 	}
 }
 
-func (s *ParamMakerContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitParamMaker(s)
+func (s *SignatureParamsContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitSignatureParams(s)
 	}
 }
 
-func (s *ParamMakerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *SignatureParamsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitParamMaker(s)
+	case DataMorfVisitor:
+		return t.VisitSignatureParams(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *LiteLangParser) ParamMaker() (localctx IParamMakerContext) {
-	localctx = NewParamMakerContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, LiteLangParserRULE_paramMaker)
+func (p *DataMorfParser) SignatureParams() (localctx ISignatureParamsContext) {
+	localctx = NewSignatureParamsContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 38, DataMorfParserRULE_signatureParams)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(256)
+	p.SetState(237)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == LiteLangParserIdentifier {
+	if _la == DataMorfParserIdentifier {
 		{
-			p.SetState(248)
-			p.Match(LiteLangParserIdentifier)
+			p.SetState(229)
+			p.Match(DataMorfParserIdentifier)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(253)
+		p.SetState(234)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LiteLangParserComma {
+		for _la == DataMorfParserComma {
 			{
-				p.SetState(249)
-				p.Match(LiteLangParserComma)
+				p.SetState(230)
+				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
 				}
 			}
 			{
-				p.SetState(250)
-				p.Match(LiteLangParserIdentifier)
+				p.SetState(231)
+				p.Match(DataMorfParserIdentifier)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
 				}
 			}
 
-			p.SetState(255)
+			p.SetState(236)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -4820,8 +4447,8 @@ errorExit:
 	goto errorExit // Trick to prevent compiler error if the label is not used
 }
 
-// IParamsContext is an interface to support dynamic dispatch.
-type IParamsContext interface {
+// ISendingParamsContext is an interface to support dynamic dispatch.
+type ISendingParamsContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
@@ -4833,43 +4460,43 @@ type IParamsContext interface {
 	AllComma() []antlr.TerminalNode
 	Comma(i int) antlr.TerminalNode
 
-	// IsParamsContext differentiates from other interfaces.
-	IsParamsContext()
+	// IsSendingParamsContext differentiates from other interfaces.
+	IsSendingParamsContext()
 }
 
-type ParamsContext struct {
+type SendingParamsContext struct {
 	antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyParamsContext() *ParamsContext {
-	var p = new(ParamsContext)
+func NewEmptySendingParamsContext() *SendingParamsContext {
+	var p = new(SendingParamsContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_params
+	p.RuleIndex = DataMorfParserRULE_sendingParams
 	return p
 }
 
-func InitEmptyParamsContext(p *ParamsContext) {
+func InitEmptySendingParamsContext(p *SendingParamsContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_params
+	p.RuleIndex = DataMorfParserRULE_sendingParams
 }
 
-func (*ParamsContext) IsParamsContext() {}
+func (*SendingParamsContext) IsSendingParamsContext() {}
 
-func NewParamsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ParamsContext {
-	var p = new(ParamsContext)
+func NewSendingParamsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SendingParamsContext {
+	var p = new(SendingParamsContext)
 
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_params
+	p.RuleIndex = DataMorfParserRULE_sendingParams
 
 	return p
 }
 
-func (s *ParamsContext) GetParser() antlr.Parser { return s.parser }
+func (s *SendingParamsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ParamsContext) AllUnit() []IUnitContext {
+func (s *SendingParamsContext) AllUnit() []IUnitContext {
 	children := s.GetChildren()
 	len := 0
 	for _, ctx := range children {
@@ -4890,7 +4517,7 @@ func (s *ParamsContext) AllUnit() []IUnitContext {
 	return tst
 }
 
-func (s *ParamsContext) Unit(i int) IUnitContext {
+func (s *SendingParamsContext) Unit(i int) IUnitContext {
 	var t antlr.RuleContext
 	j := 0
 	for _, ctx := range s.GetChildren() {
@@ -4910,84 +4537,84 @@ func (s *ParamsContext) Unit(i int) IUnitContext {
 	return t.(IUnitContext)
 }
 
-func (s *ParamsContext) AllComma() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserComma)
+func (s *SendingParamsContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(DataMorfParserComma)
 }
 
-func (s *ParamsContext) Comma(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserComma, i)
+func (s *SendingParamsContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(DataMorfParserComma, i)
 }
 
-func (s *ParamsContext) GetRuleContext() antlr.RuleContext {
+func (s *SendingParamsContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ParamsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *SendingParamsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ParamsContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterParams(s)
+func (s *SendingParamsContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterSendingParams(s)
 	}
 }
 
-func (s *ParamsContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitParams(s)
+func (s *SendingParamsContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitSendingParams(s)
 	}
 }
 
-func (s *ParamsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *SendingParamsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitParams(s)
+	case DataMorfVisitor:
+		return t.VisitSendingParams(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *LiteLangParser) Params() (localctx IParamsContext) {
-	localctx = NewParamsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 44, LiteLangParserRULE_params)
+func (p *DataMorfParser) SendingParams() (localctx ISendingParamsContext) {
+	localctx = NewSendingParamsContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 40, DataMorfParserRULE_sendingParams)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(266)
+	p.SetState(247)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&13510828947406864) != 0 {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1688857376587792) != 0 {
 		{
-			p.SetState(258)
+			p.SetState(239)
 			p.unit(0)
 		}
-		p.SetState(263)
+		p.SetState(244)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LiteLangParserComma {
+		for _la == DataMorfParserComma {
 			{
-				p.SetState(259)
-				p.Match(LiteLangParserComma)
+				p.SetState(240)
+				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
 				}
 			}
 			{
-				p.SetState(260)
+				p.SetState(241)
 				p.unit(0)
 			}
 
-			p.SetState(265)
+			p.SetState(246)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5018,9 +4645,9 @@ type IArrowFunctionContext interface {
 	GetParser() antlr.Parser
 
 	// Getter signatures
-	OpenParen() antlr.TerminalNode
-	Params() IParamsContext
-	CloseParen() antlr.TerminalNode
+	OpenRound() antlr.TerminalNode
+	SignatureParams() ISignatureParamsContext
+	CloseRound() antlr.TerminalNode
 	Block() IBlockContext
 
 	// IsArrowFunctionContext differentiates from other interfaces.
@@ -5035,13 +4662,13 @@ type ArrowFunctionContext struct {
 func NewEmptyArrowFunctionContext() *ArrowFunctionContext {
 	var p = new(ArrowFunctionContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_arrowFunction
+	p.RuleIndex = DataMorfParserRULE_arrowFunction
 	return p
 }
 
 func InitEmptyArrowFunctionContext(p *ArrowFunctionContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_arrowFunction
+	p.RuleIndex = DataMorfParserRULE_arrowFunction
 }
 
 func (*ArrowFunctionContext) IsArrowFunctionContext() {}
@@ -5052,21 +4679,21 @@ func NewArrowFunctionContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_arrowFunction
+	p.RuleIndex = DataMorfParserRULE_arrowFunction
 
 	return p
 }
 
 func (s *ArrowFunctionContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ArrowFunctionContext) OpenParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenParen, 0)
+func (s *ArrowFunctionContext) OpenRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenRound, 0)
 }
 
-func (s *ArrowFunctionContext) Params() IParamsContext {
+func (s *ArrowFunctionContext) SignatureParams() ISignatureParamsContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IParamsContext); ok {
+		if _, ok := ctx.(ISignatureParamsContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -5076,11 +4703,11 @@ func (s *ArrowFunctionContext) Params() IParamsContext {
 		return nil
 	}
 
-	return t.(IParamsContext)
+	return t.(ISignatureParamsContext)
 }
 
-func (s *ArrowFunctionContext) CloseParen() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseParen, 0)
+func (s *ArrowFunctionContext) CloseRound() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseRound, 0)
 }
 
 func (s *ArrowFunctionContext) Block() IBlockContext {
@@ -5108,20 +4735,20 @@ func (s *ArrowFunctionContext) ToStringTree(ruleNames []string, recog antlr.Reco
 }
 
 func (s *ArrowFunctionContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterArrowFunction(s)
 	}
 }
 
 func (s *ArrowFunctionContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitArrowFunction(s)
 	}
 }
 
 func (s *ArrowFunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitArrowFunction(s)
 
 	default:
@@ -5129,40 +4756,40 @@ func (s *ArrowFunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *LiteLangParser) ArrowFunction() (localctx IArrowFunctionContext) {
+func (p *DataMorfParser) ArrowFunction() (localctx IArrowFunctionContext) {
 	localctx = NewArrowFunctionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 46, LiteLangParserRULE_arrowFunction)
+	p.EnterRule(localctx, 42, DataMorfParserRULE_arrowFunction)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(268)
-		p.Match(LiteLangParserOpenParen)
+		p.SetState(249)
+		p.Match(DataMorfParserOpenRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(269)
-		p.Params()
+		p.SetState(250)
+		p.SignatureParams()
 	}
 	{
-		p.SetState(270)
-		p.Match(LiteLangParserCloseParen)
+		p.SetState(251)
+		p.Match(DataMorfParserCloseRound)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(271)
-		p.Match(LiteLangParserT__0)
+		p.SetState(252)
+		p.Match(DataMorfParserT__0)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(272)
+		p.SetState(253)
 		p.Block()
 	}
 
@@ -5187,8 +4814,8 @@ type IArrayLiteralContext interface {
 	GetParser() antlr.Parser
 
 	// Getter signatures
-	OpenBracket() antlr.TerminalNode
-	CloseBracket() antlr.TerminalNode
+	OpenSquare() antlr.TerminalNode
+	CloseSquare() antlr.TerminalNode
 	AllValue() []IValueContext
 	Value(i int) IValueContext
 	AllComma() []antlr.TerminalNode
@@ -5206,13 +4833,13 @@ type ArrayLiteralContext struct {
 func NewEmptyArrayLiteralContext() *ArrayLiteralContext {
 	var p = new(ArrayLiteralContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_arrayLiteral
+	p.RuleIndex = DataMorfParserRULE_arrayLiteral
 	return p
 }
 
 func InitEmptyArrayLiteralContext(p *ArrayLiteralContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_arrayLiteral
+	p.RuleIndex = DataMorfParserRULE_arrayLiteral
 }
 
 func (*ArrayLiteralContext) IsArrayLiteralContext() {}
@@ -5223,19 +4850,19 @@ func NewArrayLiteralContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_arrayLiteral
+	p.RuleIndex = DataMorfParserRULE_arrayLiteral
 
 	return p
 }
 
 func (s *ArrayLiteralContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ArrayLiteralContext) OpenBracket() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenBracket, 0)
+func (s *ArrayLiteralContext) OpenSquare() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenSquare, 0)
 }
 
-func (s *ArrayLiteralContext) CloseBracket() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseBracket, 0)
+func (s *ArrayLiteralContext) CloseSquare() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseSquare, 0)
 }
 
 func (s *ArrayLiteralContext) AllValue() []IValueContext {
@@ -5280,11 +4907,11 @@ func (s *ArrayLiteralContext) Value(i int) IValueContext {
 }
 
 func (s *ArrayLiteralContext) AllComma() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserComma)
+	return s.GetTokens(DataMorfParserComma)
 }
 
 func (s *ArrayLiteralContext) Comma(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserComma, i)
+	return s.GetToken(DataMorfParserComma, i)
 }
 
 func (s *ArrayLiteralContext) GetRuleContext() antlr.RuleContext {
@@ -5296,20 +4923,20 @@ func (s *ArrayLiteralContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *ArrayLiteralContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterArrayLiteral(s)
 	}
 }
 
 func (s *ArrayLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitArrayLiteral(s)
 	}
 }
 
 func (s *ArrayLiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitArrayLiteral(s)
 
 	default:
@@ -5317,54 +4944,54 @@ func (s *ArrayLiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *LiteLangParser) ArrayLiteral() (localctx IArrayLiteralContext) {
+func (p *DataMorfParser) ArrayLiteral() (localctx IArrayLiteralContext) {
 	localctx = NewArrayLiteralContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 48, LiteLangParserRULE_arrayLiteral)
+	p.EnterRule(localctx, 44, DataMorfParserRULE_arrayLiteral)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(274)
-		p.Match(LiteLangParserOpenBracket)
+		p.SetState(255)
+		p.Match(DataMorfParserOpenSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(283)
+	p.SetState(264)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&13510828947406932) != 0 {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1688857376587860) != 0 {
 		{
-			p.SetState(275)
+			p.SetState(256)
 			p.Value()
 		}
-		p.SetState(280)
+		p.SetState(261)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LiteLangParserComma {
+		for _la == DataMorfParserComma {
 			{
-				p.SetState(276)
-				p.Match(LiteLangParserComma)
+				p.SetState(257)
+				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
 				}
 			}
 			{
-				p.SetState(277)
+				p.SetState(258)
 				p.Value()
 			}
 
-			p.SetState(282)
+			p.SetState(263)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5374,8 +5001,8 @@ func (p *LiteLangParser) ArrayLiteral() (localctx IArrayLiteralContext) {
 
 	}
 	{
-		p.SetState(285)
-		p.Match(LiteLangParserCloseBracket)
+		p.SetState(266)
+		p.Match(DataMorfParserCloseSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5403,8 +5030,8 @@ type IObjectLiteralContext interface {
 	GetParser() antlr.Parser
 
 	// Getter signatures
-	OpenBrace() antlr.TerminalNode
-	CloseBrace() antlr.TerminalNode
+	OpenCurly() antlr.TerminalNode
+	CloseCurly() antlr.TerminalNode
 	AllObjectItem() []IObjectItemContext
 	ObjectItem(i int) IObjectItemContext
 	AllComma() []antlr.TerminalNode
@@ -5422,13 +5049,13 @@ type ObjectLiteralContext struct {
 func NewEmptyObjectLiteralContext() *ObjectLiteralContext {
 	var p = new(ObjectLiteralContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_objectLiteral
+	p.RuleIndex = DataMorfParserRULE_objectLiteral
 	return p
 }
 
 func InitEmptyObjectLiteralContext(p *ObjectLiteralContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_objectLiteral
+	p.RuleIndex = DataMorfParserRULE_objectLiteral
 }
 
 func (*ObjectLiteralContext) IsObjectLiteralContext() {}
@@ -5439,19 +5066,19 @@ func NewObjectLiteralContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_objectLiteral
+	p.RuleIndex = DataMorfParserRULE_objectLiteral
 
 	return p
 }
 
 func (s *ObjectLiteralContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ObjectLiteralContext) OpenBrace() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenBrace, 0)
+func (s *ObjectLiteralContext) OpenCurly() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenCurly, 0)
 }
 
-func (s *ObjectLiteralContext) CloseBrace() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseBrace, 0)
+func (s *ObjectLiteralContext) CloseCurly() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseCurly, 0)
 }
 
 func (s *ObjectLiteralContext) AllObjectItem() []IObjectItemContext {
@@ -5496,11 +5123,11 @@ func (s *ObjectLiteralContext) ObjectItem(i int) IObjectItemContext {
 }
 
 func (s *ObjectLiteralContext) AllComma() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserComma)
+	return s.GetTokens(DataMorfParserComma)
 }
 
 func (s *ObjectLiteralContext) Comma(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserComma, i)
+	return s.GetToken(DataMorfParserComma, i)
 }
 
 func (s *ObjectLiteralContext) GetRuleContext() antlr.RuleContext {
@@ -5512,20 +5139,20 @@ func (s *ObjectLiteralContext) ToStringTree(ruleNames []string, recog antlr.Reco
 }
 
 func (s *ObjectLiteralContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterObjectLiteral(s)
 	}
 }
 
 func (s *ObjectLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitObjectLiteral(s)
 	}
 }
 
 func (s *ObjectLiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitObjectLiteral(s)
 
 	default:
@@ -5533,43 +5160,43 @@ func (s *ObjectLiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *LiteLangParser) ObjectLiteral() (localctx IObjectLiteralContext) {
+func (p *DataMorfParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 	localctx = NewObjectLiteralContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 50, LiteLangParserRULE_objectLiteral)
+	p.EnterRule(localctx, 46, DataMorfParserRULE_objectLiteral)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(287)
-		p.Match(LiteLangParserOpenBrace)
+		p.SetState(268)
+		p.Match(DataMorfParserOpenCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(296)
+	p.SetState(277)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&9007199254757380) != 0 {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1125899906859012) != 0 {
 		{
-			p.SetState(288)
+			p.SetState(269)
 			p.ObjectItem()
 		}
-		p.SetState(293)
+		p.SetState(274)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LiteLangParserComma {
+		for _la == DataMorfParserComma {
 			{
-				p.SetState(289)
-				p.Match(LiteLangParserComma)
+				p.SetState(270)
+				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
 					goto errorExit
@@ -5577,11 +5204,11 @@ func (p *LiteLangParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 			}
 
 			{
-				p.SetState(290)
+				p.SetState(271)
 				p.ObjectItem()
 			}
 
-			p.SetState(295)
+			p.SetState(276)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5591,8 +5218,8 @@ func (p *LiteLangParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 
 	}
 	{
-		p.SetState(298)
-		p.Match(LiteLangParserCloseBrace)
+		p.SetState(279)
+		p.Match(DataMorfParserCloseCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5621,9 +5248,9 @@ type IKeyContext interface {
 
 	// Getter signatures
 	StringLiteral() antlr.TerminalNode
-	OpenBracket() antlr.TerminalNode
-	AccessRhs() IAccessRhsContext
-	CloseBracket() antlr.TerminalNode
+	OpenSquare() antlr.TerminalNode
+	Reference() IReferenceContext
+	CloseSquare() antlr.TerminalNode
 
 	// IsKeyContext differentiates from other interfaces.
 	IsKeyContext()
@@ -5637,13 +5264,13 @@ type KeyContext struct {
 func NewEmptyKeyContext() *KeyContext {
 	var p = new(KeyContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_key
+	p.RuleIndex = DataMorfParserRULE_key
 	return p
 }
 
 func InitEmptyKeyContext(p *KeyContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_key
+	p.RuleIndex = DataMorfParserRULE_key
 }
 
 func (*KeyContext) IsKeyContext() {}
@@ -5654,7 +5281,7 @@ func NewKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_key
+	p.RuleIndex = DataMorfParserRULE_key
 
 	return p
 }
@@ -5662,17 +5289,17 @@ func NewKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 func (s *KeyContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *KeyContext) StringLiteral() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserStringLiteral, 0)
+	return s.GetToken(DataMorfParserStringLiteral, 0)
 }
 
-func (s *KeyContext) OpenBracket() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenBracket, 0)
+func (s *KeyContext) OpenSquare() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenSquare, 0)
 }
 
-func (s *KeyContext) AccessRhs() IAccessRhsContext {
+func (s *KeyContext) Reference() IReferenceContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessRhsContext); ok {
+		if _, ok := ctx.(IReferenceContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -5682,11 +5309,11 @@ func (s *KeyContext) AccessRhs() IAccessRhsContext {
 		return nil
 	}
 
-	return t.(IAccessRhsContext)
+	return t.(IReferenceContext)
 }
 
-func (s *KeyContext) CloseBracket() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseBracket, 0)
+func (s *KeyContext) CloseSquare() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseSquare, 0)
 }
 
 func (s *KeyContext) GetRuleContext() antlr.RuleContext {
@@ -5698,20 +5325,20 @@ func (s *KeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) st
 }
 
 func (s *KeyContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterKey(s)
 	}
 }
 
 func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitKey(s)
 	}
 }
 
 func (s *KeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitKey(s)
 
 	default:
@@ -5719,43 +5346,43 @@ func (s *KeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Key() (localctx IKeyContext) {
+func (p *DataMorfParser) Key() (localctx IKeyContext) {
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 52, LiteLangParserRULE_key)
+	p.EnterRule(localctx, 48, DataMorfParserRULE_key)
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(305)
+	p.SetState(286)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case LiteLangParserStringLiteral:
+	case DataMorfParserStringLiteral:
 		{
-			p.SetState(300)
-			p.Match(LiteLangParserStringLiteral)
+			p.SetState(281)
+			p.Match(DataMorfParserStringLiteral)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case LiteLangParserOpenBracket:
+	case DataMorfParserOpenSquare:
 		{
-			p.SetState(301)
-			p.Match(LiteLangParserOpenBracket)
+			p.SetState(282)
+			p.Match(DataMorfParserOpenSquare)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 		{
-			p.SetState(302)
-			p.AccessRhs()
+			p.SetState(283)
+			p.Reference()
 		}
 		{
-			p.SetState(303)
-			p.Match(LiteLangParserCloseBracket)
+			p.SetState(284)
+			p.Match(DataMorfParserCloseSquare)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -5805,13 +5432,13 @@ type ValueContext struct {
 func NewEmptyValueContext() *ValueContext {
 	var p = new(ValueContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_value
+	p.RuleIndex = DataMorfParserRULE_value
 	return p
 }
 
 func InitEmptyValueContext(p *ValueContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_value
+	p.RuleIndex = DataMorfParserRULE_value
 }
 
 func (*ValueContext) IsValueContext() {}
@@ -5822,7 +5449,7 @@ func NewValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_value
+	p.RuleIndex = DataMorfParserRULE_value
 
 	return p
 }
@@ -5902,20 +5529,20 @@ func (s *ValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *ValueContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterValue(s)
 	}
 }
 
 func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitValue(s)
 	}
 }
 
 func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitValue(s)
 
 	default:
@@ -5923,38 +5550,38 @@ func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Value() (localctx IValueContext) {
+func (p *DataMorfParser) Value() (localctx IValueContext) {
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 54, LiteLangParserRULE_value)
+	p.EnterRule(localctx, 50, DataMorfParserRULE_value)
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(311)
+	p.SetState(292)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
-	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 27, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 24, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(307)
+			p.SetState(288)
 			p.FunctionCall()
 		}
 
 	case 2:
 		{
-			p.SetState(308)
+			p.SetState(289)
 			p.unit(0)
 		}
 
 	case 3:
 		{
-			p.SetState(309)
+			p.SetState(290)
 			p.ObjectLiteral()
 		}
 
 	case 4:
 		{
-			p.SetState(310)
+			p.SetState(291)
 			p.ArrayLiteral()
 		}
 
@@ -5999,13 +5626,13 @@ type KeyValueContext struct {
 func NewEmptyKeyValueContext() *KeyValueContext {
 	var p = new(KeyValueContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_keyValue
+	p.RuleIndex = DataMorfParserRULE_keyValue
 	return p
 }
 
 func InitEmptyKeyValueContext(p *KeyValueContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_keyValue
+	p.RuleIndex = DataMorfParserRULE_keyValue
 }
 
 func (*KeyValueContext) IsKeyValueContext() {}
@@ -6016,7 +5643,7 @@ func NewKeyValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_keyValue
+	p.RuleIndex = DataMorfParserRULE_keyValue
 
 	return p
 }
@@ -6040,7 +5667,7 @@ func (s *KeyValueContext) Key() IKeyContext {
 }
 
 func (s *KeyValueContext) Colon() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserColon, 0)
+	return s.GetToken(DataMorfParserColon, 0)
 }
 
 func (s *KeyValueContext) Value() IValueContext {
@@ -6068,20 +5695,20 @@ func (s *KeyValueContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 }
 
 func (s *KeyValueContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterKeyValue(s)
 	}
 }
 
 func (s *KeyValueContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitKeyValue(s)
 	}
 }
 
 func (s *KeyValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitKeyValue(s)
 
 	default:
@@ -6089,173 +5716,25 @@ func (s *KeyValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) KeyValue() (localctx IKeyValueContext) {
+func (p *DataMorfParser) KeyValue() (localctx IKeyValueContext) {
 	localctx = NewKeyValueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 56, LiteLangParserRULE_keyValue)
+	p.EnterRule(localctx, 52, DataMorfParserRULE_keyValue)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(313)
+		p.SetState(294)
 		p.Key()
 	}
 	{
-		p.SetState(314)
-		p.Match(LiteLangParserColon)
+		p.SetState(295)
+		p.Match(DataMorfParserColon)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(315)
+		p.SetState(296)
 		p.Value()
-	}
-
-errorExit:
-	if p.HasError() {
-		v := p.GetError()
-		localctx.SetException(v)
-		p.GetErrorHandler().ReportError(p, v)
-		p.GetErrorHandler().Recover(p, v)
-		p.SetError(nil)
-	}
-	p.ExitRule()
-	return localctx
-	goto errorExit // Trick to prevent compiler error if the label is not used
-}
-
-// ISpreadContext is an interface to support dynamic dispatch.
-type ISpreadContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// Getter signatures
-	AllDot() []antlr.TerminalNode
-	Dot(i int) antlr.TerminalNode
-	AccessRhs() IAccessRhsContext
-
-	// IsSpreadContext differentiates from other interfaces.
-	IsSpreadContext()
-}
-
-type SpreadContext struct {
-	antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptySpreadContext() *SpreadContext {
-	var p = new(SpreadContext)
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_spread
-	return p
-}
-
-func InitEmptySpreadContext(p *SpreadContext) {
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_spread
-}
-
-func (*SpreadContext) IsSpreadContext() {}
-
-func NewSpreadContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SpreadContext {
-	var p = new(SpreadContext)
-
-	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_spread
-
-	return p
-}
-
-func (s *SpreadContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *SpreadContext) AllDot() []antlr.TerminalNode {
-	return s.GetTokens(LiteLangParserDot)
-}
-
-func (s *SpreadContext) Dot(i int) antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDot, i)
-}
-
-func (s *SpreadContext) AccessRhs() IAccessRhsContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAccessRhsContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IAccessRhsContext)
-}
-
-func (s *SpreadContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *SpreadContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *SpreadContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.EnterSpread(s)
-	}
-}
-
-func (s *SpreadContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
-		listenerT.ExitSpread(s)
-	}
-}
-
-func (s *SpreadContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case LiteLangVisitor:
-		return t.VisitSpread(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *LiteLangParser) Spread() (localctx ISpreadContext) {
-	localctx = NewSpreadContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 58, LiteLangParserRULE_spread)
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(317)
-		p.Match(LiteLangParserDot)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(318)
-		p.Match(LiteLangParserDot)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(319)
-		p.Match(LiteLangParserDot)
-		if p.HasError() {
-			// Recognition error - abort rule
-			goto errorExit
-		}
-	}
-	{
-		p.SetState(320)
-		p.AccessRhs()
 	}
 
 errorExit:
@@ -6294,13 +5773,13 @@ type ObjectItemContext struct {
 func NewEmptyObjectItemContext() *ObjectItemContext {
 	var p = new(ObjectItemContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_objectItem
+	p.RuleIndex = DataMorfParserRULE_objectItem
 	return p
 }
 
 func InitEmptyObjectItemContext(p *ObjectItemContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_objectItem
+	p.RuleIndex = DataMorfParserRULE_objectItem
 }
 
 func (*ObjectItemContext) IsObjectItemContext() {}
@@ -6311,7 +5790,7 @@ func NewObjectItemContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_objectItem
+	p.RuleIndex = DataMorfParserRULE_objectItem
 
 	return p
 }
@@ -6359,20 +5838,20 @@ func (s *ObjectItemContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *ObjectItemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterObjectItem(s)
 	}
 }
 
 func (s *ObjectItemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitObjectItem(s)
 	}
 }
 
 func (s *ObjectItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitObjectItem(s)
 
 	default:
@@ -6380,32 +5859,180 @@ func (s *ObjectItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) ObjectItem() (localctx IObjectItemContext) {
+func (p *DataMorfParser) ObjectItem() (localctx IObjectItemContext) {
 	localctx = NewObjectItemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 60, LiteLangParserRULE_objectItem)
+	p.EnterRule(localctx, 54, DataMorfParserRULE_objectItem)
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(324)
+	p.SetState(300)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case LiteLangParserOpenBracket, LiteLangParserStringLiteral:
+	case DataMorfParserOpenSquare, DataMorfParserStringLiteral:
 		{
-			p.SetState(322)
+			p.SetState(298)
 			p.KeyValue()
 		}
 
-	case LiteLangParserDot:
+	case DataMorfParserDot:
 		{
-			p.SetState(323)
+			p.SetState(299)
 			p.Spread()
 		}
 
 	default:
 		p.SetError(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 		goto errorExit
+	}
+
+errorExit:
+	if p.HasError() {
+		v := p.GetError()
+		localctx.SetException(v)
+		p.GetErrorHandler().ReportError(p, v)
+		p.GetErrorHandler().Recover(p, v)
+		p.SetError(nil)
+	}
+	p.ExitRule()
+	return localctx
+	goto errorExit // Trick to prevent compiler error if the label is not used
+}
+
+// ISpreadContext is an interface to support dynamic dispatch.
+type ISpreadContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// Getter signatures
+	AllDot() []antlr.TerminalNode
+	Dot(i int) antlr.TerminalNode
+	Reference() IReferenceContext
+
+	// IsSpreadContext differentiates from other interfaces.
+	IsSpreadContext()
+}
+
+type SpreadContext struct {
+	antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptySpreadContext() *SpreadContext {
+	var p = new(SpreadContext)
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_spread
+	return p
+}
+
+func InitEmptySpreadContext(p *SpreadContext) {
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
+	p.RuleIndex = DataMorfParserRULE_spread
+}
+
+func (*SpreadContext) IsSpreadContext() {}
+
+func NewSpreadContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SpreadContext {
+	var p = new(SpreadContext)
+
+	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = DataMorfParserRULE_spread
+
+	return p
+}
+
+func (s *SpreadContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *SpreadContext) AllDot() []antlr.TerminalNode {
+	return s.GetTokens(DataMorfParserDot)
+}
+
+func (s *SpreadContext) Dot(i int) antlr.TerminalNode {
+	return s.GetToken(DataMorfParserDot, i)
+}
+
+func (s *SpreadContext) Reference() IReferenceContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IReferenceContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IReferenceContext)
+}
+
+func (s *SpreadContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *SpreadContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *SpreadContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.EnterSpread(s)
+	}
+}
+
+func (s *SpreadContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(DataMorfListener); ok {
+		listenerT.ExitSpread(s)
+	}
+}
+
+func (s *SpreadContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case DataMorfVisitor:
+		return t.VisitSpread(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *DataMorfParser) Spread() (localctx ISpreadContext) {
+	localctx = NewSpreadContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 56, DataMorfParserRULE_spread)
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(302)
+		p.Match(DataMorfParserDot)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(303)
+		p.Match(DataMorfParserDot)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(304)
+		p.Match(DataMorfParserDot)
+		if p.HasError() {
+			// Recognition error - abort rule
+			goto errorExit
+		}
+	}
+	{
+		p.SetState(305)
+		p.Reference()
 	}
 
 errorExit:
@@ -6429,9 +6056,9 @@ type IBlockContext interface {
 	GetParser() antlr.Parser
 
 	// Getter signatures
-	OpenBrace() antlr.TerminalNode
+	OpenCurly() antlr.TerminalNode
 	Statements() IStatementsContext
-	CloseBrace() antlr.TerminalNode
+	CloseCurly() antlr.TerminalNode
 
 	// IsBlockContext differentiates from other interfaces.
 	IsBlockContext()
@@ -6445,13 +6072,13 @@ type BlockContext struct {
 func NewEmptyBlockContext() *BlockContext {
 	var p = new(BlockContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_block
+	p.RuleIndex = DataMorfParserRULE_block
 	return p
 }
 
 func InitEmptyBlockContext(p *BlockContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_block
+	p.RuleIndex = DataMorfParserRULE_block
 }
 
 func (*BlockContext) IsBlockContext() {}
@@ -6462,15 +6089,15 @@ func NewBlockContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_block
+	p.RuleIndex = DataMorfParserRULE_block
 
 	return p
 }
 
 func (s *BlockContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *BlockContext) OpenBrace() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserOpenBrace, 0)
+func (s *BlockContext) OpenCurly() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserOpenCurly, 0)
 }
 
 func (s *BlockContext) Statements() IStatementsContext {
@@ -6489,8 +6116,8 @@ func (s *BlockContext) Statements() IStatementsContext {
 	return t.(IStatementsContext)
 }
 
-func (s *BlockContext) CloseBrace() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserCloseBrace, 0)
+func (s *BlockContext) CloseCurly() antlr.TerminalNode {
+	return s.GetToken(DataMorfParserCloseCurly, 0)
 }
 
 func (s *BlockContext) GetRuleContext() antlr.RuleContext {
@@ -6502,20 +6129,20 @@ func (s *BlockContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *BlockContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterBlock(s)
 	}
 }
 
 func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitBlock(s)
 	}
 }
 
 func (s *BlockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitBlock(s)
 
 	default:
@@ -6523,25 +6150,25 @@ func (s *BlockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Block() (localctx IBlockContext) {
+func (p *DataMorfParser) Block() (localctx IBlockContext) {
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 62, LiteLangParserRULE_block)
+	p.EnterRule(localctx, 58, DataMorfParserRULE_block)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(326)
-		p.Match(LiteLangParserOpenBrace)
+		p.SetState(307)
+		p.Match(DataMorfParserOpenCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
 	{
-		p.SetState(327)
+		p.SetState(308)
 		p.Statements()
 	}
 	{
-		p.SetState(328)
-		p.Match(LiteLangParserCloseBrace)
+		p.SetState(309)
+		p.Match(DataMorfParserCloseCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -6586,13 +6213,13 @@ type ConstantContext struct {
 func NewEmptyConstantContext() *ConstantContext {
 	var p = new(ConstantContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_constant
+	p.RuleIndex = DataMorfParserRULE_constant
 	return p
 }
 
 func InitEmptyConstantContext(p *ConstantContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = LiteLangParserRULE_constant
+	p.RuleIndex = DataMorfParserRULE_constant
 }
 
 func (*ConstantContext) IsConstantContext() {}
@@ -6603,7 +6230,7 @@ func NewConstantContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LiteLangParserRULE_constant
+	p.RuleIndex = DataMorfParserRULE_constant
 
 	return p
 }
@@ -6611,19 +6238,19 @@ func NewConstantContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 func (s *ConstantContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ConstantContext) NullLiteral() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserNullLiteral, 0)
+	return s.GetToken(DataMorfParserNullLiteral, 0)
 }
 
 func (s *ConstantContext) BooleanLiteral() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserBooleanLiteral, 0)
+	return s.GetToken(DataMorfParserBooleanLiteral, 0)
 }
 
 func (s *ConstantContext) DecimalLiteral() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserDecimalLiteral, 0)
+	return s.GetToken(DataMorfParserDecimalLiteral, 0)
 }
 
 func (s *ConstantContext) StringLiteral() antlr.TerminalNode {
-	return s.GetToken(LiteLangParserStringLiteral, 0)
+	return s.GetToken(DataMorfParserStringLiteral, 0)
 }
 
 func (s *ConstantContext) GetRuleContext() antlr.RuleContext {
@@ -6635,20 +6262,20 @@ func (s *ConstantContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 }
 
 func (s *ConstantContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.EnterConstant(s)
 	}
 }
 
 func (s *ConstantContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LiteLangListener); ok {
+	if listenerT, ok := listener.(DataMorfListener); ok {
 		listenerT.ExitConstant(s)
 	}
 }
 
 func (s *ConstantContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LiteLangVisitor:
+	case DataMorfVisitor:
 		return t.VisitConstant(s)
 
 	default:
@@ -6656,17 +6283,17 @@ func (s *ConstantContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LiteLangParser) Constant() (localctx IConstantContext) {
+func (p *DataMorfParser) Constant() (localctx IConstantContext) {
 	localctx = NewConstantContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 64, LiteLangParserRULE_constant)
+	p.EnterRule(localctx, 60, DataMorfParserRULE_constant)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(330)
+		p.SetState(311)
 		_la = p.GetTokenStream().LA(1)
 
-		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&9007229319512064) != 0) {
+		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1125907423035392) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -6687,7 +6314,7 @@ errorExit:
 	goto errorExit // Trick to prevent compiler error if the label is not used
 }
 
-func (p *LiteLangParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
+func (p *DataMorfParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
 	switch ruleIndex {
 	case 14:
 		var t *UnitContext = nil
@@ -6701,7 +6328,7 @@ func (p *LiteLangParser) Sempred(localctx antlr.RuleContext, ruleIndex, predInde
 	}
 }
 
-func (p *LiteLangParser) Unit_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *DataMorfParser) Unit_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 8)

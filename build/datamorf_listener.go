@@ -1,10 +1,10 @@
-// Code generated from litelang/src/LiteLang.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from src/DataMorf.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
-package LiteLang // LiteLang
+package build // DataMorf
 import "github.com/antlr4-go/antlr/v4"
 
-// LiteLangListener is a complete listener for a parse tree produced by LiteLangParser.
-type LiteLangListener interface {
+// DataMorfListener is a complete listener for a parse tree produced by DataMorfParser.
+type DataMorfListener interface {
 	antlr.ParseTreeListener
 
 	// EnterProgram is called when entering the program production.
@@ -28,15 +28,6 @@ type LiteLangListener interface {
 	// EnterIfStatement is called when entering the ifStatement production.
 	EnterIfStatement(c *IfStatementContext)
 
-	// EnterForStatement is called when entering the forStatement production.
-	EnterForStatement(c *ForStatementContext)
-
-	// EnterClassicForParam is called when entering the classicForParam production.
-	EnterClassicForParam(c *ClassicForParamContext)
-
-	// EnterIteratorForParam is called when entering the iteratorForParam production.
-	EnterIteratorForParam(c *IteratorForParamContext)
-
 	// EnterSwitchStatement is called when entering the switchStatement production.
 	EnterSwitchStatement(c *SwitchStatementContext)
 
@@ -49,20 +40,23 @@ type LiteLangListener interface {
 	// EnterValueStatement is called when entering the valueStatement production.
 	EnterValueStatement(c *ValueStatementContext)
 
+	// EnterForStatement is called when entering the forStatement production.
+	EnterForStatement(c *ForStatementContext)
+
+	// EnterClassicForCondition is called when entering the classicForCondition production.
+	EnterClassicForCondition(c *ClassicForConditionContext)
+
+	// EnterIteratorForCondition is called when entering the iteratorForCondition production.
+	EnterIteratorForCondition(c *IteratorForConditionContext)
+
 	// EnterUnit is called when entering the unit production.
 	EnterUnit(c *UnitContext)
 
-	// EnterAccessLhs is called when entering the accessLhs production.
-	EnterAccessLhs(c *AccessLhsContext)
+	// EnterReference is called when entering the reference production.
+	EnterReference(c *ReferenceContext)
 
-	// EnterAccessRhs is called when entering the accessRhs production.
-	EnterAccessRhs(c *AccessRhsContext)
-
-	// EnterAccessorRhs is called when entering the accessorRhs production.
-	EnterAccessorRhs(c *AccessorRhsContext)
-
-	// EnterAccessorLhs is called when entering the accessorLhs production.
-	EnterAccessorLhs(c *AccessorLhsContext)
+	// EnterAccessor is called when entering the accessor production.
+	EnterAccessor(c *AccessorContext)
 
 	// EnterAccessProperty is called when entering the accessProperty production.
 	EnterAccessProperty(c *AccessPropertyContext)
@@ -70,11 +64,11 @@ type LiteLangListener interface {
 	// EnterFunctionCall is called when entering the functionCall production.
 	EnterFunctionCall(c *FunctionCallContext)
 
-	// EnterParamMaker is called when entering the paramMaker production.
-	EnterParamMaker(c *ParamMakerContext)
+	// EnterSignatureParams is called when entering the signatureParams production.
+	EnterSignatureParams(c *SignatureParamsContext)
 
-	// EnterParams is called when entering the params production.
-	EnterParams(c *ParamsContext)
+	// EnterSendingParams is called when entering the sendingParams production.
+	EnterSendingParams(c *SendingParamsContext)
 
 	// EnterArrowFunction is called when entering the arrowFunction production.
 	EnterArrowFunction(c *ArrowFunctionContext)
@@ -94,11 +88,11 @@ type LiteLangListener interface {
 	// EnterKeyValue is called when entering the keyValue production.
 	EnterKeyValue(c *KeyValueContext)
 
-	// EnterSpread is called when entering the spread production.
-	EnterSpread(c *SpreadContext)
-
 	// EnterObjectItem is called when entering the objectItem production.
 	EnterObjectItem(c *ObjectItemContext)
+
+	// EnterSpread is called when entering the spread production.
+	EnterSpread(c *SpreadContext)
 
 	// EnterBlock is called when entering the block production.
 	EnterBlock(c *BlockContext)
@@ -127,15 +121,6 @@ type LiteLangListener interface {
 	// ExitIfStatement is called when exiting the ifStatement production.
 	ExitIfStatement(c *IfStatementContext)
 
-	// ExitForStatement is called when exiting the forStatement production.
-	ExitForStatement(c *ForStatementContext)
-
-	// ExitClassicForParam is called when exiting the classicForParam production.
-	ExitClassicForParam(c *ClassicForParamContext)
-
-	// ExitIteratorForParam is called when exiting the iteratorForParam production.
-	ExitIteratorForParam(c *IteratorForParamContext)
-
 	// ExitSwitchStatement is called when exiting the switchStatement production.
 	ExitSwitchStatement(c *SwitchStatementContext)
 
@@ -148,20 +133,23 @@ type LiteLangListener interface {
 	// ExitValueStatement is called when exiting the valueStatement production.
 	ExitValueStatement(c *ValueStatementContext)
 
+	// ExitForStatement is called when exiting the forStatement production.
+	ExitForStatement(c *ForStatementContext)
+
+	// ExitClassicForCondition is called when exiting the classicForCondition production.
+	ExitClassicForCondition(c *ClassicForConditionContext)
+
+	// ExitIteratorForCondition is called when exiting the iteratorForCondition production.
+	ExitIteratorForCondition(c *IteratorForConditionContext)
+
 	// ExitUnit is called when exiting the unit production.
 	ExitUnit(c *UnitContext)
 
-	// ExitAccessLhs is called when exiting the accessLhs production.
-	ExitAccessLhs(c *AccessLhsContext)
+	// ExitReference is called when exiting the reference production.
+	ExitReference(c *ReferenceContext)
 
-	// ExitAccessRhs is called when exiting the accessRhs production.
-	ExitAccessRhs(c *AccessRhsContext)
-
-	// ExitAccessorRhs is called when exiting the accessorRhs production.
-	ExitAccessorRhs(c *AccessorRhsContext)
-
-	// ExitAccessorLhs is called when exiting the accessorLhs production.
-	ExitAccessorLhs(c *AccessorLhsContext)
+	// ExitAccessor is called when exiting the accessor production.
+	ExitAccessor(c *AccessorContext)
 
 	// ExitAccessProperty is called when exiting the accessProperty production.
 	ExitAccessProperty(c *AccessPropertyContext)
@@ -169,11 +157,11 @@ type LiteLangListener interface {
 	// ExitFunctionCall is called when exiting the functionCall production.
 	ExitFunctionCall(c *FunctionCallContext)
 
-	// ExitParamMaker is called when exiting the paramMaker production.
-	ExitParamMaker(c *ParamMakerContext)
+	// ExitSignatureParams is called when exiting the signatureParams production.
+	ExitSignatureParams(c *SignatureParamsContext)
 
-	// ExitParams is called when exiting the params production.
-	ExitParams(c *ParamsContext)
+	// ExitSendingParams is called when exiting the sendingParams production.
+	ExitSendingParams(c *SendingParamsContext)
 
 	// ExitArrowFunction is called when exiting the arrowFunction production.
 	ExitArrowFunction(c *ArrowFunctionContext)
@@ -193,11 +181,11 @@ type LiteLangListener interface {
 	// ExitKeyValue is called when exiting the keyValue production.
 	ExitKeyValue(c *KeyValueContext)
 
-	// ExitSpread is called when exiting the spread production.
-	ExitSpread(c *SpreadContext)
-
 	// ExitObjectItem is called when exiting the objectItem production.
 	ExitObjectItem(c *ObjectItemContext)
+
+	// ExitSpread is called when exiting the spread production.
+	ExitSpread(c *SpreadContext)
 
 	// ExitBlock is called when exiting the block production.
 	ExitBlock(c *BlockContext)

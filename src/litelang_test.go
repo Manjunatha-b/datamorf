@@ -1,4 +1,4 @@
-package litelang
+package datamorf
 
 import (
 	"fmt"

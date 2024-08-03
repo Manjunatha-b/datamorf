@@ -1,4 +1,4 @@
-grammar LiteLang;
+grammar DataMorf;
 
 program: statements? EOF;
 statements: statement+;
@@ -15,26 +15,20 @@ statement:
 	| unitStatement SemiColon;
 
 variableStatement: Var Identifier ( Assign value)?;
-assignStatement: accessLhs Assign value;
-functionStatement:
-	Function Identifier OpenParen paramMaker CloseParen block;
-ifStatement:
-	If OpenParen unit CloseParen block (
-		Else If OpenParen unit CloseParen block
-	)*  (Else block)?;
-forStatement:
-	For OpenParen (classicForParam | iteratorForParam) CloseParen block;
-classicForParam: (variableStatement | assignStatement) SemiColon condition = unitStatement SemiColon
-		postOp = assignStatement;
-iteratorForParam: Var Identifier Of accessRhs;
-switchStatement: Switch OpenParen unit CloseParen block;
-deleteStatement:
-	Delete (Identifier (Dot (accessProperty | Identifier))*);
+assignStatement: reference Assign value;
+functionStatement: Function Identifier OpenRound signatureParams CloseRound block;
+ifStatement: If OpenRound unit CloseRound block (Else If OpenRound unit CloseRound block)*  (Else block)?;
+switchStatement: Switch OpenRound unit CloseRound block;
+deleteStatement: Delete (Identifier (Dot (accessProperty | Identifier))*);
 unitStatement: unit;
 valueStatement : value SemiColon;
 
+forStatement: For OpenRound (classicForCondition | iteratorForCondition) CloseRound block;
+classicForCondition: init = variableStatement SemiColon condition = unitStatement SemiColon postOp = assignStatement;
+iteratorForCondition: Var Identifier Of reference;
+
 unit:
-	OpenParen single = unit CloseParen
+	OpenRound single = unit CloseRound
 	| left = unit ( Divide) right = unit
 	| left = unit ( Multiply) right = unit
 	| left = unit ( Plus) right = unit
@@ -50,46 +44,41 @@ unit:
 		| Or
 	) right = unit
 	| Not single = unit
-	| accessRhs
+	| reference
 	| constant;
 
-accessLhs: Identifier (accessorLhs)*;
-accessRhs: (functionCall | Identifier) (accessorRhs)*;
-accessorRhs: (
-		accessProperty
-		| (Dot Identifier)
-		| (Dot functionCall)
-	);
-accessorLhs: accessProperty | (Dot Identifier);
-accessProperty:
-	OpenBracket (StringLiteral | DecimalLiteral | Identifier) CloseBracket;
-functionCall: Identifier OpenParen (params) CloseParen;
-paramMaker: (Identifier (Comma Identifier)*)?;
-params: (unit (Comma unit)*)?;
-arrowFunction: OpenParen params CloseParen '=>' block;
+reference: (functionCall | Identifier) (accessor)*;
+accessor: (accessProperty | (Dot Identifier) | (Dot functionCall));
+accessProperty: OpenSquare (StringLiteral | DecimalLiteral | Identifier) CloseSquare;
 
-arrayLiteral: OpenBracket (value (Comma value)*)? CloseBracket;
-objectLiteral:
-	OpenBrace (objectItem (Comma (objectItem))*)? CloseBrace;
-key: ( StringLiteral | OpenBracket accessRhs CloseBracket);
+functionCall: Identifier OpenRound (sendingParams) CloseRound;
+signatureParams: (Identifier (Comma Identifier)*)?;
+sendingParams: (unit (Comma unit)*)?;
+arrowFunction: OpenRound signatureParams CloseRound '=>' block;
+
+arrayLiteral: OpenSquare (value (Comma value)*)? CloseSquare;
+objectLiteral: OpenCurly (objectItem (Comma (objectItem))*)? CloseCurly;
+key: ( StringLiteral | OpenSquare reference CloseSquare);
 value: (functionCall | unit | objectLiteral | arrayLiteral);
 keyValue: key Colon value;
-spread: Dot Dot Dot accessRhs;
 objectItem: (keyValue | spread);
 
-block: OpenBrace statements CloseBrace;
+spread: Dot Dot Dot reference;
+
+block: OpenCurly statements CloseCurly;
+
 constant:
 	NullLiteral
 	| BooleanLiteral
 	| DecimalLiteral
 	| StringLiteral;
 
-OpenBracket: '[';
-CloseBracket: ']';
-OpenParen: '(';
-CloseParen: ')';
-OpenBrace: '{';
-CloseBrace: '}';
+OpenSquare: '[';
+CloseSquare: ']';
+OpenRound: '(';
+CloseRound: ')';
+OpenCurly: '{';
+CloseCurly: '}';
 SemiColon: ';';
 Comma: ',';
 Assign: '=';
@@ -97,8 +86,6 @@ QuestionMark: '?';
 QuestionMarkDot: '?.';
 Colon: ':';
 Dot: '.';
-PlusPlus: '++';
-MinusMinus: '--';
 Plus: '+';
 Minus: '-';
 Not: '!';
@@ -115,13 +102,9 @@ NotEquals: '!=';
 And: '&&';
 Or: '||';
 
-/// Null Literals
 NullLiteral: 'null';
-
-/// Boolean Literals
 BooleanLiteral: 'true' | 'false';
 
-/// Numeric Literals
 DecimalLiteral:
 	DecimalIntegerLiteral '.' [0-9]*
 	| DecimalIntegerLiteral;
@@ -132,7 +115,6 @@ Do: 'do';
 Of: 'of';
 Case: 'case';
 Else: 'else';
-New: 'new';
 Var: 'var';
 Return: 'return';
 Continue: 'continue';
@@ -151,9 +133,6 @@ StringLiteral: '"' DoubleStringCharacter* '"';
 WhiteSpaces: [\t ]+ -> channel(HIDDEN);
 LineTerminator: [\r\n ] -> channel(HIDDEN);
 
-// Fragment rules
 fragment DoubleStringCharacter: ~["\\\r\n] | LineContinuation;
-
 fragment LineContinuation: '\\' [\r\n\u2028\u2029];
-
 fragment DecimalIntegerLiteral: '0' | [1-9] [0-9_]*;
