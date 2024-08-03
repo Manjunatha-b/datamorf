@@ -1,0 +1,8 @@
+var arr1 = [1,2,3,4,5];
+
+if(arr1.length()>4){
+  log("yes length greater than 4");
+} 
+else {
+  log("length is not greater than 4");
+}
