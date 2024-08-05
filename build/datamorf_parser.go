@@ -60,7 +60,7 @@ func datamorfParserInit() {
 	}
 	staticData.PredictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 52, 314, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 52, 335, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
 		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
 		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 2, 19, 7, 19, 2, 20, 7, 20, 2,
@@ -78,123 +78,133 @@ func datamorfParserInit() {
 		11, 1, 11, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 13, 1, 13, 1, 13,
 		1, 13, 1, 13, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1,
 		14, 3, 14, 182, 8, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14,
-		1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 5, 14, 199, 8,
-		14, 10, 14, 12, 14, 202, 9, 14, 1, 15, 1, 15, 3, 15, 206, 8, 15, 1, 15,
-		5, 15, 209, 8, 15, 10, 15, 12, 15, 212, 9, 15, 1, 16, 1, 16, 1, 16, 1,
-		16, 1, 16, 3, 16, 219, 8, 16, 1, 17, 1, 17, 1, 17, 1, 17, 1, 18, 1, 18,
-		1, 18, 1, 18, 1, 18, 1, 19, 1, 19, 1, 19, 5, 19, 233, 8, 19, 10, 19, 12,
-		19, 236, 9, 19, 3, 19, 238, 8, 19, 1, 20, 1, 20, 1, 20, 5, 20, 243, 8,
-		20, 10, 20, 12, 20, 246, 9, 20, 3, 20, 248, 8, 20, 1, 21, 1, 21, 1, 21,
-		1, 21, 1, 21, 1, 21, 1, 22, 1, 22, 1, 22, 1, 22, 5, 22, 260, 8, 22, 10,
-		22, 12, 22, 263, 9, 22, 3, 22, 265, 8, 22, 1, 22, 1, 22, 1, 23, 1, 23,
-		1, 23, 1, 23, 5, 23, 273, 8, 23, 10, 23, 12, 23, 276, 9, 23, 3, 23, 278,
-		8, 23, 1, 23, 1, 23, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 3, 24, 287, 8,
-		24, 1, 25, 1, 25, 1, 25, 1, 25, 3, 25, 293, 8, 25, 1, 26, 1, 26, 1, 26,
-		1, 26, 1, 27, 1, 27, 3, 27, 301, 8, 27, 1, 28, 1, 28, 1, 28, 1, 28, 1,
+		1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1,
+		14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14,
+		1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 5, 14, 220, 8,
+		14, 10, 14, 12, 14, 223, 9, 14, 1, 15, 1, 15, 3, 15, 227, 8, 15, 1, 15,
+		5, 15, 230, 8, 15, 10, 15, 12, 15, 233, 9, 15, 1, 16, 1, 16, 1, 16, 1,
+		16, 1, 16, 3, 16, 240, 8, 16, 1, 17, 1, 17, 1, 17, 1, 17, 1, 18, 1, 18,
+		1, 18, 1, 18, 1, 18, 1, 19, 1, 19, 1, 19, 5, 19, 254, 8, 19, 10, 19, 12,
+		19, 257, 9, 19, 3, 19, 259, 8, 19, 1, 20, 1, 20, 1, 20, 5, 20, 264, 8,
+		20, 10, 20, 12, 20, 267, 9, 20, 3, 20, 269, 8, 20, 1, 21, 1, 21, 1, 21,
+		1, 21, 1, 21, 1, 21, 1, 22, 1, 22, 1, 22, 1, 22, 5, 22, 281, 8, 22, 10,
+		22, 12, 22, 284, 9, 22, 3, 22, 286, 8, 22, 1, 22, 1, 22, 1, 23, 1, 23,
+		1, 23, 1, 23, 5, 23, 294, 8, 23, 10, 23, 12, 23, 297, 9, 23, 3, 23, 299,
+		8, 23, 1, 23, 1, 23, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 3, 24, 308, 8,
+		24, 1, 25, 1, 25, 1, 25, 1, 25, 3, 25, 314, 8, 25, 1, 26, 1, 26, 1, 26,
+		1, 26, 1, 27, 1, 27, 3, 27, 322, 8, 27, 1, 28, 1, 28, 1, 28, 1, 28, 1,
 		28, 1, 29, 1, 29, 1, 29, 1, 29, 1, 30, 1, 30, 1, 30, 0, 1, 28, 31, 0, 2,
 		4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
-		42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 0, 3, 1, 0, 22, 29, 2, 0, 32, 32,
-		49, 50, 2, 0, 30, 32, 50, 50, 323, 0, 63, 1, 0, 0, 0, 2, 68, 1, 0, 0, 0,
-		4, 89, 1, 0, 0, 0, 6, 91, 1, 0, 0, 0, 8, 97, 1, 0, 0, 0, 10, 101, 1, 0,
-		0, 0, 12, 108, 1, 0, 0, 0, 14, 129, 1, 0, 0, 0, 16, 135, 1, 0, 0, 0, 18,
-		147, 1, 0, 0, 0, 20, 149, 1, 0, 0, 0, 22, 152, 1, 0, 0, 0, 24, 161, 1,
-		0, 0, 0, 26, 167, 1, 0, 0, 0, 28, 181, 1, 0, 0, 0, 30, 205, 1, 0, 0, 0,
-		32, 218, 1, 0, 0, 0, 34, 220, 1, 0, 0, 0, 36, 224, 1, 0, 0, 0, 38, 237,
-		1, 0, 0, 0, 40, 247, 1, 0, 0, 0, 42, 249, 1, 0, 0, 0, 44, 255, 1, 0, 0,
-		0, 46, 268, 1, 0, 0, 0, 48, 286, 1, 0, 0, 0, 50, 292, 1, 0, 0, 0, 52, 294,
-		1, 0, 0, 0, 54, 300, 1, 0, 0, 0, 56, 302, 1, 0, 0, 0, 58, 307, 1, 0, 0,
-		0, 60, 311, 1, 0, 0, 0, 62, 64, 3, 2, 1, 0, 63, 62, 1, 0, 0, 0, 63, 64,
-		1, 0, 0, 0, 64, 65, 1, 0, 0, 0, 65, 66, 5, 0, 0, 1, 66, 1, 1, 0, 0, 0,
-		67, 69, 3, 4, 2, 0, 68, 67, 1, 0, 0, 0, 69, 70, 1, 0, 0, 0, 70, 68, 1,
-		0, 0, 0, 70, 71, 1, 0, 0, 0, 71, 3, 1, 0, 0, 0, 72, 73, 3, 6, 3, 0, 73,
-		74, 5, 8, 0, 0, 74, 90, 1, 0, 0, 0, 75, 76, 3, 8, 4, 0, 76, 77, 5, 8, 0,
-		0, 77, 90, 1, 0, 0, 0, 78, 90, 3, 10, 5, 0, 79, 90, 3, 12, 6, 0, 80, 90,
-		3, 22, 11, 0, 81, 90, 3, 14, 7, 0, 82, 90, 3, 20, 10, 0, 83, 84, 3, 16,
-		8, 0, 84, 85, 5, 8, 0, 0, 85, 90, 1, 0, 0, 0, 86, 87, 3, 18, 9, 0, 87,
-		88, 5, 8, 0, 0, 88, 90, 1, 0, 0, 0, 89, 72, 1, 0, 0, 0, 89, 75, 1, 0, 0,
-		0, 89, 78, 1, 0, 0, 0, 89, 79, 1, 0, 0, 0, 89, 80, 1, 0, 0, 0, 89, 81,
-		1, 0, 0, 0, 89, 82, 1, 0, 0, 0, 89, 83, 1, 0, 0, 0, 89, 86, 1, 0, 0, 0,
-		90, 5, 1, 0, 0, 0, 91, 92, 5, 38, 0, 0, 92, 95, 5, 49, 0, 0, 93, 94, 5,
-		10, 0, 0, 94, 96, 3, 50, 25, 0, 95, 93, 1, 0, 0, 0, 95, 96, 1, 0, 0, 0,
-		96, 7, 1, 0, 0, 0, 97, 98, 3, 30, 15, 0, 98, 99, 5, 10, 0, 0, 99, 100,
-		3, 50, 25, 0, 100, 9, 1, 0, 0, 0, 101, 102, 5, 44, 0, 0, 102, 103, 5, 49,
-		0, 0, 103, 104, 5, 4, 0, 0, 104, 105, 3, 38, 19, 0, 105, 106, 5, 5, 0,
-		0, 106, 107, 3, 58, 29, 0, 107, 11, 1, 0, 0, 0, 108, 109, 5, 46, 0, 0,
-		109, 110, 5, 4, 0, 0, 110, 111, 3, 28, 14, 0, 111, 112, 5, 5, 0, 0, 112,
-		122, 3, 58, 29, 0, 113, 114, 5, 37, 0, 0, 114, 115, 5, 46, 0, 0, 115, 116,
-		5, 4, 0, 0, 116, 117, 3, 28, 14, 0, 117, 118, 5, 5, 0, 0, 118, 119, 3,
-		58, 29, 0, 119, 121, 1, 0, 0, 0, 120, 113, 1, 0, 0, 0, 121, 124, 1, 0,
-		0, 0, 122, 120, 1, 0, 0, 0, 122, 123, 1, 0, 0, 0, 123, 127, 1, 0, 0, 0,
-		124, 122, 1, 0, 0, 0, 125, 126, 5, 37, 0, 0, 126, 128, 3, 58, 29, 0, 127,
-		125, 1, 0, 0, 0, 127, 128, 1, 0, 0, 0, 128, 13, 1, 0, 0, 0, 129, 130, 5,
-		42, 0, 0, 130, 131, 5, 4, 0, 0, 131, 132, 3, 28, 14, 0, 132, 133, 5, 5,
-		0, 0, 133, 134, 3, 58, 29, 0, 134, 15, 1, 0, 0, 0, 135, 136, 5, 48, 0,
-		0, 136, 144, 5, 49, 0, 0, 137, 140, 5, 14, 0, 0, 138, 141, 3, 34, 17, 0,
-		139, 141, 5, 49, 0, 0, 140, 138, 1, 0, 0, 0, 140, 139, 1, 0, 0, 0, 141,
-		143, 1, 0, 0, 0, 142, 137, 1, 0, 0, 0, 143, 146, 1, 0, 0, 0, 144, 142,
-		1, 0, 0, 0, 144, 145, 1, 0, 0, 0, 145, 17, 1, 0, 0, 0, 146, 144, 1, 0,
-		0, 0, 147, 148, 3, 28, 14, 0, 148, 19, 1, 0, 0, 0, 149, 150, 3, 50, 25,
-		0, 150, 151, 5, 8, 0, 0, 151, 21, 1, 0, 0, 0, 152, 153, 5, 41, 0, 0, 153,
-		156, 5, 4, 0, 0, 154, 157, 3, 24, 12, 0, 155, 157, 3, 26, 13, 0, 156, 154,
-		1, 0, 0, 0, 156, 155, 1, 0, 0, 0, 157, 158, 1, 0, 0, 0, 158, 159, 5, 5,
-		0, 0, 159, 160, 3, 58, 29, 0, 160, 23, 1, 0, 0, 0, 161, 162, 3, 6, 3, 0,
-		162, 163, 5, 8, 0, 0, 163, 164, 3, 18, 9, 0, 164, 165, 5, 8, 0, 0, 165,
-		166, 3, 8, 4, 0, 166, 25, 1, 0, 0, 0, 167, 168, 5, 38, 0, 0, 168, 169,
-		5, 49, 0, 0, 169, 170, 5, 35, 0, 0, 170, 171, 3, 30, 15, 0, 171, 27, 1,
-		0, 0, 0, 172, 173, 6, 14, -1, 0, 173, 174, 5, 4, 0, 0, 174, 175, 3, 28,
-		14, 0, 175, 176, 5, 5, 0, 0, 176, 182, 1, 0, 0, 0, 177, 178, 5, 17, 0,
-		0, 178, 182, 3, 28, 14, 3, 179, 182, 3, 30, 15, 0, 180, 182, 3, 60, 30,
-		0, 181, 172, 1, 0, 0, 0, 181, 177, 1, 0, 0, 0, 181, 179, 1, 0, 0, 0, 181,
-		180, 1, 0, 0, 0, 182, 200, 1, 0, 0, 0, 183, 184, 10, 8, 0, 0, 184, 185,
-		5, 19, 0, 0, 185, 199, 3, 28, 14, 9, 186, 187, 10, 7, 0, 0, 187, 188, 5,
-		18, 0, 0, 188, 199, 3, 28, 14, 8, 189, 190, 10, 6, 0, 0, 190, 191, 5, 15,
-		0, 0, 191, 199, 3, 28, 14, 7, 192, 193, 10, 5, 0, 0, 193, 194, 5, 16, 0,
-		0, 194, 199, 3, 28, 14, 6, 195, 196, 10, 4, 0, 0, 196, 197, 7, 0, 0, 0,
-		197, 199, 3, 28, 14, 5, 198, 183, 1, 0, 0, 0, 198, 186, 1, 0, 0, 0, 198,
-		189, 1, 0, 0, 0, 198, 192, 1, 0, 0, 0, 198, 195, 1, 0, 0, 0, 199, 202,
-		1, 0, 0, 0, 200, 198, 1, 0, 0, 0, 200, 201, 1, 0, 0, 0, 201, 29, 1, 0,
-		0, 0, 202, 200, 1, 0, 0, 0, 203, 206, 3, 36, 18, 0, 204, 206, 5, 49, 0,
-		0, 205, 203, 1, 0, 0, 0, 205, 204, 1, 0, 0, 0, 206, 210, 1, 0, 0, 0, 207,
-		209, 3, 32, 16, 0, 208, 207, 1, 0, 0, 0, 209, 212, 1, 0, 0, 0, 210, 208,
-		1, 0, 0, 0, 210, 211, 1, 0, 0, 0, 211, 31, 1, 0, 0, 0, 212, 210, 1, 0,
-		0, 0, 213, 219, 3, 34, 17, 0, 214, 215, 5, 14, 0, 0, 215, 219, 5, 49, 0,
-		0, 216, 217, 5, 14, 0, 0, 217, 219, 3, 36, 18, 0, 218, 213, 1, 0, 0, 0,
-		218, 214, 1, 0, 0, 0, 218, 216, 1, 0, 0, 0, 219, 33, 1, 0, 0, 0, 220, 221,
-		5, 2, 0, 0, 221, 222, 7, 1, 0, 0, 222, 223, 5, 3, 0, 0, 223, 35, 1, 0,
-		0, 0, 224, 225, 5, 49, 0, 0, 225, 226, 5, 4, 0, 0, 226, 227, 3, 40, 20,
-		0, 227, 228, 5, 5, 0, 0, 228, 37, 1, 0, 0, 0, 229, 234, 5, 49, 0, 0, 230,
-		231, 5, 9, 0, 0, 231, 233, 5, 49, 0, 0, 232, 230, 1, 0, 0, 0, 233, 236,
-		1, 0, 0, 0, 234, 232, 1, 0, 0, 0, 234, 235, 1, 0, 0, 0, 235, 238, 1, 0,
-		0, 0, 236, 234, 1, 0, 0, 0, 237, 229, 1, 0, 0, 0, 237, 238, 1, 0, 0, 0,
-		238, 39, 1, 0, 0, 0, 239, 244, 3, 28, 14, 0, 240, 241, 5, 9, 0, 0, 241,
-		243, 3, 28, 14, 0, 242, 240, 1, 0, 0, 0, 243, 246, 1, 0, 0, 0, 244, 242,
-		1, 0, 0, 0, 244, 245, 1, 0, 0, 0, 245, 248, 1, 0, 0, 0, 246, 244, 1, 0,
-		0, 0, 247, 239, 1, 0, 0, 0, 247, 248, 1, 0, 0, 0, 248, 41, 1, 0, 0, 0,
-		249, 250, 5, 4, 0, 0, 250, 251, 3, 38, 19, 0, 251, 252, 5, 5, 0, 0, 252,
-		253, 5, 1, 0, 0, 253, 254, 3, 58, 29, 0, 254, 43, 1, 0, 0, 0, 255, 264,
-		5, 2, 0, 0, 256, 261, 3, 50, 25, 0, 257, 258, 5, 9, 0, 0, 258, 260, 3,
-		50, 25, 0, 259, 257, 1, 0, 0, 0, 260, 263, 1, 0, 0, 0, 261, 259, 1, 0,
-		0, 0, 261, 262, 1, 0, 0, 0, 262, 265, 1, 0, 0, 0, 263, 261, 1, 0, 0, 0,
-		264, 256, 1, 0, 0, 0, 264, 265, 1, 0, 0, 0, 265, 266, 1, 0, 0, 0, 266,
-		267, 5, 3, 0, 0, 267, 45, 1, 0, 0, 0, 268, 277, 5, 6, 0, 0, 269, 274, 3,
-		54, 27, 0, 270, 271, 5, 9, 0, 0, 271, 273, 3, 54, 27, 0, 272, 270, 1, 0,
-		0, 0, 273, 276, 1, 0, 0, 0, 274, 272, 1, 0, 0, 0, 274, 275, 1, 0, 0, 0,
-		275, 278, 1, 0, 0, 0, 276, 274, 1, 0, 0, 0, 277, 269, 1, 0, 0, 0, 277,
-		278, 1, 0, 0, 0, 278, 279, 1, 0, 0, 0, 279, 280, 5, 7, 0, 0, 280, 47, 1,
-		0, 0, 0, 281, 287, 5, 50, 0, 0, 282, 283, 5, 2, 0, 0, 283, 284, 3, 30,
-		15, 0, 284, 285, 5, 3, 0, 0, 285, 287, 1, 0, 0, 0, 286, 281, 1, 0, 0, 0,
-		286, 282, 1, 0, 0, 0, 287, 49, 1, 0, 0, 0, 288, 293, 3, 36, 18, 0, 289,
-		293, 3, 28, 14, 0, 290, 293, 3, 46, 23, 0, 291, 293, 3, 44, 22, 0, 292,
-		288, 1, 0, 0, 0, 292, 289, 1, 0, 0, 0, 292, 290, 1, 0, 0, 0, 292, 291,
-		1, 0, 0, 0, 293, 51, 1, 0, 0, 0, 294, 295, 3, 48, 24, 0, 295, 296, 5, 13,
-		0, 0, 296, 297, 3, 50, 25, 0, 297, 53, 1, 0, 0, 0, 298, 301, 3, 52, 26,
-		0, 299, 301, 3, 56, 28, 0, 300, 298, 1, 0, 0, 0, 300, 299, 1, 0, 0, 0,
-		301, 55, 1, 0, 0, 0, 302, 303, 5, 14, 0, 0, 303, 304, 5, 14, 0, 0, 304,
-		305, 5, 14, 0, 0, 305, 306, 3, 30, 15, 0, 306, 57, 1, 0, 0, 0, 307, 308,
-		5, 6, 0, 0, 308, 309, 3, 2, 1, 0, 309, 310, 5, 7, 0, 0, 310, 59, 1, 0,
-		0, 0, 311, 312, 7, 2, 0, 0, 312, 61, 1, 0, 0, 0, 26, 63, 70, 89, 95, 122,
-		127, 140, 144, 156, 181, 198, 200, 205, 210, 218, 234, 237, 244, 247, 261,
-		264, 274, 277, 286, 292, 300,
+		42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 0, 2, 2, 0, 32, 32, 49, 50, 2,
+		0, 30, 32, 50, 50, 351, 0, 63, 1, 0, 0, 0, 2, 68, 1, 0, 0, 0, 4, 89, 1,
+		0, 0, 0, 6, 91, 1, 0, 0, 0, 8, 97, 1, 0, 0, 0, 10, 101, 1, 0, 0, 0, 12,
+		108, 1, 0, 0, 0, 14, 129, 1, 0, 0, 0, 16, 135, 1, 0, 0, 0, 18, 147, 1,
+		0, 0, 0, 20, 149, 1, 0, 0, 0, 22, 152, 1, 0, 0, 0, 24, 161, 1, 0, 0, 0,
+		26, 167, 1, 0, 0, 0, 28, 181, 1, 0, 0, 0, 30, 226, 1, 0, 0, 0, 32, 239,
+		1, 0, 0, 0, 34, 241, 1, 0, 0, 0, 36, 245, 1, 0, 0, 0, 38, 258, 1, 0, 0,
+		0, 40, 268, 1, 0, 0, 0, 42, 270, 1, 0, 0, 0, 44, 276, 1, 0, 0, 0, 46, 289,
+		1, 0, 0, 0, 48, 307, 1, 0, 0, 0, 50, 313, 1, 0, 0, 0, 52, 315, 1, 0, 0,
+		0, 54, 321, 1, 0, 0, 0, 56, 323, 1, 0, 0, 0, 58, 328, 1, 0, 0, 0, 60, 332,
+		1, 0, 0, 0, 62, 64, 3, 2, 1, 0, 63, 62, 1, 0, 0, 0, 63, 64, 1, 0, 0, 0,
+		64, 65, 1, 0, 0, 0, 65, 66, 5, 0, 0, 1, 66, 1, 1, 0, 0, 0, 67, 69, 3, 4,
+		2, 0, 68, 67, 1, 0, 0, 0, 69, 70, 1, 0, 0, 0, 70, 68, 1, 0, 0, 0, 70, 71,
+		1, 0, 0, 0, 71, 3, 1, 0, 0, 0, 72, 73, 3, 6, 3, 0, 73, 74, 5, 8, 0, 0,
+		74, 90, 1, 0, 0, 0, 75, 76, 3, 8, 4, 0, 76, 77, 5, 8, 0, 0, 77, 90, 1,
+		0, 0, 0, 78, 90, 3, 10, 5, 0, 79, 90, 3, 12, 6, 0, 80, 90, 3, 22, 11, 0,
+		81, 90, 3, 14, 7, 0, 82, 90, 3, 20, 10, 0, 83, 84, 3, 16, 8, 0, 84, 85,
+		5, 8, 0, 0, 85, 90, 1, 0, 0, 0, 86, 87, 3, 18, 9, 0, 87, 88, 5, 8, 0, 0,
+		88, 90, 1, 0, 0, 0, 89, 72, 1, 0, 0, 0, 89, 75, 1, 0, 0, 0, 89, 78, 1,
+		0, 0, 0, 89, 79, 1, 0, 0, 0, 89, 80, 1, 0, 0, 0, 89, 81, 1, 0, 0, 0, 89,
+		82, 1, 0, 0, 0, 89, 83, 1, 0, 0, 0, 89, 86, 1, 0, 0, 0, 90, 5, 1, 0, 0,
+		0, 91, 92, 5, 38, 0, 0, 92, 95, 5, 49, 0, 0, 93, 94, 5, 10, 0, 0, 94, 96,
+		3, 50, 25, 0, 95, 93, 1, 0, 0, 0, 95, 96, 1, 0, 0, 0, 96, 7, 1, 0, 0, 0,
+		97, 98, 3, 30, 15, 0, 98, 99, 5, 10, 0, 0, 99, 100, 3, 50, 25, 0, 100,
+		9, 1, 0, 0, 0, 101, 102, 5, 44, 0, 0, 102, 103, 5, 49, 0, 0, 103, 104,
+		5, 4, 0, 0, 104, 105, 3, 38, 19, 0, 105, 106, 5, 5, 0, 0, 106, 107, 3,
+		58, 29, 0, 107, 11, 1, 0, 0, 0, 108, 109, 5, 46, 0, 0, 109, 110, 5, 4,
+		0, 0, 110, 111, 3, 28, 14, 0, 111, 112, 5, 5, 0, 0, 112, 122, 3, 58, 29,
+		0, 113, 114, 5, 37, 0, 0, 114, 115, 5, 46, 0, 0, 115, 116, 5, 4, 0, 0,
+		116, 117, 3, 28, 14, 0, 117, 118, 5, 5, 0, 0, 118, 119, 3, 58, 29, 0, 119,
+		121, 1, 0, 0, 0, 120, 113, 1, 0, 0, 0, 121, 124, 1, 0, 0, 0, 122, 120,
+		1, 0, 0, 0, 122, 123, 1, 0, 0, 0, 123, 127, 1, 0, 0, 0, 124, 122, 1, 0,
+		0, 0, 125, 126, 5, 37, 0, 0, 126, 128, 3, 58, 29, 0, 127, 125, 1, 0, 0,
+		0, 127, 128, 1, 0, 0, 0, 128, 13, 1, 0, 0, 0, 129, 130, 5, 42, 0, 0, 130,
+		131, 5, 4, 0, 0, 131, 132, 3, 28, 14, 0, 132, 133, 5, 5, 0, 0, 133, 134,
+		3, 58, 29, 0, 134, 15, 1, 0, 0, 0, 135, 136, 5, 48, 0, 0, 136, 144, 5,
+		49, 0, 0, 137, 140, 5, 14, 0, 0, 138, 141, 3, 34, 17, 0, 139, 141, 5, 49,
+		0, 0, 140, 138, 1, 0, 0, 0, 140, 139, 1, 0, 0, 0, 141, 143, 1, 0, 0, 0,
+		142, 137, 1, 0, 0, 0, 143, 146, 1, 0, 0, 0, 144, 142, 1, 0, 0, 0, 144,
+		145, 1, 0, 0, 0, 145, 17, 1, 0, 0, 0, 146, 144, 1, 0, 0, 0, 147, 148, 3,
+		28, 14, 0, 148, 19, 1, 0, 0, 0, 149, 150, 3, 50, 25, 0, 150, 151, 5, 8,
+		0, 0, 151, 21, 1, 0, 0, 0, 152, 153, 5, 41, 0, 0, 153, 156, 5, 4, 0, 0,
+		154, 157, 3, 24, 12, 0, 155, 157, 3, 26, 13, 0, 156, 154, 1, 0, 0, 0, 156,
+		155, 1, 0, 0, 0, 157, 158, 1, 0, 0, 0, 158, 159, 5, 5, 0, 0, 159, 160,
+		3, 58, 29, 0, 160, 23, 1, 0, 0, 0, 161, 162, 3, 6, 3, 0, 162, 163, 5, 8,
+		0, 0, 163, 164, 3, 18, 9, 0, 164, 165, 5, 8, 0, 0, 165, 166, 3, 8, 4, 0,
+		166, 25, 1, 0, 0, 0, 167, 168, 5, 38, 0, 0, 168, 169, 5, 49, 0, 0, 169,
+		170, 5, 35, 0, 0, 170, 171, 3, 30, 15, 0, 171, 27, 1, 0, 0, 0, 172, 173,
+		6, 14, -1, 0, 173, 174, 5, 4, 0, 0, 174, 175, 3, 28, 14, 0, 175, 176, 5,
+		5, 0, 0, 176, 182, 1, 0, 0, 0, 177, 178, 5, 17, 0, 0, 178, 182, 3, 28,
+		14, 3, 179, 182, 3, 30, 15, 0, 180, 182, 3, 60, 30, 0, 181, 172, 1, 0,
+		0, 0, 181, 177, 1, 0, 0, 0, 181, 179, 1, 0, 0, 0, 181, 180, 1, 0, 0, 0,
+		182, 221, 1, 0, 0, 0, 183, 184, 10, 15, 0, 0, 184, 185, 5, 19, 0, 0, 185,
+		220, 3, 28, 14, 16, 186, 187, 10, 14, 0, 0, 187, 188, 5, 18, 0, 0, 188,
+		220, 3, 28, 14, 15, 189, 190, 10, 13, 0, 0, 190, 191, 5, 15, 0, 0, 191,
+		220, 3, 28, 14, 14, 192, 193, 10, 12, 0, 0, 193, 194, 5, 16, 0, 0, 194,
+		220, 3, 28, 14, 13, 195, 196, 10, 11, 0, 0, 196, 197, 5, 22, 0, 0, 197,
+		220, 3, 28, 14, 12, 198, 199, 10, 10, 0, 0, 199, 200, 5, 23, 0, 0, 200,
+		220, 3, 28, 14, 11, 201, 202, 10, 9, 0, 0, 202, 203, 5, 24, 0, 0, 203,
+		220, 3, 28, 14, 10, 204, 205, 10, 8, 0, 0, 205, 206, 5, 25, 0, 0, 206,
+		220, 3, 28, 14, 9, 207, 208, 10, 7, 0, 0, 208, 209, 5, 26, 0, 0, 209, 220,
+		3, 28, 14, 8, 210, 211, 10, 6, 0, 0, 211, 212, 5, 27, 0, 0, 212, 220, 3,
+		28, 14, 7, 213, 214, 10, 5, 0, 0, 214, 215, 5, 28, 0, 0, 215, 220, 3, 28,
+		14, 6, 216, 217, 10, 4, 0, 0, 217, 218, 5, 29, 0, 0, 218, 220, 3, 28, 14,
+		5, 219, 183, 1, 0, 0, 0, 219, 186, 1, 0, 0, 0, 219, 189, 1, 0, 0, 0, 219,
+		192, 1, 0, 0, 0, 219, 195, 1, 0, 0, 0, 219, 198, 1, 0, 0, 0, 219, 201,
+		1, 0, 0, 0, 219, 204, 1, 0, 0, 0, 219, 207, 1, 0, 0, 0, 219, 210, 1, 0,
+		0, 0, 219, 213, 1, 0, 0, 0, 219, 216, 1, 0, 0, 0, 220, 223, 1, 0, 0, 0,
+		221, 219, 1, 0, 0, 0, 221, 222, 1, 0, 0, 0, 222, 29, 1, 0, 0, 0, 223, 221,
+		1, 0, 0, 0, 224, 227, 3, 36, 18, 0, 225, 227, 5, 49, 0, 0, 226, 224, 1,
+		0, 0, 0, 226, 225, 1, 0, 0, 0, 227, 231, 1, 0, 0, 0, 228, 230, 3, 32, 16,
+		0, 229, 228, 1, 0, 0, 0, 230, 233, 1, 0, 0, 0, 231, 229, 1, 0, 0, 0, 231,
+		232, 1, 0, 0, 0, 232, 31, 1, 0, 0, 0, 233, 231, 1, 0, 0, 0, 234, 240, 3,
+		34, 17, 0, 235, 236, 5, 14, 0, 0, 236, 240, 5, 49, 0, 0, 237, 238, 5, 14,
+		0, 0, 238, 240, 3, 36, 18, 0, 239, 234, 1, 0, 0, 0, 239, 235, 1, 0, 0,
+		0, 239, 237, 1, 0, 0, 0, 240, 33, 1, 0, 0, 0, 241, 242, 5, 2, 0, 0, 242,
+		243, 7, 0, 0, 0, 243, 244, 5, 3, 0, 0, 244, 35, 1, 0, 0, 0, 245, 246, 5,
+		49, 0, 0, 246, 247, 5, 4, 0, 0, 247, 248, 3, 40, 20, 0, 248, 249, 5, 5,
+		0, 0, 249, 37, 1, 0, 0, 0, 250, 255, 5, 49, 0, 0, 251, 252, 5, 9, 0, 0,
+		252, 254, 5, 49, 0, 0, 253, 251, 1, 0, 0, 0, 254, 257, 1, 0, 0, 0, 255,
+		253, 1, 0, 0, 0, 255, 256, 1, 0, 0, 0, 256, 259, 1, 0, 0, 0, 257, 255,
+		1, 0, 0, 0, 258, 250, 1, 0, 0, 0, 258, 259, 1, 0, 0, 0, 259, 39, 1, 0,
+		0, 0, 260, 265, 3, 28, 14, 0, 261, 262, 5, 9, 0, 0, 262, 264, 3, 28, 14,
+		0, 263, 261, 1, 0, 0, 0, 264, 267, 1, 0, 0, 0, 265, 263, 1, 0, 0, 0, 265,
+		266, 1, 0, 0, 0, 266, 269, 1, 0, 0, 0, 267, 265, 1, 0, 0, 0, 268, 260,
+		1, 0, 0, 0, 268, 269, 1, 0, 0, 0, 269, 41, 1, 0, 0, 0, 270, 271, 5, 4,
+		0, 0, 271, 272, 3, 38, 19, 0, 272, 273, 5, 5, 0, 0, 273, 274, 5, 1, 0,
+		0, 274, 275, 3, 58, 29, 0, 275, 43, 1, 0, 0, 0, 276, 285, 5, 2, 0, 0, 277,
+		282, 3, 50, 25, 0, 278, 279, 5, 9, 0, 0, 279, 281, 3, 50, 25, 0, 280, 278,
+		1, 0, 0, 0, 281, 284, 1, 0, 0, 0, 282, 280, 1, 0, 0, 0, 282, 283, 1, 0,
+		0, 0, 283, 286, 1, 0, 0, 0, 284, 282, 1, 0, 0, 0, 285, 277, 1, 0, 0, 0,
+		285, 286, 1, 0, 0, 0, 286, 287, 1, 0, 0, 0, 287, 288, 5, 3, 0, 0, 288,
+		45, 1, 0, 0, 0, 289, 298, 5, 6, 0, 0, 290, 295, 3, 54, 27, 0, 291, 292,
+		5, 9, 0, 0, 292, 294, 3, 54, 27, 0, 293, 291, 1, 0, 0, 0, 294, 297, 1,
+		0, 0, 0, 295, 293, 1, 0, 0, 0, 295, 296, 1, 0, 0, 0, 296, 299, 1, 0, 0,
+		0, 297, 295, 1, 0, 0, 0, 298, 290, 1, 0, 0, 0, 298, 299, 1, 0, 0, 0, 299,
+		300, 1, 0, 0, 0, 300, 301, 5, 7, 0, 0, 301, 47, 1, 0, 0, 0, 302, 308, 5,
+		50, 0, 0, 303, 304, 5, 2, 0, 0, 304, 305, 3, 30, 15, 0, 305, 306, 5, 3,
+		0, 0, 306, 308, 1, 0, 0, 0, 307, 302, 1, 0, 0, 0, 307, 303, 1, 0, 0, 0,
+		308, 49, 1, 0, 0, 0, 309, 314, 3, 36, 18, 0, 310, 314, 3, 28, 14, 0, 311,
+		314, 3, 46, 23, 0, 312, 314, 3, 44, 22, 0, 313, 309, 1, 0, 0, 0, 313, 310,
+		1, 0, 0, 0, 313, 311, 1, 0, 0, 0, 313, 312, 1, 0, 0, 0, 314, 51, 1, 0,
+		0, 0, 315, 316, 3, 48, 24, 0, 316, 317, 5, 13, 0, 0, 317, 318, 3, 50, 25,
+		0, 318, 53, 1, 0, 0, 0, 319, 322, 3, 52, 26, 0, 320, 322, 3, 56, 28, 0,
+		321, 319, 1, 0, 0, 0, 321, 320, 1, 0, 0, 0, 322, 55, 1, 0, 0, 0, 323, 324,
+		5, 14, 0, 0, 324, 325, 5, 14, 0, 0, 325, 326, 5, 14, 0, 0, 326, 327, 3,
+		30, 15, 0, 327, 57, 1, 0, 0, 0, 328, 329, 5, 6, 0, 0, 329, 330, 3, 2, 1,
+		0, 330, 331, 5, 7, 0, 0, 331, 59, 1, 0, 0, 0, 332, 333, 7, 1, 0, 0, 333,
+		61, 1, 0, 0, 0, 26, 63, 70, 89, 95, 122, 127, 140, 144, 156, 181, 219,
+		221, 226, 231, 239, 255, 258, 265, 268, 282, 285, 295, 298, 307, 313, 321,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -3053,6 +3063,12 @@ type IUnitContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// GetOperator returns the operator token.
+	GetOperator() antlr.Token
+
+	// SetOperator sets the operator token.
+	SetOperator(antlr.Token)
+
 	// GetLeft returns the left rule contexts.
 	GetLeft() IUnitContext
 
@@ -3098,10 +3114,11 @@ type IUnitContext interface {
 
 type UnitContext struct {
 	antlr.BaseParserRuleContext
-	parser antlr.Parser
-	left   IUnitContext
-	single IUnitContext
-	right  IUnitContext
+	parser   antlr.Parser
+	left     IUnitContext
+	single   IUnitContext
+	operator antlr.Token
+	right    IUnitContext
 }
 
 func NewEmptyUnitContext() *UnitContext {
@@ -3130,6 +3147,10 @@ func NewUnitContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 }
 
 func (s *UnitContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *UnitContext) GetOperator() antlr.Token { return s.operator }
+
+func (s *UnitContext) SetOperator(v antlr.Token) { s.operator = v }
 
 func (s *UnitContext) GetLeft() IUnitContext { return s.left }
 
@@ -3319,8 +3340,6 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 	var _ antlr.ParserRuleContext = _prevctx // TODO: To prevent unused variable warning.
 	_startState := 28
 	p.EnterRecursionRule(localctx, 28, DataMorfParserRULE_unit, _p)
-	var _la int
-
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
@@ -3390,7 +3409,7 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 		goto errorExit
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(200)
+	p.SetState(221)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3405,7 +3424,7 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(198)
+			p.SetState(219)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -3418,24 +3437,25 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
 				p.SetState(183)
 
-				if !(p.Precpred(p.GetParserRuleContext(), 8)) {
-					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 8)", ""))
+				if !(p.Precpred(p.GetParserRuleContext(), 15)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 15)", ""))
 					goto errorExit
 				}
-
 				{
 					p.SetState(184)
-					p.Match(DataMorfParserDivide)
+
+					var _m = p.Match(DataMorfParserDivide)
+
+					localctx.(*UnitContext).operator = _m
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
 					}
 				}
-
 				{
 					p.SetState(185)
 
-					var _x = p.unit(9)
+					var _x = p.unit(16)
 
 					localctx.(*UnitContext).right = _x
 				}
@@ -3446,24 +3466,25 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
 				p.SetState(186)
 
-				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
-					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 7)", ""))
+				if !(p.Precpred(p.GetParserRuleContext(), 14)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 14)", ""))
 					goto errorExit
 				}
-
 				{
 					p.SetState(187)
-					p.Match(DataMorfParserMultiply)
+
+					var _m = p.Match(DataMorfParserMultiply)
+
+					localctx.(*UnitContext).operator = _m
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
 					}
 				}
-
 				{
 					p.SetState(188)
 
-					var _x = p.unit(8)
+					var _x = p.unit(15)
 
 					localctx.(*UnitContext).right = _x
 				}
@@ -3474,24 +3495,25 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
 				p.SetState(189)
 
-				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
-					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 6)", ""))
+				if !(p.Precpred(p.GetParserRuleContext(), 13)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 13)", ""))
 					goto errorExit
 				}
-
 				{
 					p.SetState(190)
-					p.Match(DataMorfParserPlus)
+
+					var _m = p.Match(DataMorfParserPlus)
+
+					localctx.(*UnitContext).operator = _m
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
 					}
 				}
-
 				{
 					p.SetState(191)
 
-					var _x = p.unit(7)
+					var _x = p.unit(14)
 
 					localctx.(*UnitContext).right = _x
 				}
@@ -3502,24 +3524,25 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
 				p.SetState(192)
 
-				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
-					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
+				if !(p.Precpred(p.GetParserRuleContext(), 12)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 12)", ""))
 					goto errorExit
 				}
-
 				{
 					p.SetState(193)
-					p.Match(DataMorfParserMinus)
+
+					var _m = p.Match(DataMorfParserMinus)
+
+					localctx.(*UnitContext).operator = _m
 					if p.HasError() {
 						// Recognition error - abort rule
 						goto errorExit
 					}
 				}
-
 				{
 					p.SetState(194)
 
-					var _x = p.unit(6)
+					var _x = p.unit(13)
 
 					localctx.(*UnitContext).right = _x
 				}
@@ -3530,23 +3553,226 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
 				p.SetState(195)
 
+				if !(p.Precpred(p.GetParserRuleContext(), 11)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 11)", ""))
+					goto errorExit
+				}
+				{
+					p.SetState(196)
+
+					var _m = p.Match(DataMorfParserLessThan)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(197)
+
+					var _x = p.unit(12)
+
+					localctx.(*UnitContext).right = _x
+				}
+
+			case 6:
+				localctx = NewUnitContext(p, _parentctx, _parentState)
+				localctx.(*UnitContext).left = _prevctx
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(198)
+
+				if !(p.Precpred(p.GetParserRuleContext(), 10)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 10)", ""))
+					goto errorExit
+				}
+				{
+					p.SetState(199)
+
+					var _m = p.Match(DataMorfParserMoreThan)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(200)
+
+					var _x = p.unit(11)
+
+					localctx.(*UnitContext).right = _x
+				}
+
+			case 7:
+				localctx = NewUnitContext(p, _parentctx, _parentState)
+				localctx.(*UnitContext).left = _prevctx
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(201)
+
+				if !(p.Precpred(p.GetParserRuleContext(), 9)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 9)", ""))
+					goto errorExit
+				}
+				{
+					p.SetState(202)
+
+					var _m = p.Match(DataMorfParserLessThanEquals)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(203)
+
+					var _x = p.unit(10)
+
+					localctx.(*UnitContext).right = _x
+				}
+
+			case 8:
+				localctx = NewUnitContext(p, _parentctx, _parentState)
+				localctx.(*UnitContext).left = _prevctx
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(204)
+
+				if !(p.Precpred(p.GetParserRuleContext(), 8)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 8)", ""))
+					goto errorExit
+				}
+				{
+					p.SetState(205)
+
+					var _m = p.Match(DataMorfParserGreaterThanEquals)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(206)
+
+					var _x = p.unit(9)
+
+					localctx.(*UnitContext).right = _x
+				}
+
+			case 9:
+				localctx = NewUnitContext(p, _parentctx, _parentState)
+				localctx.(*UnitContext).left = _prevctx
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(207)
+
+				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 7)", ""))
+					goto errorExit
+				}
+				{
+					p.SetState(208)
+
+					var _m = p.Match(DataMorfParserEquals)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(209)
+
+					var _x = p.unit(8)
+
+					localctx.(*UnitContext).right = _x
+				}
+
+			case 10:
+				localctx = NewUnitContext(p, _parentctx, _parentState)
+				localctx.(*UnitContext).left = _prevctx
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(210)
+
+				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 6)", ""))
+					goto errorExit
+				}
+				{
+					p.SetState(211)
+
+					var _m = p.Match(DataMorfParserNotEquals)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(212)
+
+					var _x = p.unit(7)
+
+					localctx.(*UnitContext).right = _x
+				}
+
+			case 11:
+				localctx = NewUnitContext(p, _parentctx, _parentState)
+				localctx.(*UnitContext).left = _prevctx
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(213)
+
+				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
+					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
+					goto errorExit
+				}
+				{
+					p.SetState(214)
+
+					var _m = p.Match(DataMorfParserAnd)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
+					}
+				}
+				{
+					p.SetState(215)
+
+					var _x = p.unit(6)
+
+					localctx.(*UnitContext).right = _x
+				}
+
+			case 12:
+				localctx = NewUnitContext(p, _parentctx, _parentState)
+				localctx.(*UnitContext).left = _prevctx
+				p.PushNewRecursionContext(localctx, _startState, DataMorfParserRULE_unit)
+				p.SetState(216)
+
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					p.SetError(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 					goto errorExit
 				}
 				{
-					p.SetState(196)
-					_la = p.GetTokenStream().LA(1)
+					p.SetState(217)
 
-					if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1069547520) != 0) {
-						p.GetErrorHandler().RecoverInline(p)
-					} else {
-						p.GetErrorHandler().ReportMatch(p)
-						p.Consume()
+					var _m = p.Match(DataMorfParserOr)
+
+					localctx.(*UnitContext).operator = _m
+					if p.HasError() {
+						// Recognition error - abort rule
+						goto errorExit
 					}
 				}
 				{
-					p.SetState(197)
+					p.SetState(218)
 
 					var _x = p.unit(5)
 
@@ -3558,7 +3784,7 @@ func (p *DataMorfParser) unit(_p int) (localctx IUnitContext) {
 			}
 
 		}
-		p.SetState(202)
+		p.SetState(223)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -3728,7 +3954,7 @@ func (p *DataMorfParser) Reference() (localctx IReferenceContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(205)
+	p.SetState(226)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3737,13 +3963,13 @@ func (p *DataMorfParser) Reference() (localctx IReferenceContext) {
 	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 12, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(203)
+			p.SetState(224)
 			p.FunctionCall()
 		}
 
 	case 2:
 		{
-			p.SetState(204)
+			p.SetState(225)
 			p.Match(DataMorfParserIdentifier)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -3754,7 +3980,7 @@ func (p *DataMorfParser) Reference() (localctx IReferenceContext) {
 	case antlr.ATNInvalidAltNumber:
 		goto errorExit
 	}
-	p.SetState(210)
+	p.SetState(231)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3766,12 +3992,12 @@ func (p *DataMorfParser) Reference() (localctx IReferenceContext) {
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(207)
+				p.SetState(228)
 				p.Accessor()
 			}
 
 		}
-		p.SetState(212)
+		p.SetState(233)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -3918,7 +4144,7 @@ func (p *DataMorfParser) Accessor() (localctx IAccessorContext) {
 	localctx = NewAccessorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, DataMorfParserRULE_accessor)
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(218)
+	p.SetState(239)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -3927,13 +4153,13 @@ func (p *DataMorfParser) Accessor() (localctx IAccessorContext) {
 	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 14, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(213)
+			p.SetState(234)
 			p.AccessProperty()
 		}
 
 	case 2:
 		{
-			p.SetState(214)
+			p.SetState(235)
 			p.Match(DataMorfParserDot)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -3941,7 +4167,7 @@ func (p *DataMorfParser) Accessor() (localctx IAccessorContext) {
 			}
 		}
 		{
-			p.SetState(215)
+			p.SetState(236)
 			p.Match(DataMorfParserIdentifier)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -3951,7 +4177,7 @@ func (p *DataMorfParser) Accessor() (localctx IAccessorContext) {
 
 	case 3:
 		{
-			p.SetState(216)
+			p.SetState(237)
 			p.Match(DataMorfParserDot)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -3959,7 +4185,7 @@ func (p *DataMorfParser) Accessor() (localctx IAccessorContext) {
 			}
 		}
 		{
-			p.SetState(217)
+			p.SetState(238)
 			p.FunctionCall()
 		}
 
@@ -4087,7 +4313,7 @@ func (p *DataMorfParser) AccessProperty() (localctx IAccessPropertyContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(220)
+		p.SetState(241)
 		p.Match(DataMorfParserOpenSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4095,7 +4321,7 @@ func (p *DataMorfParser) AccessProperty() (localctx IAccessPropertyContext) {
 		}
 	}
 	{
-		p.SetState(221)
+		p.SetState(242)
 		_la = p.GetTokenStream().LA(1)
 
 		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1688854155231232) != 0) {
@@ -4106,7 +4332,7 @@ func (p *DataMorfParser) AccessProperty() (localctx IAccessPropertyContext) {
 		}
 	}
 	{
-		p.SetState(222)
+		p.SetState(243)
 		p.Match(DataMorfParserCloseSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4239,7 +4465,7 @@ func (p *DataMorfParser) FunctionCall() (localctx IFunctionCallContext) {
 	p.EnterRule(localctx, 36, DataMorfParserRULE_functionCall)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(224)
+		p.SetState(245)
 		p.Match(DataMorfParserIdentifier)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4247,7 +4473,7 @@ func (p *DataMorfParser) FunctionCall() (localctx IFunctionCallContext) {
 		}
 	}
 	{
-		p.SetState(225)
+		p.SetState(246)
 		p.Match(DataMorfParserOpenRound)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4256,12 +4482,12 @@ func (p *DataMorfParser) FunctionCall() (localctx IFunctionCallContext) {
 	}
 
 	{
-		p.SetState(226)
+		p.SetState(247)
 		p.SendingParams()
 	}
 
 	{
-		p.SetState(227)
+		p.SetState(248)
 		p.Match(DataMorfParserCloseRound)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4383,7 +4609,7 @@ func (p *DataMorfParser) SignatureParams() (localctx ISignatureParamsContext) {
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(237)
+	p.SetState(258)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -4392,14 +4618,14 @@ func (p *DataMorfParser) SignatureParams() (localctx ISignatureParamsContext) {
 
 	if _la == DataMorfParserIdentifier {
 		{
-			p.SetState(229)
+			p.SetState(250)
 			p.Match(DataMorfParserIdentifier)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
-		p.SetState(234)
+		p.SetState(255)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -4408,7 +4634,7 @@ func (p *DataMorfParser) SignatureParams() (localctx ISignatureParamsContext) {
 
 		for _la == DataMorfParserComma {
 			{
-				p.SetState(230)
+				p.SetState(251)
 				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -4416,7 +4642,7 @@ func (p *DataMorfParser) SignatureParams() (localctx ISignatureParamsContext) {
 				}
 			}
 			{
-				p.SetState(231)
+				p.SetState(252)
 				p.Match(DataMorfParserIdentifier)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -4424,7 +4650,7 @@ func (p *DataMorfParser) SignatureParams() (localctx ISignatureParamsContext) {
 				}
 			}
 
-			p.SetState(236)
+			p.SetState(257)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -4581,7 +4807,7 @@ func (p *DataMorfParser) SendingParams() (localctx ISendingParamsContext) {
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(247)
+	p.SetState(268)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -4590,10 +4816,10 @@ func (p *DataMorfParser) SendingParams() (localctx ISendingParamsContext) {
 
 	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1688857376587792) != 0 {
 		{
-			p.SetState(239)
+			p.SetState(260)
 			p.unit(0)
 		}
-		p.SetState(244)
+		p.SetState(265)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -4602,7 +4828,7 @@ func (p *DataMorfParser) SendingParams() (localctx ISendingParamsContext) {
 
 		for _la == DataMorfParserComma {
 			{
-				p.SetState(240)
+				p.SetState(261)
 				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -4610,11 +4836,11 @@ func (p *DataMorfParser) SendingParams() (localctx ISendingParamsContext) {
 				}
 			}
 			{
-				p.SetState(241)
+				p.SetState(262)
 				p.unit(0)
 			}
 
-			p.SetState(246)
+			p.SetState(267)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -4761,7 +4987,7 @@ func (p *DataMorfParser) ArrowFunction() (localctx IArrowFunctionContext) {
 	p.EnterRule(localctx, 42, DataMorfParserRULE_arrowFunction)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(249)
+		p.SetState(270)
 		p.Match(DataMorfParserOpenRound)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4769,11 +4995,11 @@ func (p *DataMorfParser) ArrowFunction() (localctx IArrowFunctionContext) {
 		}
 	}
 	{
-		p.SetState(250)
+		p.SetState(271)
 		p.SignatureParams()
 	}
 	{
-		p.SetState(251)
+		p.SetState(272)
 		p.Match(DataMorfParserCloseRound)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4781,7 +5007,7 @@ func (p *DataMorfParser) ArrowFunction() (localctx IArrowFunctionContext) {
 		}
 	}
 	{
-		p.SetState(252)
+		p.SetState(273)
 		p.Match(DataMorfParserT__0)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -4789,7 +5015,7 @@ func (p *DataMorfParser) ArrowFunction() (localctx IArrowFunctionContext) {
 		}
 	}
 	{
-		p.SetState(253)
+		p.SetState(274)
 		p.Block()
 	}
 
@@ -4951,14 +5177,14 @@ func (p *DataMorfParser) ArrayLiteral() (localctx IArrayLiteralContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(255)
+		p.SetState(276)
 		p.Match(DataMorfParserOpenSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(264)
+	p.SetState(285)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -4967,10 +5193,10 @@ func (p *DataMorfParser) ArrayLiteral() (localctx IArrayLiteralContext) {
 
 	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1688857376587860) != 0 {
 		{
-			p.SetState(256)
+			p.SetState(277)
 			p.Value()
 		}
-		p.SetState(261)
+		p.SetState(282)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -4979,7 +5205,7 @@ func (p *DataMorfParser) ArrayLiteral() (localctx IArrayLiteralContext) {
 
 		for _la == DataMorfParserComma {
 			{
-				p.SetState(257)
+				p.SetState(278)
 				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -4987,11 +5213,11 @@ func (p *DataMorfParser) ArrayLiteral() (localctx IArrayLiteralContext) {
 				}
 			}
 			{
-				p.SetState(258)
+				p.SetState(279)
 				p.Value()
 			}
 
-			p.SetState(263)
+			p.SetState(284)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5001,7 +5227,7 @@ func (p *DataMorfParser) ArrayLiteral() (localctx IArrayLiteralContext) {
 
 	}
 	{
-		p.SetState(266)
+		p.SetState(287)
 		p.Match(DataMorfParserCloseSquare)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -5167,14 +5393,14 @@ func (p *DataMorfParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(268)
+		p.SetState(289)
 		p.Match(DataMorfParserOpenCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
 		}
 	}
-	p.SetState(277)
+	p.SetState(298)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -5183,10 +5409,10 @@ func (p *DataMorfParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 
 	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1125899906859012) != 0 {
 		{
-			p.SetState(269)
+			p.SetState(290)
 			p.ObjectItem()
 		}
-		p.SetState(274)
+		p.SetState(295)
 		p.GetErrorHandler().Sync(p)
 		if p.HasError() {
 			goto errorExit
@@ -5195,7 +5421,7 @@ func (p *DataMorfParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 
 		for _la == DataMorfParserComma {
 			{
-				p.SetState(270)
+				p.SetState(291)
 				p.Match(DataMorfParserComma)
 				if p.HasError() {
 					// Recognition error - abort rule
@@ -5204,11 +5430,11 @@ func (p *DataMorfParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 			}
 
 			{
-				p.SetState(271)
+				p.SetState(292)
 				p.ObjectItem()
 			}
 
-			p.SetState(276)
+			p.SetState(297)
 			p.GetErrorHandler().Sync(p)
 			if p.HasError() {
 				goto errorExit
@@ -5218,7 +5444,7 @@ func (p *DataMorfParser) ObjectLiteral() (localctx IObjectLiteralContext) {
 
 	}
 	{
-		p.SetState(279)
+		p.SetState(300)
 		p.Match(DataMorfParserCloseCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -5350,7 +5576,7 @@ func (p *DataMorfParser) Key() (localctx IKeyContext) {
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, DataMorfParserRULE_key)
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(286)
+	p.SetState(307)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -5359,7 +5585,7 @@ func (p *DataMorfParser) Key() (localctx IKeyContext) {
 	switch p.GetTokenStream().LA(1) {
 	case DataMorfParserStringLiteral:
 		{
-			p.SetState(281)
+			p.SetState(302)
 			p.Match(DataMorfParserStringLiteral)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5369,7 +5595,7 @@ func (p *DataMorfParser) Key() (localctx IKeyContext) {
 
 	case DataMorfParserOpenSquare:
 		{
-			p.SetState(282)
+			p.SetState(303)
 			p.Match(DataMorfParserOpenSquare)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5377,11 +5603,11 @@ func (p *DataMorfParser) Key() (localctx IKeyContext) {
 			}
 		}
 		{
-			p.SetState(283)
+			p.SetState(304)
 			p.Reference()
 		}
 		{
-			p.SetState(284)
+			p.SetState(305)
 			p.Match(DataMorfParserCloseSquare)
 			if p.HasError() {
 				// Recognition error - abort rule
@@ -5554,7 +5780,7 @@ func (p *DataMorfParser) Value() (localctx IValueContext) {
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, DataMorfParserRULE_value)
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(292)
+	p.SetState(313)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -5563,25 +5789,25 @@ func (p *DataMorfParser) Value() (localctx IValueContext) {
 	switch p.GetInterpreter().AdaptivePredict(p.BaseParser, p.GetTokenStream(), 24, p.GetParserRuleContext()) {
 	case 1:
 		{
-			p.SetState(288)
+			p.SetState(309)
 			p.FunctionCall()
 		}
 
 	case 2:
 		{
-			p.SetState(289)
+			p.SetState(310)
 			p.unit(0)
 		}
 
 	case 3:
 		{
-			p.SetState(290)
+			p.SetState(311)
 			p.ObjectLiteral()
 		}
 
 	case 4:
 		{
-			p.SetState(291)
+			p.SetState(312)
 			p.ArrayLiteral()
 		}
 
@@ -5721,11 +5947,11 @@ func (p *DataMorfParser) KeyValue() (localctx IKeyValueContext) {
 	p.EnterRule(localctx, 52, DataMorfParserRULE_keyValue)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(294)
+		p.SetState(315)
 		p.Key()
 	}
 	{
-		p.SetState(295)
+		p.SetState(316)
 		p.Match(DataMorfParserColon)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -5733,7 +5959,7 @@ func (p *DataMorfParser) KeyValue() (localctx IKeyValueContext) {
 		}
 	}
 	{
-		p.SetState(296)
+		p.SetState(317)
 		p.Value()
 	}
 
@@ -5863,7 +6089,7 @@ func (p *DataMorfParser) ObjectItem() (localctx IObjectItemContext) {
 	localctx = NewObjectItemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, DataMorfParserRULE_objectItem)
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(300)
+	p.SetState(321)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
 		goto errorExit
@@ -5872,13 +6098,13 @@ func (p *DataMorfParser) ObjectItem() (localctx IObjectItemContext) {
 	switch p.GetTokenStream().LA(1) {
 	case DataMorfParserOpenSquare, DataMorfParserStringLiteral:
 		{
-			p.SetState(298)
+			p.SetState(319)
 			p.KeyValue()
 		}
 
 	case DataMorfParserDot:
 		{
-			p.SetState(299)
+			p.SetState(320)
 			p.Spread()
 		}
 
@@ -6007,7 +6233,7 @@ func (p *DataMorfParser) Spread() (localctx ISpreadContext) {
 	p.EnterRule(localctx, 56, DataMorfParserRULE_spread)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(302)
+		p.SetState(323)
 		p.Match(DataMorfParserDot)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -6015,7 +6241,7 @@ func (p *DataMorfParser) Spread() (localctx ISpreadContext) {
 		}
 	}
 	{
-		p.SetState(303)
+		p.SetState(324)
 		p.Match(DataMorfParserDot)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -6023,7 +6249,7 @@ func (p *DataMorfParser) Spread() (localctx ISpreadContext) {
 		}
 	}
 	{
-		p.SetState(304)
+		p.SetState(325)
 		p.Match(DataMorfParserDot)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -6031,7 +6257,7 @@ func (p *DataMorfParser) Spread() (localctx ISpreadContext) {
 		}
 	}
 	{
-		p.SetState(305)
+		p.SetState(326)
 		p.Reference()
 	}
 
@@ -6155,7 +6381,7 @@ func (p *DataMorfParser) Block() (localctx IBlockContext) {
 	p.EnterRule(localctx, 58, DataMorfParserRULE_block)
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(307)
+		p.SetState(328)
 		p.Match(DataMorfParserOpenCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -6163,11 +6389,11 @@ func (p *DataMorfParser) Block() (localctx IBlockContext) {
 		}
 	}
 	{
-		p.SetState(308)
+		p.SetState(329)
 		p.Statements()
 	}
 	{
-		p.SetState(309)
+		p.SetState(330)
 		p.Match(DataMorfParserCloseCurly)
 		if p.HasError() {
 			// Recognition error - abort rule
@@ -6290,7 +6516,7 @@ func (p *DataMorfParser) Constant() (localctx IConstantContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(311)
+		p.SetState(332)
 		_la = p.GetTokenStream().LA(1)
 
 		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1125907423035392) != 0) {
@@ -6331,18 +6557,39 @@ func (p *DataMorfParser) Sempred(localctx antlr.RuleContext, ruleIndex, predInde
 func (p *DataMorfParser) Unit_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 0:
-		return p.Precpred(p.GetParserRuleContext(), 8)
+		return p.Precpred(p.GetParserRuleContext(), 15)
 
 	case 1:
-		return p.Precpred(p.GetParserRuleContext(), 7)
+		return p.Precpred(p.GetParserRuleContext(), 14)
 
 	case 2:
-		return p.Precpred(p.GetParserRuleContext(), 6)
+		return p.Precpred(p.GetParserRuleContext(), 13)
 
 	case 3:
-		return p.Precpred(p.GetParserRuleContext(), 5)
+		return p.Precpred(p.GetParserRuleContext(), 12)
 
 	case 4:
+		return p.Precpred(p.GetParserRuleContext(), 11)
+
+	case 5:
+		return p.Precpred(p.GetParserRuleContext(), 10)
+
+	case 6:
+		return p.Precpred(p.GetParserRuleContext(), 9)
+
+	case 7:
+		return p.Precpred(p.GetParserRuleContext(), 8)
+
+	case 8:
+		return p.Precpred(p.GetParserRuleContext(), 7)
+
+	case 9:
+		return p.Precpred(p.GetParserRuleContext(), 6)
+
+	case 10:
+		return p.Precpred(p.GetParserRuleContext(), 5)
+
+	case 11:
 		return p.Precpred(p.GetParserRuleContext(), 4)
 
 	default:

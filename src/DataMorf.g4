@@ -16,40 +16,50 @@ statement:
 
 variableStatement: Var Identifier ( Assign value)?;
 assignStatement: reference Assign value;
-functionStatement: Function Identifier OpenRound signatureParams CloseRound block;
-ifStatement: If OpenRound unit CloseRound block (Else If OpenRound unit CloseRound block)*  (Else block)?;
+functionStatement:
+	Function Identifier OpenRound signatureParams CloseRound block;
+ifStatement:
+	If OpenRound unit CloseRound block (
+		Else If OpenRound unit CloseRound block
+	)* (Else block)?;
 switchStatement: Switch OpenRound unit CloseRound block;
-deleteStatement: Delete (Identifier (Dot (accessProperty | Identifier))*);
+deleteStatement:
+	Delete (Identifier (Dot (accessProperty | Identifier))*);
 unitStatement: unit;
-valueStatement : value SemiColon;
+valueStatement: value SemiColon;
 
-forStatement: For OpenRound (classicForCondition | iteratorForCondition) CloseRound block;
-classicForCondition: init = variableStatement SemiColon condition = unitStatement SemiColon postOp = assignStatement;
+forStatement:
+	For OpenRound (classicForCondition | iteratorForCondition) CloseRound block;
+classicForCondition:
+	init = variableStatement SemiColon condition = unitStatement SemiColon postOp = assignStatement;
 iteratorForCondition: Var Identifier Of reference;
 
 unit:
 	OpenRound single = unit CloseRound
-	| left = unit ( Divide) right = unit
-	| left = unit ( Multiply) right = unit
-	| left = unit ( Plus) right = unit
-	| left = unit ( Minus) right = unit
-	| left = unit (
-		LessThan
-		| MoreThan
-		| LessThanEquals
-		| GreaterThanEquals
-		| Equals
-		| NotEquals
-		| And
-		| Or
-	) right = unit
+	| left = unit operator = Divide right = unit
+	| left = unit operator = Multiply right = unit
+	| left = unit operator = Plus right = unit
+	| left = unit operator = Minus right = unit
+	| left = unit operator = LessThan right = unit
+	| left = unit operator = MoreThan right = unit
+	| left = unit operator = LessThanEquals right = unit
+	| left = unit operator = GreaterThanEquals right = unit
+	| left = unit operator = Equals right = unit
+	| left = unit operator = NotEquals right = unit
+	| left = unit operator = And right = unit
+	| left = unit operator = Or right = unit
 	| Not single = unit
 	| reference
 	| constant;
 
 reference: (functionCall | Identifier) (accessor)*;
-accessor: (accessProperty | (Dot Identifier) | (Dot functionCall));
-accessProperty: OpenSquare (StringLiteral | DecimalLiteral | Identifier) CloseSquare;
+accessor: (
+		accessProperty
+		| (Dot Identifier)
+		| (Dot functionCall)
+	);
+accessProperty:
+	OpenSquare (StringLiteral | DecimalLiteral | Identifier) CloseSquare;
 
 functionCall: Identifier OpenRound (sendingParams) CloseRound;
 signatureParams: (Identifier (Comma Identifier)*)?;
@@ -57,7 +67,8 @@ sendingParams: (unit (Comma unit)*)?;
 arrowFunction: OpenRound signatureParams CloseRound '=>' block;
 
 arrayLiteral: OpenSquare (value (Comma value)*)? CloseSquare;
-objectLiteral: OpenCurly (objectItem (Comma (objectItem))*)? CloseCurly;
+objectLiteral:
+	OpenCurly (objectItem (Comma (objectItem))*)? CloseCurly;
 key: ( StringLiteral | OpenSquare reference CloseSquare);
 value: (functionCall | unit | objectLiteral | arrayLiteral);
 keyValue: key Colon value;

@@ -1,4 +1,4 @@
-// Generated from /Users/manjunatha/Documents/Research/litelang/src/datamorf.g4 by ANTLR 4.13.1
+// Generated from c://Users//chillTime//Documents//datamorf//src//DataMorf.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -111,7 +111,7 @@ public class DataMorfLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "datamorf.g4"; }
+	public String getGrammarFileName() { return "DataMorf.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

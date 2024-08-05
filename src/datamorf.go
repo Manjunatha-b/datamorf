@@ -98,62 +98,56 @@ func (v *DataMorfVisitor) VisitStatement(ctx *parser.StatementContext) interface
 }
 
 func (v *DataMorfVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) interface{} {
-	var value interface{}
-	value = nil
-	var name string
-	value = nil
-
-	if ctx.Value() != nil {
-		value = ctx.Value().Accept(v)
-	}
-
-	name = ctx.Identifier().GetText()
-	v.variables[name] = value
+	variableName := ctx.Identifier().GetText()
+	value := ctx.Value().Accept(v)
+	v.variables[variableName] = value
 	return nil
 }
 
 func (v *DataMorfVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
-	if ctx.ObjectLiteral() != nil {
-		return ctx.ObjectLiteral().Accept(v)
+	switch x := ctx.GetChild(0).(type) {
+	case *parser.ObjectLiteralContext:
+		return v.VisitObjectLiteral(x)
+	case *parser.ArrayLiteralContext:
+		return v.VisitArrayLiteral(x)
+	case *parser.FunctionCallContext:
+		return v.VisitFunctionCall(x)
+	case *parser.UnitContext:
+		return v.VisitUnit(x)
+	default:
+		return nil
 	}
-	if ctx.ArrayLiteral() != nil {
-		return ctx.ArrayLiteral().Accept(v)
-	}
-	if ctx.FunctionCall() != nil {
-		return ctx.FunctionCall().Accept(v)
-	}
-	if ctx.Unit() != nil {
-		return ctx.Unit().Accept(v)
-	}
-
-	return nil
 }
 
 func (v *DataMorfVisitor) VisitObjectLiteral(ctx *parser.ObjectLiteralContext) interface{} {
 	objectItems := ctx.AllObjectItem()
-	objectMap := make(map[string]interface{})
+	newObject := map[string]interface{}{}
 
-	for i := range objectItems {
-		objectItem := objectItems[i]
-		var currentObj map[string]interface{}
-		if objectItem.KeyValue() != nil {
-			currentObj = objectItem.KeyValue().Accept(v).(map[string]interface{})
-			for key, value := range currentObj {
-				objectMap[key] = value
-			}
-		} else if objectItem.Spread() != nil {
-			currentObj = objectItem.Spread().Accept(v).(map[string]interface{})
-			for key, value := range currentObj {
-				objectMap[key] = value
-			}
+	for _, objectItem := range objectItems {
+		var currentObjectItem map[string]interface{}
+		switch x := objectItem.GetChild(0).(type) {
+		case *parser.KeyValueContext:
+			singularKeyValueObject := v.VisitKeyValue(x)
+			currentObjectItem = singularKeyValueObject.(map[string]interface{})
+			break
+		case *parser.SpreadContext:
+			copiedObject := v.VisitSpread(x)
+			currentObjectItem = copiedObject.(map[string]interface{})
+			break
+		default:
+			panic("Unknown object key value type")
+		}
+
+		for key, value := range currentObjectItem {
+			newObject[key] = value
 		}
 	}
 
-	return objectMap
+	return newObject
 }
 
 func (v *DataMorfVisitor) VisitSpread(ctx *parser.SpreadContext) interface{} {
-	object := ctx.AccessRhs().Accept(v)
+	object := ctx.Reference().Accept(v)
 	return object
 }
 
@@ -166,10 +160,9 @@ func (v *DataMorfVisitor) VisitKeyValue(ctx *parser.KeyValueContext) interface{}
 }
 
 func (v *DataMorfVisitor) VisitArrayLiteral(ctx *parser.ArrayLiteralContext) interface{} {
-	values := make([]interface{}, 0)
-	for _, valueTree := range ctx.AllValue() {
-		value := valueTree.Accept(v)
-		values = append(values, value)
+	values := make([]interface{}, len(ctx.AllValue()))
+	for i, valueTree := range ctx.AllValue() {
+		values[i] = valueTree.Accept(v)
 	}
 	return values
 }
@@ -178,7 +171,7 @@ func (v *DataMorfVisitor) VisitKey(ctx *parser.KeyContext) interface{} {
 	if ctx.StringLiteral() != nil {
 		return processStringLiteral(ctx.StringLiteral().GetText())
 	}
-	panic("No key Found")
+	panic("Expected key, none found")
 }
 
 func (v *DataMorfVisitor) VisitUnitStatement(ctx *parser.UnitStatementContext) interface{} {
@@ -190,65 +183,74 @@ func (v *DataMorfVisitor) VisitUnit(ctx *parser.UnitContext) interface{} {
 		return ctx.Constant().Accept(v)
 	}
 
-	if ctx.Plus() != nil {
-		left := ctx.GetLeft().Accept(v)
-		right := ctx.GetRight().Accept(v)
-		if isNumber(left) && isNumber(right) {
-			return left.(float64) + right.(float64)
-		} else if isString(left) && isString(right) {
-			return left.(string) + right.(string)
-		} else {
-			if isString(left) {
-				rightBytes, _ := json.Marshal(right)
-				return left.(string) + string(rightBytes)
-			} else if isString(right) {
-				leftBytes, _ := json.Marshal(left)
-				return string(leftBytes) + right.(string)
-			} else {
-				// todo : throw exception here instead
-				return nil
-			}
-		}
+	if ctx.OpenRound() != nil && ctx.CloseRound() != nil {
+		return ctx.Unit(0).Accept(v)
 	}
 
-	if ctx.Minus() != nil {
-		left := ctx.GetLeft().Accept(v)
-		right := ctx.GetRight().Accept(v)
-		if isNumber(left) && isNumber(right) {
-			return left.(float64) - right.(float64)
-		} else {
-			return nil
-		}
+	if ctx.GetLeft() != nil && ctx.GetRight() != nil {
+		// left := ctx.GetLeft().Accept(v)
+		// right := ctx.GetRight().Accept(v)
+		fmt.Println("operator type: ", ctx.GetOperator())
 	}
 
-	if ctx.MoreThan() != nil {
-		left := ctx.GetLeft().Accept(v)
-		right := ctx.GetRight().Accept(v)
-		if isNumber(left) && isNumber(right) {
-			return left.(float64) > right.(float64)
-		} else {
-			return nil
-		}
-	}
+	// if ctx.Plus() != nil {
+	// 	if isNumber(left) && isNumber(right) {
+	// 		return left.(float64) + right.(float64)
+	// 	} else if isString(left) && isString(right) {
+	// 		return left.(string) + right.(string)
+	// 	} else {
+	// 		if isString(left) {
+	// 			rightBytes, _ := json.Marshal(right)
+	// 			return left.(string) + string(rightBytes)
+	// 		} else if isString(right) {
+	// 			leftBytes, _ := json.Marshal(left)
+	// 			return string(leftBytes) + right.(string)
+	// 		} else {
+	// 			// todo : throw exception here instead
+	// 			return nil
+	// 		}
+	// 	}
+	// }
 
-	if ctx.AccessRhs() != nil {
-		return ctx.AccessRhs().Accept(v)
+	// if ctx.Minus() != nil {
+	// 	left := ctx.GetLeft().Accept(v)
+	// 	right := ctx.GetRight().Accept(v)
+	// 	if isNumber(left) && isNumber(right) {
+	// 		return left.(float64) - right.(float64)
+	// 	} else {
+	// 		return nil
+	// 	}
+	// }
+
+	// if ctx.MoreThan() != nil {
+	// 	left := ctx.GetLeft().Accept(v)
+	// 	right := ctx.GetRight().Accept(v)
+	// 	if isNumber(left) && isNumber(right) {
+	// 		return left.(float64) > right.(float64)
+	// 	} else {
+	// 		return nil
+	// 	}
+	// }
+
+	if ctx.Reference() != nil {
+		return ctx.Reference().Accept(v)
 	}
 	return nil
 }
 
 func (v *DataMorfVisitor) VisitConstant(ctx *parser.ConstantContext) interface{} {
-	if ctx.StringLiteral() != nil {
-		return processStringLiteral(ctx.StringLiteral().GetText())
-	}
+	fmt.Println("constant type: ", ctx)
+	// if ctx.StringLiteral() != nil {
+	// 	return processStringLiteral(ctx.StringLiteral().GetText())
+	// }
 
-	if ctx.DecimalLiteral() != nil {
-		num, err := strconv.ParseFloat(ctx.DecimalLiteral().GetText(), 64)
-		if err != nil {
-			panic("Unable to convert decimal literal: " + ctx.DecimalLiteral().GetText())
-		}
-		return num
-	}
+	// if ctx.DecimalLiteral() != nil {
+	// 	num, err := strconv.ParseFloat(ctx.DecimalLiteral().GetText(), 64)
+	// 	if err != nil {
+	// 		panic("Unable to convert decimal literal: " + ctx.DecimalLiteral().GetText())
+	// 	}
+	// 	return num
+	// }
 
 	return nil
 }
